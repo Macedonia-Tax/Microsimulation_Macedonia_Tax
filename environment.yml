@@ -1,0 +1,13 @@
+name: taxcalc-dev
+dependencies:
+- python
+- "numpy>=1.13"
+- "pandas>=0.23"
+- numba
+- pytest
+- pytest-pep8
+- pytest-xdist
+- mock
+- pycodestyle
+- pylint
+- coverage
