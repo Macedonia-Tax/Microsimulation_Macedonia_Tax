@@ -20,7 +20,6 @@ def corp_tax_base_before_deductions(tax_base_before_deductions,
     """
     income_tax_base_after_deductions = (tax_base_before_deductions -
                                         deductions_from_tax_base)
-    print(tax_base_before_deductions)
     return (income_tax_base_after_deductions)
 
 @iterate_jit(nopython=True)
