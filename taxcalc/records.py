@@ -78,9 +78,9 @@ class Records(object):
     PITCSV_YEAR = 2017
 
     CUR_PATH = os.path.abspath(os.path.dirname(__file__))
-    PIT_DATA_FILENAME = 'cit_poland.csv'
-    PIT_WEIGHTS_FILENAME = 'cit_weights_poland.csv'
-    VAR_INFO_FILENAME = 'records_variables_poland.json'
+    PIT_DATA_FILENAME = 'pit.csv'
+    PIT_WEIGHTS_FILENAME = 'pit_weights.csv'
+    VAR_INFO_FILENAME = 'records_variables.json'
 
     def __init__(self,
                  data=PIT_DATA_FILENAME,
@@ -215,43 +215,12 @@ class Records(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        GF_SALARY = self.gfactors.factor_value('SALARY', year)
-        GF_RENT = self.gfactors.factor_value('RENT', year)
-        GF_BP_NONSPECULATIVE = self.gfactors.factor_value('BP_NONSPECULATIVE',
-                                                          year)
-        GF_BP_SPECULATIVE = self.gfactors.factor_value('BP_SPECULATIVE', year)
-        GF_BP_SPECIFIED = self.gfactors.factor_value('BP_SPECIFIED', year)
-        GF_BP_PATENT115BBF = self.gfactors.factor_value('BP_PATENT115BBF',
-                                                        year)
-        GF_STCG_APPRATE = self.gfactors.factor_value('STCG_APPRATE', year)
-        GF_OINCOME = self.gfactors.factor_value('OINCOME', year)
-        GF_DEDUCTIONS = self.gfactors.factor_value('DEDUCTIONS', year)
-        GF_DEDUCTION_10AA = self.gfactors.factor_value('DEDU_SEC_10A_OR_10AA',
-                                                       year)
-        GF_ST_CG_AMT_1 = self.gfactors.factor_value('ST_CG_AMT_1', year)
-        GF_ST_CG_AMT_2 = self.gfactors.factor_value('ST_CG_AMT_2', year)
-        GF_LT_CG_AMT_1 = self.gfactors.factor_value('LT_CG_AMT_1', year)
-        GF_LT_CG_AMT_2 = self.gfactors.factor_value('LT_CG_AMT_2', year)
-        GF_CYL_SET_OFF = self.gfactors.factor_value('LOSSES_CY', year)
-        GF_BFL_SET_OFF_BALANCE = self.gfactors.factor_value('LOSSES_BF', year)
-        GF_NET_AGRC_INCOME = self.gfactors.factor_value('AGRI_INCOME', year)
-        self.SALARIES *= GF_SALARY
-        self.INCOME_HP *= GF_RENT
-        self.PRFT_GAIN_BP_OTHR_SPECLTV_BUS *= GF_BP_NONSPECULATIVE
-        self.PRFT_GAIN_BP_SPECLTV_BUS *= GF_BP_SPECULATIVE
-        self.PRFT_GAIN_BP_SPCFD_BUS *= GF_BP_SPECIFIED
-        self.PRFT_GAIN_BP_INC_115BBF *= GF_BP_PATENT115BBF
-        self.ST_CG_AMT_APPRATE *= GF_STCG_APPRATE
-        self.TOTAL_INCOME_OS *= GF_OINCOME
-        self.TOTAL_DEDUC_VIA *= GF_DEDUCTIONS
-        self.TOTAL_DEDUC_10AA *= GF_DEDUCTION_10AA
-        self.ST_CG_AMT_1 *= GF_ST_CG_AMT_1
-        self.ST_CG_AMT_2 *= GF_ST_CG_AMT_2
-        self.LT_CG_AMT_1 *= GF_LT_CG_AMT_1
-        self.LT_CG_AMT_2 *= GF_LT_CG_AMT_2
-        self.CYL_SET_OFF *= GF_CYL_SET_OFF
-        self.BFL_SET_OFF_BALANCE *= GF_BFL_SET_OFF_BALANCE
-        self.NET_AGRC_INCOME *= GF_NET_AGRC_INCOME
+        GF_TAX_BASE_BEFORE_DEDUCTIONS = self.gfactors.factor_value('tax_base_before_deductions', year)
+        GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
+
+        self.tax_base_before_deductions *= GF_TAX_BASE_BEFORE_DEDUCTIONS
+        self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
+
 
     def _read_data(self, data):
         """
@@ -306,9 +275,6 @@ class Records(object):
                 setattr(self, varname,
                         np.zeros(self.array_length, dtype=np.float64))
         # check for valid AGEGRP values
-        if not np.all(np.logical_and(np.greater_equal(self.AGEGRP, 0),
-                                     np.less_equal(self.AGEGRP, 2))):
-            raise ValueError('not all AGEGRP values in [0,2] range')
         # delete intermediate variables
         del READ_VARS
         del UNREAD_VARS

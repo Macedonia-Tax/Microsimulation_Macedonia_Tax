@@ -14,23 +14,11 @@ import re
 import copy
 import numpy as np
 import pandas as pd
-from taxcalc.functions import (net_salary_income, net_rental_income,
-                               income_business_profession,
-                               total_other_income, gross_total_income,
-                               itemized_deductions, deduction_10AA,
-                               taxable_total_income,
-                               tax_stcg_splrate, tax_ltcg_splrate,
-                               tax_specialrates, current_year_losses,
-                               brought_fwd_losses, agri_income, pit_liability)
-from taxcalc.corpfunctions import (depreciation_PM, depreciation_PM15,
-                                   depreciation_PM30, depreciation_PM40,
-                                   depreciation_PM50, depreciation_PM60,
-                                   depreciation_PM80, depreciation_PM100,
-                                   corp_income_business_profession,
-                                   corp_GTI_before_set_off, GTI_and_losses,
-                                   cit_liability, MAT_liability,
-                                   MAT_liability_and_credit)
-from taxcalc.gstfunctions import (gst_liability_item)
+from taxcalc.functions import (net_salary_income, taxable_income,
+                               pit_liability)
+from taxcalc.corpfunctions import (corp_tax_base_before_deductions, 
+                                   cit_liability)
+from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
 from taxcalc.records import Records
 from taxcalc.corprecords import CorpRecords
@@ -175,52 +163,18 @@ class Calculator(object):
         # For now, don't zero out for corporate
         # pdb.set_trace()
         # Corporate calculations
-        net_rental_income(self.__policy, self.__corprecords)
-        depreciation_PM(self.__policy, self.__corprecords)
-        depreciation_PM15(self.__policy, self.__corprecords)
-        depreciation_PM30(self.__policy, self.__corprecords)
-        depreciation_PM40(self.__policy, self.__corprecords)
-        depreciation_PM50(self.__policy, self.__corprecords)
-        depreciation_PM60(self.__policy, self.__corprecords)
-        depreciation_PM80(self.__policy, self.__corprecords)
-        depreciation_PM100(self.__policy, self.__corprecords)
-        corp_income_business_profession(self.__policy, self.__corprecords)
-        total_other_income(self.__policy, self.__corprecords)
-        current_year_losses(self.__policy, self.__corprecords)
-        brought_fwd_losses(self.__policy, self.__corprecords)
-        corp_GTI_before_set_off(self.__policy, self.__corprecords)
-        GTI_and_losses(self.__policy, self.__corprecords)
-        itemized_deductions(self.__policy, self.__corprecords)
-        deduction_10AA(self.__policy, self.__corprecords)
-        taxable_total_income(self.__policy, self.__corprecords)
-        tax_stcg_splrate(self.__policy, self.__corprecords)
-        tax_ltcg_splrate(self.__policy, self.__corprecords)
-        tax_specialrates(self.__policy, self.__corprecords)
+        corp_tax_base_before_deductions(self.__policy, self.__corprecords)
         cit_liability(self.__policy, self.__corprecords)
-        MAT_liability(self.__policy, self.__corprecords)
-        MAT_liability_and_credit(self.__policy, self.__corprecords)
 
         # Individual calculations
         net_salary_income(self.__policy, self.__records)
-        net_rental_income(self.__policy, self.__records)
-        income_business_profession(self.__policy, self.__records)
-        total_other_income(self.__policy, self.__records)
-        current_year_losses(self.__policy, self.__records)
-        brought_fwd_losses(self.__policy, self.__records)
-        gross_total_income(self.__policy, self.__records)
-        itemized_deductions(self.__policy, self.__records)
-        agri_income(self.__policy, self.__records)
-        taxable_total_income(self.__policy, self.__records)
-        tax_stcg_splrate(self.__policy, self.__records)
-        tax_ltcg_splrate(self.__policy, self.__records)
-        tax_specialrates(self.__policy, self.__records)
+        taxable_income(self.__policy, self.__records)
         pit_liability(self.__policy, self.__records)
         # GST calculations
         # agg_consumption(self.__policy, self.__gstrecords)
         # gst_liability_cereal(self.__policy, self.__gstrecords)
         # gst_liability_other(self.__policy, self.__gstrecords)
-        gst_liability_item(self)
-        # gst_liability_item(self.__policy, self.__gstrecords)
+        gst_liability(self.__policy, self.__gstrecords)
         # TODO: ADD: expanded_income(self.__policy, self.__records)
         # TODO: ADD: aftertax_income(self.__policy, self.__records)
 

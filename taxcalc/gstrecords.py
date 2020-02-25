@@ -116,7 +116,7 @@ class GSTRecords(object):
         # specify current_year and ASSESSMENT_YEAR values
         if isinstance(start_year, int):
             self.__current_year = start_year
-            self.ASSESSMENT_YEAR.fill(start_year)
+            self.AYEAR.fill(start_year)
         else:
             msg = 'start_year is not an integer'
             raise ValueError(msg)

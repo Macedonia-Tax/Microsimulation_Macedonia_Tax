@@ -1,6 +1,5 @@
 {
-
-    "_cit_rate_category1": {
+    "_cit_rate_small_business": {
         "long_name": "rate at which corporates are taxed",
         "description": "Corporate Tax rate",
         "itr_ref": "Schedule 1 Finance Act",
@@ -26,9 +25,8 @@
         "out_of_range_minmsg": "",
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
-    },
-       
-   "_cit_rate_category2": {
+    },     
+   "_cit_rate_regular": {
         "long_name": "rate at which corporates are taxed",
         "description": "Corporate Tax rate",
         "itr_ref": "Schedule 1 Finance Act",
