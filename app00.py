@@ -13,7 +13,7 @@ recs = Records()
 grecs = GSTRecords()
 
 # create CorpRecords object using cross-section data
-crecs1 = CorpRecords(data='cit_cross.csv', weights='cit_cross_wgts.csv')
+crecs1 = CorpRecords(data='cit_poland.csv', weights='cit_weights_poland.csv')
 # Note: weights argument is optional
 assert isinstance(crecs1, CorpRecords)
 assert crecs1.current_year == 2017

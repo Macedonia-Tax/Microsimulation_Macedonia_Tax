@@ -81,10 +81,10 @@ class CorpRecords(object):
     CITCSV_YEAR = 2017
 
     CUR_PATH = os.path.abspath(os.path.dirname(__file__))
-    CIT_DATA_FILENAME = 'cit_cross.csv'
-    CIT_WEIGHTS_FILENAME = 'cit_cross_wgts.csv'
+    CIT_DATA_FILENAME = 'cit_poland.csv'
+    CIT_WEIGHTS_FILENAME = 'cit_weights_poland.csv'
     CIT_BLOWFACTORS_FILENAME = 'cit_panel_blowup.csv'
-    VAR_INFO_FILENAME = 'corprecords_variables.json'
+    VAR_INFO_FILENAME = 'corprecords_variables_poland.json'
 
     def __init__(self,
                  data=CIT_DATA_FILENAME,
@@ -124,7 +124,7 @@ class CorpRecords(object):
         # specify current_year and ASSESSMENT_YEAR values
         if isinstance(start_year, int):
             self.__current_year = start_year
-            self.ASSESSMENT_YEAR.fill(start_year)
+            self.AYEAR.fill(start_year)
         else:
             msg = 'start_year is not an integer'
             raise ValueError(msg)
