@@ -43,7 +43,7 @@ class GrowFactors(object):
     # TODO: Growfactors for Corporate and non-corporate Income heads are
     # TODO: currently set as same. New field names should be read in case we
     # TODO: want separate growfactors for Corporate and Non-corporate data.
-    VALID_NAMES = set(['CPI', 'SALARY', 'tax_base_before_deductions', 
+    VALID_NAMES = set(['CPI', 'SALARIES', 'tax_base_before_deductions', 
                        'deductions_from_tax_base'])
 
     def __init__(self, growfactors_filename=FILE_PATH):
@@ -126,7 +126,7 @@ class GrowFactors(object):
             msg = 'lastyear={} > GrowFactors.last_year={}'
             raise ValueError(msg.format(lastyear, self.last_year))
         # pylint: disable=no-member
-        rates = [round((self.gfdf['SALARY'][cyr] - 1.0), 4)
+        rates = [round((self.gfdf['SALARIES'][cyr] - 1.0), 4)
                  for cyr in range(firstyear, lastyear + 1)]
         return rates
 

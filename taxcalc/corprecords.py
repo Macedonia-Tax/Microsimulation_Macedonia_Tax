@@ -381,49 +381,11 @@ class CorpRecords(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        GF_CORP1 = self.gfactors.factor_value('CORP', year)
-        GF_RENT = self.gfactors.factor_value('RENT', year)
-        GF_BP_NONSPECULATIVE = self.gfactors.factor_value('BP_NONSPECULATIVE',
-                                                          year)
-        GF_BP_SPECULATIVE = self.gfactors.factor_value('BP_SPECULATIVE',
-                                                       year)
-        GF_BP_SPECIFIED = self.gfactors.factor_value('BP_SPECIFIED', year)
-        GF_BP_PATENT115BBF = self.gfactors.factor_value('BP_PATENT115BBF',
-                                                        year)
-        GF_ST_CG_AMT_1 = self.gfactors.factor_value('ST_CG_AMT_1', year)
-        GF_ST_CG_AMT_2 = self.gfactors.factor_value('ST_CG_AMT_2', year)
-        GF_LT_CG_AMT_1 = self.gfactors.factor_value('LT_CG_AMT_1', year)
-        GF_LT_CG_AMT_2 = self.gfactors.factor_value('LT_CG_AMT_2', year)
-        GF_STCG_APPRATE = self.gfactors.factor_value('STCG_APPRATE', year)
-        GF_OINCOME = self.gfactors.factor_value('OINCOME', year)
-        GF_CYL_SET_OFF = self.gfactors.factor_value('LOSSES_CY', year)
-        GF_DEDUCTIONS = self.gfactors.factor_value('DEDUCTIONS', year)
-        GF_DEDUCTION_10AA = self.gfactors.factor_value('DEDU_SEC_10A_OR_10AA',
-                                                       year)
-        GF_NET_AGRC_INCOME = self.gfactors.factor_value('AGRI_INCOME', year)
-        GF_INVESTMENT = self.gfactors.factor_value('INVESTMENT', year)
-        self.ST_CG_AMT_1 *= GF_ST_CG_AMT_1
-        self.ST_CG_AMT_2 *= GF_ST_CG_AMT_2
-        self.ST_CG_AMT_APPRATE *= GF_STCG_APPRATE
-        self.LT_CG_AMT_1 *= GF_LT_CG_AMT_1
-        self.LT_CG_AMT_2 *= GF_LT_CG_AMT_2
-        self.INCOME_HP *= GF_RENT
-        self.PRFT_GAIN_BP_OTHR_SPECLTV_BUS *= GF_BP_NONSPECULATIVE
-        self.PRFT_GAIN_BP_SPECLTV_BUS *= GF_BP_SPECULATIVE
-        self.PRFT_GAIN_BP_SPCFD_BUS *= GF_BP_SPECIFIED
-        self.PRFT_GAIN_BP_INC_115BBF *= GF_BP_PATENT115BBF
-        self.TOTAL_INCOME_OS *= GF_OINCOME
-        self.CYL_SET_OFF *= GF_CYL_SET_OFF
-        self.TOTAL_DEDUC_VIA *= GF_DEDUCTIONS
-        self.TOTAL_DEDUC_10AA *= GF_DEDUCTION_10AA
-        self.NET_AGRC_INCOME *= GF_NET_AGRC_INCOME
-        self.PWR_DOWN_VAL_1ST_DAY_PY_15P *= GF_INVESTMENT
-        self.PADDTNS_180_DAYS__MOR_PY_15P *= GF_INVESTMENT
-        self.PCR34_PY_15P *= GF_INVESTMENT
-        self.PADDTNS_LESS_180_DAYS_15P *= GF_INVESTMENT
-        self.PCR7_PY_15P *= GF_INVESTMENT
-        self.PEXP_INCURRD_TRF_ASSTS_15P *= GF_INVESTMENT
-        self.PCAP_GAINS_LOSS_SEC50_15P *= GF_INVESTMENT
+        GF_TAX_BASE_BEFORE_DEDUCTIONS = self.gfactors.factor_value('tax_base_before_deductions', year)
+        GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
+
+        self.tax_base_before_deductions *= GF_TAX_BASE_BEFORE_DEDUCTIONS
+        self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
 
     def _extract_panel_year(self):
         """
@@ -552,8 +514,6 @@ class CorpRecords(object):
                             taxdf[varname].astype(np.int32).values)
                 else:
                     if varname not in CorpRecords.STRING_READ_VARS:
-                        print(varname)
-                        print(CorpRecords.STRING_READ_VARS)
                         setattr(self, varname,
                             taxdf[varname].astype(np.float64).values)
                     else:

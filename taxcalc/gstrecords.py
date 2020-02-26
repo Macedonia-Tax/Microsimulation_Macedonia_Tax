@@ -234,8 +234,8 @@ class GSTRecords(object):
         """
         # pylint: disable=too-many-locals,too-many-statements
 
-        GF_CONSUMPTION = self.gfactors.factor_value('CONSUMPTION', year)
-        GF_OTHER = self.gfactors.factor_value('OTHER_CONS_ITEM', year)
+        GF_CONSUMPTION = self.gfactors.factor_value('CPI', year)
+        GF_OTHER = self.gfactors.factor_value('CPI', year)
 
         for v in GSTRecords.FIELD_VARS:
             if v.startswith('CONS_') and not(v.startswith('CONS_OTHER')):
