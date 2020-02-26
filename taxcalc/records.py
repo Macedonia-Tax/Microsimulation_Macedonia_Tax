@@ -215,11 +215,10 @@ class Records(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        GF_TAX_BASE_BEFORE_DEDUCTIONS = self.gfactors.factor_value('tax_base_before_deductions', year)
-        GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
+        GF_SALARIES = self.gfactors.factor_value('SALARIES', year)
 
-        self.tax_base_before_deductions *= GF_TAX_BASE_BEFORE_DEDUCTIONS
-        self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
+        self.SALARIES *= GF_SALARIES
+
 
 
     def _read_data(self, data):
