@@ -214,6 +214,18 @@ class Calculator(object):
         del arys
         return pdf
 
+    def dataframe_cit(self, variable_list):
+        """
+        Return pandas DataFrame containing the listed variables from embedded
+        CorpRecords object.
+        """
+        assert isinstance(variable_list, list)
+        print(variable_list)
+        arys = [self.carray(vname) for vname in variable_list]
+        pdf = pd.DataFrame(data=np.column_stack(arys), columns=variable_list)
+        del arys
+        return pdf
+    
     def distribution_table_dataframe(self):
         """
         Return pandas DataFrame containing the DIST_TABLE_COLUMNS variables
@@ -245,6 +257,10 @@ class Calculator(object):
          ignored).
         """
         if variable_value is None:
+            #print('I am here')
+            #print(variable_name)
+            #print(getattr(self.__corprecords, variable_name))
+            getattr(self.__corprecords, variable_name)
             return getattr(self.__corprecords, variable_name)
         assert isinstance(variable_value, np.ndarray)
         setattr(self.__corprecords, variable_name, variable_value)
