@@ -342,12 +342,15 @@ class CorpRecords(object):
         CorpRecords.INTEGER_READ_VARS = set(k for k,
                                             v in vardict['read'].items()
                                             if v['type'] == 'int')
+        CorpRecords.STRING_READ_VARS = set(k for k,
+                                            v in vardict['read'].items()
+                                            if v['type'] == 'string')
         FLOAT_READ_VARS = set(k for k, v in vardict['read'].items()
                               if v['type'] == 'float')
         CorpRecords.MUST_READ_VARS = set(k for k, v in vardict['read'].items()
                                          if v.get('required'))
         CorpRecords.USABLE_READ_VARS = (CorpRecords.INTEGER_READ_VARS |
-                                        FLOAT_READ_VARS)
+                                        FLOAT_READ_VARS | CorpRecords.STRING_READ_VARS)
         INT_CALCULATED_VARS = set(k for k, v in vardict['calc'].items()
                                   if v['type'] == 'int')
         FLOAT_CALCULATED_VARS = set(k for k, v in vardict['calc'].items()
@@ -364,6 +367,7 @@ class CorpRecords(object):
 
     # specify various sets of variable names
     INTEGER_READ_VARS = None
+    STRING_READ_VARS = None
     MUST_READ_VARS = None
     USABLE_READ_VARS = None
     CALCULATED_VARS = None
@@ -547,8 +551,14 @@ class CorpRecords(object):
                     setattr(self, varname,
                             taxdf[varname].astype(np.int32).values)
                 else:
-                    setattr(self, varname,
+                    if varname not in CorpRecords.STRING_READ_VARS:
+                        print(varname)
+                        print(CorpRecords.STRING_READ_VARS)
+                        setattr(self, varname,
                             taxdf[varname].astype(np.float64).values)
+                    else:
+                        setattr(self, varname,
+                            taxdf[varname].astype(np.str).values)
             else:
                 self.IGNORED_VARS.add(varname)
         # check that MUST_READ_VARS are all present in taxdf

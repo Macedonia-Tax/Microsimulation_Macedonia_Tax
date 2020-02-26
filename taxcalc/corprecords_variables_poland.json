@@ -11,10 +11,16 @@
       "desc": "Assessment year of ITR form that include prior year information",
       "form": {"2017": "ITR-6 Assessment Year (first year)"}
     },   
-    "legal_eng": {
+    "legal_form": {
       "type": "string",
       "desc": "Legal Form of the business in English",
       "form": {"2017": "Field no. 3 in form CIT-8"}
+    },
+    "sector": {
+      "required": true,    
+      "type": "string",
+      "desc": "Sector classification",
+      "form": {"2017": ""}
     },
     "tax_base_before_deductions": {
       "type": "float",

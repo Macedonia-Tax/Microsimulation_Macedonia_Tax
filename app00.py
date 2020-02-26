@@ -46,6 +46,9 @@ np.seterr(divide='ignore', invalid='ignore')
 
 # Produce DataFrame of results using cross-section
 calc1.calc_all()
+
+sector=calc1.carray('CIT_ID_NO')
+
 AggInc17c = calc1.carray('GTI_Before_Loss')
 GTI17c = calc1.carray('deductions')
 citax17c = calc1.carray('citax')
