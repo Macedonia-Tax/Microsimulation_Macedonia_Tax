@@ -59,7 +59,7 @@ print(f'Tax Base After Deductions, 2017: {sum(Tax_Base_After_Deductions * weight
 print(f'CIT Collection, 2017: {sum(citax * weight) / 10**9:,.2f} Billion')
 print(f'Effective Tax Rate, 2017: {weighted_etr_overall*100:,.1f}%')
 
-dump_vars = ['legal_form', 'sector', 'tax_base_before_deductions', 'deductions_from_tax_base',
+dump_vars = ['legal_form', 'sector', 'province', 'tax_base_before_deductions', 'deductions_from_tax_base',
              'income_tax_base_after_deductions', 'citax']
 dumpdf_2017 = calc1.dataframe_cit(dump_vars)
 dumpdf_2017.to_csv('app00_poland.csv', index=False, float_format='%.0f')
@@ -88,6 +88,9 @@ print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
 df_sector = dumpdf_2017.groupby(['sector']).sum()
 df_sector['citax_millions'] = df_sector['citax']/10**6
 
+df_province = dumpdf_2017.groupby(['province']).sum()
+df_province['citax_millions'] = df_province['citax']/10**6
+
 ax = df_sector.plot(kind='bar', use_index=True, y='citax_millions', 
                     yticks = np.linspace(0,7,15), legend=False, rot=90,
                     figsize=(8,8))
@@ -97,6 +100,13 @@ ax.set_xlabel('')
 ax.set_title(' CIT collection by sector (2017)', fontweight="bold")
 plt.show()
 
+ax = df_province.plot(kind='bar', use_index=True, y='citax_millions', 
+                    yticks = np.linspace(0,7,15), legend=False, rot=90,
+                    figsize=(8,8))
+ax.set_ylabel('CIT in million Zlotys')
+ax.set_xlabel('')
+ax.set_title(' CIT collection by Province (2017)', fontweight="bold")
+plt.show()
 
 
 

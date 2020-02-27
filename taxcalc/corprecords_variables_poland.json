@@ -22,6 +22,11 @@
       "desc": "Sector classification",
       "form": {"2017": ""}
     },
+    "province": { 
+      "type": "string",
+      "desc": "Sector classification",
+      "form": {"2017": ""}
+    },
     "tax_base_before_deductions": {
       "type": "float",
       "desc": "Income tax base before deductions",
