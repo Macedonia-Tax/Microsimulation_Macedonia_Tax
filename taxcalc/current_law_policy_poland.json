@@ -1,7 +1,7 @@
 {
     "_cit_rate_small_business": {
-        "long_name": "rate at which corporates are taxed",
-        "description": "Corporate Tax rate",
+        "long_name": "rate at which small corporations are taxed",
+        "description": "Small Corporations Tax rate",
         "itr_ref": "Schedule 1 Finance Act",
         "notes": "",
         "row_var": "AYEAR",
@@ -27,7 +27,7 @@
         "out_of_range_action": "stop"
     },     
    "_cit_rate_regular": {
-        "long_name": "rate at which corporates are taxed",
+        "long_name": "rate at which regular corporations are taxed",
         "description": "Corporate Tax rate",
         "itr_ref": "Schedule 1 Finance Act",
         "notes": "",
