@@ -3,29 +3,29 @@
     "CIT_ID_NO": {
       "required": true,
       "type": "int",
-      "desc": "Unique positive numeric identifier for filing unit",
-      "form": {"2017": "private info"}
+      "desc": "Identyfikator podatkowy NIP podatnika, Unique positive numeric identifier for filing unit",
+      "form": {"2017": "CIT-8 Field Number 1"}
     },
     "AYEAR": {
       "type": "int",
       "desc": "Assessment year of ITR form that include prior year information",
-      "form": {"2017": "ITR-6 Assessment Year (first year)"}
+      "form": {"2017": "CIT-8 Field Number 4"}
     },   
     "legal_form": {
       "type": "string",
-      "desc": "Legal Form of the business in English",
-      "form": {"2017": "Field no. 3 in form CIT-8"}
+      "desc": "Szczególna forma prawna, Legal Form of the business in English",
+      "form": {"2017": "Obtained from Registration Data INS-NIP2"}
     },
     "sector": {
       "required": true,    
       "type": "string",
-      "desc": "Sector classification",
-      "form": {"2017": ""}
+      "desc": "Sekcja PKD, Sector classification",
+      "form": {"2017": "Obtained from Registration Data INS-NIP2"}
     },
     "province": { 
       "type": "string",
-      "desc": "Sector classification",
-      "form": {"2017": ""}
+      "desc": "Województwo, Province",
+      "form": {"2017": "CIT-8 field no. 10"}
     },
     "tax_base_before_deductions": {
       "type": "float",
