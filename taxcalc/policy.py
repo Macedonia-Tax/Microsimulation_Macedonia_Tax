@@ -48,6 +48,7 @@ class Policy(ParametersBase):
     DEFAULT_NUM_YEARS = LAST_BUDGET_YEAR - JSON_START_YEAR + 1
 
     def __init__(self,
+                 DEFAULTS_FILENAME=DEFAULTS_FILENAME,
                  gfactors=None,
                  start_year=JSON_START_YEAR,
                  num_years=DEFAULT_NUM_YEARS):
