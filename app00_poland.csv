@@ -1,0 +1,451 @@
+legal_form,sector,province,tax_base_before_deductions,deductions_from_tax_base,income_tax_base_after_deductions,citax
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,2148876.0,0.0,2148876.0,408286.44
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Świętokrzyskie,2139750.0,0.0,2139750.0,406552.5
+ OSP.17 Limited liability companies ,Utilities,Mazowieckie,1681265.0,0.0,1681265.0,319440.35
+ OSP.99 Without a particular legal form ,Utilities,Małopolskie,1379500.0,0.0,1379500.0,262105.0
+ OSP.17 Limited liability companies ,Construction,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Health,Mazowieckie,554165.0,0.0,554165.0,105291.35
+ OSP.17 Limited liability companies ,Health,Łódzkie,545040.0,0.0,545040.0,103557.6
+ OSP.16 Joint stock companies ,Professional/Scientific,Świętokrzyskie,399664.0,0.0,399664.0,75936.16
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,390538.0,0.0,390538.0,74202.22
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,322916.0,0.0,322916.0,61354.04
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Wielkopolskie,313790.0,0.0,313790.0,59620.1
+ OSP.17 Limited liability companies ,Utilities,Łódzkie,204694.0,0.0,204694.0,38891.86
+ OSP.17 Limited liability companies ,Utilities,Śląskie,200503.0,0.0,200503.0,38095.57
+ OSP.17 Limited liability companies ,Construction,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.16 Joint stock companies ,Manufacturing,Mazowieckie,56101.0,0.0,56101.0,10659.19
+ OSP.16 Joint stock companies ,Manufacturing,Mazowieckie,185410.0,0.0,185410.0,35227.9
+ OSP.40 Cooperatives ,Construction,Dolnośląskie,389665.0,0.0,389665.0,74036.35
+ OSP.17 Limited liability companies ,Transportation and Storage,Małopolskie,561843.0,0.0,561843.0,106750.17
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Wielkopolskie,256971.0,0.0,256971.0,48824.49
+ OSP.17 Limited liability companies ,Utilities,Wielkopolskie,587319.0,0.0,587319.0,111590.61
+ OSP.17 Limited liability companies ,Construction,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Świętokrzyskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Świętokrzyskie,0.0,0.0,0.0,0.0
+ OSP.99 Without a particular legal form ,Education,Wielkopolskie,136343.0,0.0,136343.0,25905.170000000002
+ OSP.17 Limited liability companies ,Manufacturing,Łódzkie,67046.0,0.0,67046.0,12738.74
+ OSP.17 Limited liability companies ,Construction,Śląskie,705577.0,0.0,705577.0,134059.63
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,366833.0,0.0,366833.0,69698.27
+ OSP.17 Limited liability companies ,Manufacturing,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Mazowieckie,250492.0,0.0,250492.0,47593.48
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,319756.0,0.0,319756.0,60753.64
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,64372.0,0.0,64372.0,12230.68
+ OSP.16 Joint stock companies ,Not determined,Mazowieckie,746922.0,0.0,746922.0,141915.18
+ OSP.17 Limited liability companies ,Manufacturing,Małopolskie,1483859.0,0.0,1483859.0,281933.21
+ OSP.17 Limited liability companies ,Admin and Support Services,Mazowieckie,48319.0,0.0,48319.0,9180.61
+ OSP.17 Limited liability companies ,Construction,Małopolskie,737339.0,0.0,737339.0,140094.41
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Małopolskie,10870.0,0.0,10870.0,2065.3
+ OSP.46 Independent public healthcare institutions ,Health,Małopolskie,20933.0,0.0,20933.0,3977.27
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,252407.0,0.0,252407.0,47957.33
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,128867.0,0.0,128867.0,24484.73
+ OSP.17 Limited liability companies ,Not determined,Warmińsko-Mazurskie,84187.0,0.0,84187.0,15995.53
+ OSP.17 Limited liability companies ,Manufacturing,Małopolskie,727998.0,0.0,727998.0,138319.62
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Wielkopolskie,1476837.0,0.0,1476837.0,280599.03
+ OSP.17 Limited liability companies ,Construction,Śląskie,325174.0,0.0,325174.0,61783.06
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,2403.0,0.0,2403.0,456.57
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,375813.0,0.0,375813.0,71404.47
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,157840.0,0.0,157840.0,29989.6
+ OSP.17 Limited liability companies ,Professional/Scientific,Warmińsko-Mazurskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,533153.0,0.0,533153.0,101299.07
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Małopolskie,759960.0,0.0,759960.0,144392.4
+ OSP.16 Joint stock companies ,Manufacturing,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.16 Joint stock companies ,Other Service Activities,Mazowieckie,158842.0,0.0,158842.0,30179.98
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,1154461.0,0.0,1154461.0,219347.59
+ OSP.16 Joint stock companies ,Manufacturing,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Łódzkie,5756.0,0.0,5756.0,1093.64
+ OSP.17 Limited liability companies ,Real Estate,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Wielkopolskie,923420.0,0.0,923420.0,175449.8
+ OSP.17 Limited liability companies ,ICT,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,135847.0,0.0,135847.0,25810.93
+ OSP.17 Limited liability companies ,Manufacturing,Małopolskie,7229.0,0.0,7229.0,1373.51
+ OSP.17 Limited liability companies ,ICT,Mazowieckie,346904.0,0.0,346904.0,65911.76
+ OSP.16 Joint stock companies ,Real Estate,Śląskie,38287.0,0.0,38287.0,7274.53
+ OSP.17 Limited liability companies ,Transportation and Storage,Mazowieckie,193823.0,0.0,193823.0,36826.37
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Admin and Support Services,Dolnośląskie,53361.0,0.0,53361.0,10138.59
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,34879.0,0.0,34879.0,6627.01
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,38449.0,0.0,38449.0,7305.31
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,415534.0,0.0,415534.0,78951.46
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Łódzkie,406257.0,0.0,406257.0,77188.83
+ OSP.17 Limited liability companies ,Manufacturing,Dolnośląskie,120150.0,0.0,120150.0,22828.5
+ OSP.17 Limited liability companies ,Admin and Support Services,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Śląskie,281111.0,0.0,281111.0,53411.090000000004
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,122379.0,0.0,122379.0,23252.010000000002
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,150566.0,0.0,150566.0,28607.54
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,534268.0,0.0,534268.0,101510.92
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Małopolskie,73743.0,0.0,73743.0,14011.17
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Małopolskie,368541.0,0.0,368541.0,70022.79
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Dolnośląskie,310266.0,0.0,310266.0,58950.54
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,121316.0,0.0,121316.0,23050.04
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Małopolskie,118505.0,0.0,118505.0,22515.95
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,1325338.0,0.0,1325338.0,251814.22
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,772439.0,0.0,772439.0,146763.41
+ OSP.49 Funds ,Finance,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Dolnośląskie,3824541.0,0.0,3824541.0,726662.79
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,202840.0,0.0,202840.0,38539.6
+ OSP.55 of the Association ,Other Service Activities,Łódzkie,45850.0,0.0,45850.0,8711.5
+ OSP.17 Limited liability companies ,Health,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,62364.0,0.0,62364.0,11849.16
+ OSP.17 Limited liability companies ,Other Service Activities,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,210355.0,0.0,210355.0,39967.45
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,1413167.0,0.0,1413167.0,268501.73
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,400826.0,0.0,400826.0,76156.94
+ OSP.16 Joint stock companies ,Manufacturing,Dolnośląskie,921736.0,0.0,921736.0,175129.84
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Mazowieckie,4189085.0,0.0,4189085.0,795926.15
+ OSP.16 Joint stock companies ,Manufacturing,Wielkopolskie,340782.0,0.0,340782.0,64748.58
+ OSP.40 Cooperatives ,Manufacturing,Śląskie,519598.0,0.0,519598.0,98723.62
+ OSP.16 Joint stock companies ,Wholesale/Retail Trade,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Małopolskie,1275222.0,0.0,1275222.0,242292.18
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Warmińsko-Mazurskie,1385452.0,0.0,1385452.0,263235.88
+ OSP.17 Limited liability companies ,ICT,Dolnośląskie,640159.0,0.0,640159.0,121630.21
+ OSP.31 Voivodship self-government organizational units ,Entertainment,Kujawsko-Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,55784.0,0.0,55784.0,10598.960000000001
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,1246347.0,0.0,1246347.0,236805.93
+ OSP.17 Limited liability companies ,Manufacturing,Śląskie,264394.0,50176.0,214218.0,40701.42
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,136595.0,0.0,136595.0,25953.05
+ OSP.17 Limited liability companies ,Not determined,Kujawsko-Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,ICT,Mazowieckie,559712.0,0.0,559712.0,106345.28
+ OSP.17 Limited liability companies ,Real Estate,Kujawsko-Pomorskie,1181229.0,0.0,1181229.0,224433.51
+ OSP.17 Limited liability companies ,Utilities,Dolnośląskie,899022.0,0.0,899022.0,170814.18
+ OSP.17 Limited liability companies ,Utilities,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Wielkopolskie,112878.0,0.0,112878.0,21446.82
+ OSP.17 Limited liability companies ,Professional/Scientific,Wielkopolskie,1772350.0,0.0,1772350.0,336746.5
+ OSP.17 Limited liability companies ,Construction,Wielkopolskie,434240.0,0.0,434240.0,82505.6
+ OSP.57 Physical culture associations ,Entertainment,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Śląskie,1707979.0,0.0,1707979.0,324516.01
+ OSP.17 Limited liability companies ,Utilities,Mazowieckie,452957.0,0.0,452957.0,86061.83
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,27094.0,0.0,27094.0,5147.86
+ OSP.16 Joint stock companies ,Wholesale/Retail Trade,Mazowieckie,48883.0,0.0,48883.0,9287.77
+ OSP.40 Cooperatives ,Real Estate,Wielkopolskie,206125.0,0.0,206125.0,39163.75
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,73643.0,0.0,73643.0,13992.17
+ OSP.17 Limited liability companies ,Admin and Support Services,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,313580.0,0.0,313580.0,59580.2
+ OSP.17 Limited liability companies ,Health,Małopolskie,1344848.0,0.0,1344848.0,255521.12
+ OSP.17 Limited liability companies ,Education,Mazowieckie,201332.0,0.0,201332.0,38253.08
+ OSP.17 Limited liability companies ,Not determined,Kujawsko-Pomorskie,0.0,0.0,0.0,0.0
+ OSP.16 Joint stock companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Opolskie,95556.0,0.0,95556.0,18155.64
+ OSP.17 Limited liability companies ,Construction,Opolskie,12351.0,0.0,12351.0,2346.69
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,390635.0,0.0,390635.0,74220.65
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Małopolskie,66681.0,0.0,66681.0,12669.39
+ OSP.17 Limited liability companies ,Construction,Kujawsko-Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Opolskie,235212.0,0.0,235212.0,44690.28
+ OSP.17 Limited liability companies ,Real Estate,Opolskie,183438.0,0.0,183438.0,34853.22
+ OSP.17 Limited liability companies ,Professional/Scientific,Kujawsko-Pomorskie,189333.0,0.0,189333.0,35973.27
+ OSP.17 Limited liability companies ,Construction,Kujawsko-Pomorskie,32416.0,0.0,32416.0,6159.04
+ OSP.17 Limited liability companies ,Not determined,Kujawsko-Pomorskie,208476.0,0.0,208476.0,39610.44
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Łódzkie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Podkarpackie,77691.0,0.0,77691.0,14761.29
+ OSP.70 Political parties ,Other Service Activities,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Małopolskie,213158.0,0.0,213158.0,40500.020000000004
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Kujawsko-Pomorskie,230755.0,0.0,230755.0,43843.45
+ OSP.40 Cooperatives ,Not determined,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.16 Joint stock companies ,Real Estate,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Małopolskie,1325864.0,0.0,1325864.0,251914.16
+ OSP.16 Joint stock companies ,Utilities,Mazowieckie,792824.0,0.0,792824.0,150636.56
+ OSP.17 Limited liability companies ,Manufacturing,Łódzkie,0.0,0.0,0.0,0.0
+ OSP.49 Funds ,Not determined,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Wielkopolskie,1223509.0,0.0,1223509.0,232466.71
+ OSP.17 Limited liability companies ,Not determined,Kujawsko-Pomorskie,1911882.0,0.0,1911882.0,363257.58
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Warmińsko-Mazurskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Wielkopolskie,187256.0,0.0,187256.0,35578.64
+ OSP.40 Cooperatives ,Finance,Łódzkie,1856721.0,0.0,1856721.0,352776.99
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Health,Podkarpackie,2298821.0,0.0,2298821.0,436775.99
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Mazowieckie,405297.0,0.0,405297.0,77006.43000000001
+ OSP.17 Limited liability companies ,ICT,Podkarpackie,3473479.0,0.0,3473479.0,659961.01
+ OSP.17 Limited liability companies ,Not determined,Śląskie,738081.0,0.0,738081.0,140235.39
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Mazowieckie,344707.0,0.0,344707.0,65494.33
+ OSP.17 Limited liability companies ,Utilities,Śląskie,1747679.0,0.0,1747679.0,332059.01
+ OSP.17 Limited liability companies ,ICT,Podkarpackie,330492.0,0.0,330492.0,62793.48
+ OSP.17 Limited liability companies ,Transportation and Storage,Małopolskie,739079.0,0.0,739079.0,140425.01
+ OSP.17 Limited liability companies ,Agriculture,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.55 of the Association ,Other Service Activities,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Łódzkie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Health,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.49 Funds ,Finance,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Mazowieckie,1675982.0,0.0,1675982.0,318436.58
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,87600.0,0.0,87600.0,16644.0
+ OSP.17 Limited liability companies ,Manufacturing,Podkarpackie,1339264.0,0.0,1339264.0,254460.16
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Kujawsko-Pomorskie,765130.0,0.0,765130.0,145374.7
+ OSP.17 Limited liability companies ,Manufacturing,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Zachodniopomorskie,513092.0,0.0,513092.0,97487.48
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podkarpackie,1201490.0,0.0,1201490.0,228283.1
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podkarpackie,1052637.0,0.0,1052637.0,200001.03
+ OSP.17 Limited liability companies ,Construction,Śląskie,175480.0,0.0,175480.0,33341.2
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,781477.0,0.0,781477.0,148480.63
+ OSP.17 Limited liability companies ,Transportation and Storage,Podkarpackie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Kujawsko-Pomorskie,11348.0,0.0,11348.0,2156.12
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Admin and Support Services,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Łódzkie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,237561.0,0.0,237561.0,45136.590000000004
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,401132.0,0.0,401132.0,76215.08
+ OSP.17 Limited liability companies ,Not determined,Śląskie,0.0,0.0,0.0,0.0
+ OSP.48 Foundations ,Education,Zachodniopomorskie,4189.0,0.0,4189.0,795.91
+ OSP.40 Cooperatives ,Not determined,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Kujawsko-Pomorskie,353595.0,0.0,353595.0,67183.05
+ OSP.17 Limited liability companies ,Real Estate,Wielkopolskie,4526380.0,0.0,4526380.0,860012.2
+ OSP.17 Limited liability companies ,Admin and Support Services,Podkarpackie,76284.0,0.0,76284.0,14493.960000000001
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podkarpackie,52356.0,0.0,52356.0,9947.64
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,329410.0,0.0,329410.0,62587.9
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Kujawsko-Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Admin and Support Services,Podlaskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,314390.0,0.0,314390.0,59734.1
+ OSP.17 Limited liability companies ,Manufacturing,Zachodniopomorskie,2183768.0,0.0,2183768.0,414915.92
+ OSP.17 Limited liability companies ,Admin and Support Services,Podlaskie,1053076.0,0.0,1053076.0,200084.44
+ OSP.16 Joint stock companies ,Admin and Support Services,Podlaskie,68389.0,0.0,68389.0,12993.91
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,13437.0,0.0,13437.0,2553.03
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Warmińsko-Mazurskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podlaskie,1285723.0,0.0,1285723.0,244287.37
+ OSP.17 Limited liability companies ,Transportation and Storage,Mazowieckie,115544.0,0.0,115544.0,21953.36
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podlaskie,173797.0,0.0,173797.0,33021.43
+ OSP.17 Limited liability companies ,Manufacturing,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Śląskie,397473.0,0.0,397473.0,75519.87
+ OSP.17 Limited liability companies ,Real Estate,Zachodniopomorskie,47110.0,0.0,47110.0,8950.9
+ OSP.40 Cooperatives ,Real Estate,Mazowieckie,364716.0,0.0,364716.0,69296.04
+ OSP.17 Limited liability companies ,Professional/Scientific,Kujawsko-Pomorskie,61042.0,0.0,61042.0,11597.98
+ OSP.17 Limited liability companies ,Real Estate,Podlaskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Kujawsko-Pomorskie,321771.0,0.0,321771.0,61136.49
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,677681.0,0.0,677681.0,128759.39
+ OSP.17 Limited liability companies ,Health,Mazowieckie,1046594.0,0.0,1046594.0,198852.86000000002
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,1378713.0,0.0,1378713.0,261955.47
+ OSP.40 Cooperatives ,Finance,Wielkopolskie,2155535.0,0.0,2155535.0,409551.65
+ OSP.17 Limited liability companies ,Admin and Support Services,Śląskie,7989929.0,0.0,7989929.0,1518086.51
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,15499.0,0.0,15499.0,2944.81
+ OSP.17 Limited liability companies ,Admin and Support Services,Podlaskie,479565.0,0.0,479565.0,91117.35
+ OSP.17 Limited liability companies ,Professional/Scientific,Podlaskie,889385.0,0.0,889385.0,168983.15
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Podlaskie,111030.0,0.0,111030.0,21095.7
+ OSP.17 Limited liability companies ,Health,Mazowieckie,141511.0,0.0,141511.0,26887.09
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,197916.0,0.0,197916.0,37604.04
+ OSP.17 Limited liability companies ,Construction,Podlaskie,2253631.0,0.0,2253631.0,428189.89
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,402599.0,0.0,402599.0,76493.81
+ OSP.17 Limited liability companies ,Manufacturing,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,261218.0,0.0,261218.0,49631.42
+ OSP.17 Limited liability companies ,Construction,Mazowieckie,634537.0,0.0,634537.0,120562.03
+ OSP.17 Limited liability companies ,ICT,Wielkopolskie,1208813.0,0.0,1208813.0,229674.47
+ OSP.17 Limited liability companies ,Construction,Pomorskie,1945119.0,0.0,1945119.0,369572.61
+ OSP.17 Limited liability companies ,Health,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Pomorskie,1636940.0,0.0,1636940.0,311018.6
+ OSP.40 Cooperatives ,Real Estate,Wielkopolskie,147000.0,0.0,147000.0,27930.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubelskie,373608.0,0.0,373608.0,70985.52
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,367828.0,0.0,367828.0,69887.32
+ OSP.17 Limited liability companies ,Manufacturing,Śląskie,85244.0,0.0,85244.0,16196.36
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,955676.0,0.0,955676.0,181578.44
+ OSP.17 Limited liability companies ,Not determined,Łódzkie,12862.0,0.0,12862.0,2443.78
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,243956.0,0.0,243956.0,46351.64
+ OSP.17 Limited liability companies ,Construction,Wielkopolskie,268897.0,0.0,268897.0,51090.43
+ OSP.17 Limited liability companies ,Not determined,Wielkopolskie,201081.0,0.0,201081.0,38205.39
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,770179.0,0.0,770179.0,146334.01
+ OSP.17 Limited liability companies ,Finance,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.29 Municipal self-government organizational units ,Utilities,Warmińsko-Mazurskie,168754.0,0.0,168754.0,32063.260000000002
+ OSP.17 Limited liability companies ,ICT,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Mazowieckie,1196039.0,0.0,1196039.0,227247.41
+ OSP.40 Cooperatives ,Real Estate,Mazowieckie,105392.0,0.0,105392.0,20024.48
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,2250667.0,0.0,2250667.0,427626.73
+ OSP.17 Limited liability companies ,Not determined,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.40 Cooperatives ,Real Estate,Wielkopolskie,92181.0,0.0,92181.0,17514.39
+ OSP.49 Funds ,Not determined,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.16 Joint stock companies ,Mining and Quarrying,Małopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Lubelskie,8125.0,0.0,8125.0,1543.75
+ OSP.17 Limited liability companies ,Transportation and Storage,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,289164.0,0.0,289164.0,54941.16
+ OSP.17 Limited liability companies ,Not determined,Wielkopolskie,804928.0,0.0,804928.0,152936.32
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubelskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Finance,Mazowieckie,496985.0,0.0,496985.0,94427.15
+ OSP.17 Limited liability companies ,Construction,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Łódzkie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Zachodniopomorskie,289349.0,0.0,289349.0,54976.31
+ OSP.17 Limited liability companies ,Not determined,Pomorskie,71601.0,0.0,71601.0,13604.19
+ OSP.17 Limited liability companies ,Agriculture,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubelskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Pomorskie,417770.0,0.0,417770.0,79376.3
+ OSP.17 Limited liability companies ,Manufacturing,Zachodniopomorskie,130995.0,0.0,130995.0,24889.05
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,366821.0,0.0,366821.0,69695.99
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,231074.0,0.0,231074.0,43904.06
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,224293.0,0.0,224293.0,42615.67
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,36239.0,36239.0,0.0,0.0
+ OSP.48 Foundations ,Other Service Activities,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Lubelskie,585818.0,0.0,585818.0,111305.42
+ OSP.17 Limited liability companies ,Construction,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Warmińsko-Mazurskie,1316259.0,0.0,1316259.0,250089.21
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubelskie,207302.0,0.0,207302.0,39387.38
+ OSP.40 Cooperatives ,Finance,Mazowieckie,856450.0,0.0,856450.0,162725.5
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Pomorskie,123459.0,0.0,123459.0,23457.21
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,48682.0,0.0,48682.0,9249.58
+ OSP.17 Limited liability companies ,Real Estate,Pomorskie,3436203.0,0.0,3436203.0,652878.5700000001
+ OSP.17 Limited liability companies ,ICT,Mazowieckie,705610.0,0.0,705610.0,134065.9
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,471490.0,0.0,471490.0,89583.1
+ OSP.17 Limited liability companies ,ICT,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Mazowieckie,691863.0,0.0,691863.0,131453.97
+ OSP.40 Cooperatives ,Finance,Wielkopolskie,2874687.0,0.0,2874687.0,546190.53
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Wielkopolskie,7059.0,0.0,7059.0,1341.21
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,52857.0,0.0,52857.0,10042.83
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Łódzkie,58805.0,0.0,58805.0,11172.95
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubelskie,203383.0,0.0,203383.0,38642.770000000004
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Mazowieckie,113787.0,0.0,113787.0,21619.53
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,399557.0,0.0,399557.0,75915.83
+ OSP.17 Limited liability companies ,Construction,Mazowieckie,48256.0,0.0,48256.0,9168.64
+ OSP.17 Limited liability companies ,Not determined,Lubelskie,45921.0,0.0,45921.0,8724.99
+ OSP.17 Limited liability companies ,Transportation and Storage,Lubuskie,39333.0,0.0,39333.0,7473.27
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,2030912.0,0.0,2030912.0,385873.28
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,2015712.0,0.0,2015712.0,382985.28
+ OSP.40 Cooperatives ,Finance,Śląskie,2354306.0,0.0,2354306.0,447318.14
+ OSP.17 Limited liability companies ,Real Estate,Pomorskie,3050763.0,0.0,3050763.0,579644.97
+ OSP.17 Limited liability companies ,ICT,Lubuskie,128201.0,0.0,128201.0,24358.19
+ OSP.17 Limited liability companies ,Construction,Lubuskie,331014.0,0.0,331014.0,62892.66
+ OSP.16 Joint stock companies ,Not determined,Zachodniopomorskie,751985.0,0.0,751985.0,142877.15
+ OSP.17 Limited liability companies ,Entertainment,Łódzkie,506653.0,0.0,506653.0,96264.07
+ OSP.17 Limited liability companies ,Education,Mazowieckie,876151.0,0.0,876151.0,166468.69
+ OSP.17 Limited liability companies ,Construction,Wielkopolskie,416524.0,0.0,416524.0,79139.56
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,484051.0,0.0,484051.0,91969.69
+ OSP.17 Limited liability companies ,Manufacturing,Warmińsko-Mazurskie,122867.0,0.0,122867.0,23344.73
+ OSP.40 Cooperatives ,Finance,Warmińsko-Mazurskie,1515115.0,0.0,1515115.0,287871.85
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,201974.0,0.0,201974.0,38375.06
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubuskie,358498.0,0.0,358498.0,68114.62
+ OSP.17 Limited liability companies ,Construction,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,ICT,Mazowieckie,868644.0,0.0,868644.0,165042.36000000002
+ OSP.46 Independent public healthcare institutions ,Health,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Dolnośląskie,339215.0,0.0,339215.0,64450.85
+ OSP.17 Limited liability companies ,Admin and Support Services,Łódzkie,125050.0,0.0,125050.0,23759.5
+ OSP.40 Cooperatives ,Real Estate,Łódzkie,259518.0,0.0,259518.0,49308.42
+ OSP.17 Limited liability companies ,Admin and Support Services,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Pomorskie,88531.0,0.0,88531.0,16820.89
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,231694.0,0.0,231694.0,44021.86
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Lubuskie,2199640.0,0.0,2199640.0,417931.6
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Lubuskie,459534.0,0.0,459534.0,87311.46
+ OSP.40 Cooperatives ,Not determined,Lubuskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Mazowieckie,33354.0,0.0,33354.0,6337.26
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,1144854.0,0.0,1144854.0,217522.26
+ OSP.40 Cooperatives ,Finance,Mazowieckie,1714342.0,0.0,1714342.0,325724.98
+ OSP.48 Foundations ,Not determined,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Lubuskie,249333.0,0.0,249333.0,47373.270000000004
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,966058.0,0.0,966058.0,183551.02
+ OSP.17 Limited liability companies ,Admin and Support Services,Mazowieckie,696679.0,0.0,696679.0,132369.01
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Wielkopolskie,143117.0,0.0,143117.0,27192.23
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,744266.0,0.0,744266.0,141410.54
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,98842.0,0.0,98842.0,18779.98
+ OSP.17 Limited liability companies ,ICT,Pomorskie,1794720.0,0.0,1794720.0,340996.8
+ OSP.17 Limited liability companies ,Manufacturing,Lubuskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,156349.0,0.0,156349.0,29706.31
+ OSP.17 Limited liability companies ,Finance,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.55 of the Association ,Entertainment,Wielkopolskie,1.0,0.0,1.0,0.19
+ OSP.17 Limited liability companies ,Transportation and Storage,Łódzkie,188654.0,0.0,188654.0,35844.26
+ OSP.17 Limited liability companies ,Health,Mazowieckie,307715.0,0.0,307715.0,58465.85
+ OSP.16 Joint stock companies ,Manufacturing,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Pomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Warmińsko-Mazurskie,30567.0,0.0,30567.0,5807.7300000000005
+ OSP.16 Joint stock companies ,Not determined,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Pomorskie,421324.0,0.0,421324.0,80051.56
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,960221.0,0.0,960221.0,182441.99
+ OSP.17 Limited liability companies ,ICT,Śląskie,365413.0,0.0,365413.0,69428.47
+ OSP.17 Limited liability companies ,Utilities,Śląskie,20117.0,0.0,20117.0,3822.23
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Śląskie,2889433.0,0.0,2889433.0,548992.27
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Śląskie,1702723.0,0.0,1702723.0,323517.37
+ OSP.17 Limited liability companies ,Admin and Support Services,Śląskie,578267.0,0.0,578267.0,109870.73
+ OSP.17 Limited liability companies ,Utilities,Mazowieckie,160467.0,0.0,160467.0,30488.73
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,663085.0,0.0,663085.0,125986.15000000001
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,42693.0,0.0,42693.0,8111.67
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,1562164.0,0.0,1562164.0,296811.16
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Zachodniopomorskie,869087.0,0.0,869087.0,165126.53
+ OSP.17 Limited liability companies ,Transportation and Storage,Śląskie,0.0,0.0,0.0,0.0
+ OSP.16 Joint stock companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Utilities,Śląskie,259378.0,0.0,259378.0,49281.82
+ OSP.17 Limited liability companies ,ICT,Śląskie,1617227.0,0.0,1617227.0,307273.13
+ OSP.31 Voivodship self-government organizational units ,Education,Wielkopolskie,60193.0,0.0,60193.0,11436.67
+ OSP.17 Limited liability companies ,ICT,Śląskie,290352.0,0.0,290352.0,55166.88
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Łódzkie,1125924.0,0.0,1125924.0,213925.56
+ OSP.17 Limited liability companies ,Professional/Scientific,Lubuskie,83211.0,0.0,83211.0,15810.09
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.46 Independent public healthcare institutions ,Health,Wielkopolskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Dolnośląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,332105.0,0.0,332105.0,63099.950000000004
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Dolnośląskie,240162.0,0.0,240162.0,45630.78
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Świętokrzyskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Hotels and Restaurants,Zachodniopomorskie,1030102.0,0.0,1030102.0,195719.38
+ OSP.17 Limited liability companies ,Construction,Dolnośląskie,122347.0,0.0,122347.0,23245.93
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,456929.0,0.0,456929.0,86816.51
+ OSP.28 State organizational units ,Entertainment,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,474660.0,0.0,474660.0,90185.4
+ OSP.17 Limited liability companies ,Real Estate,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Śląskie,812558.0,0.0,812558.0,154386.02
+ OSP.17 Limited liability companies ,Transportation and Storage,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Zachodniopomorskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Transportation and Storage,Śląskie,27968.0,0.0,27968.0,5313.92
+ OSP.17 Limited liability companies ,Admin and Support Services,Mazowieckie,1121597.0,0.0,1121597.0,213103.43
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Real Estate,Lubuskie,2305017.0,0.0,2305017.0,437953.23
+ OSP.28 State organizational units ,Education,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Construction,Śląskie,639121.0,0.0,639121.0,121432.99
+ OSP.40 Cooperatives ,Wholesale/Retail Trade,Zachodniopomorskie,3383.0,0.0,3383.0,642.77
+ OSP.17 Limited liability companies ,Utilities,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,122721.0,0.0,122721.0,23316.99
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,638074.0,0.0,638074.0,121234.06
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,108922.0,0.0,108922.0,20695.18
+ OSP.55 of the Association ,Education,Lubuskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Manufacturing,Mazowieckie,1154388.0,0.0,1154388.0,219333.72
+ OSP.16 Joint stock companies ,Professional/Scientific,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Professional/Scientific,Wielkopolskie,221598.0,0.0,221598.0,42103.62
+ OSP.16 Joint stock companies ,Admin and Support Services,Zachodniopomorskie,176349.0,0.0,176349.0,33506.31
+ OSP.17 Limited liability companies ,Admin and Support Services,Mazowieckie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Not determined,Śląskie,0.0,0.0,0.0,0.0
+ OSP.28 State organizational units ,Entertainment,Wielkopolskie,48929.0,0.0,48929.0,9296.51
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,1825196.0,0.0,1825196.0,346787.24
+ OSP.17 Limited liability companies ,Not determined,Mazowieckie,775211.0,0.0,775211.0,147290.09
+ OSP.17 Limited liability companies ,Real Estate,Mazowieckie,52197.0,0.0,52197.0,9917.43
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Świętokrzyskie,269235.0,0.0,269235.0,51154.65
+ OSP.17 Limited liability companies ,Not determined,Łódzkie,165447.0,0.0,165447.0,31434.93
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Mazowieckie,236260.0,0.0,236260.0,44889.4
+ OSP.17 Limited liability companies ,Transportation and Storage,Śląskie,282792.0,0.0,282792.0,53730.48
+ OSP.17 Limited liability companies ,Not determined,Wielkopolskie,724338.0,34477.0,689861.0,131073.59
+ OSP.17 Limited liability companies ,Admin and Support Services,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Wholesale/Retail Trade,Śląskie,120708.0,0.0,120708.0,22934.52
+ OSP.16 Joint stock companies ,ICT,Śląskie,0.0,0.0,0.0,0.0
+ OSP.17 Limited liability companies ,Health,Wielkopolskie,72044.0,0.0,72044.0,13688.36
+ OSP.55 of the Association ,Health,Łódzkie,62918.0,0.0,62918.0,11954.42
+ OSP.17 Limited liability companies ,Professional/Scientific,Mazowieckie,42224.0,0.0,42224.0,8022.56
+ OSP.16 Joint stock companies ,Professional/Scientific,Śląskie,33098.0,0.0,33098.0,6288.62

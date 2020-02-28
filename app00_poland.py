@@ -91,18 +91,24 @@ df_sector['citax_millions'] = df_sector['citax']/10**6
 df_province = dumpdf_2017.groupby(['province']).sum()
 df_province['citax_millions'] = df_province['citax']/10**6
 
+cmap = plt.cm.tab10
+colors = cmap(np.arange(len(df_sector)) % cmap.N)
+
 ax = df_sector.plot(kind='bar', use_index=True, y='citax_millions', 
                     yticks = np.linspace(0,7,15), legend=False, rot=90,
-                    figsize=(8,8))
+                    figsize=(8,8), color=colors)
 
 ax.set_ylabel('CIT in million Zlotys')
 ax.set_xlabel('')
 ax.set_title(' CIT collection by sector (2017)', fontweight="bold")
 plt.show()
 
+cmap = plt.cm.tab10
+colors = cmap(np.arange(len(df_province)) % cmap.N)
+
 ax = df_province.plot(kind='bar', use_index=True, y='citax_millions', 
                     yticks = np.linspace(0,7,15), legend=False, rot=90,
-                    figsize=(8,8))
+                    figsize=(8,8), color=colors)
 ax.set_ylabel('CIT in million Zlotys')
 ax.set_xlabel('')
 ax.set_title(' CIT collection by Province (2017)', fontweight="bold")
