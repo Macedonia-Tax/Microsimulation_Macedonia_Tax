@@ -27,11 +27,21 @@
       "desc": "Województwo, Province",
       "form": {"2017": "CIT-8 field no. 10"}
     },
-    "tax_base_before_deductions": {
+    "income": {
       "type": "float",
-      "desc": "Income tax base before deductions",
-      "form": {"2017": "CIT-8 field no. 108"}
+      "desc": "Dochód, Income",
+      "form": {"2017": "CIT-8 field no. 49"}
     },
+    "tax_free_income_total": {
+      "type": "float",
+      "desc": "Rrazem dochody wolne, Tax Free Income",
+      "form": {"2017": "CIT-8 field no. 54"}
+    }, 
+    "deductions_from_income_total": {
+      "type": "float",
+      "desc": "Razem odliczenia od dochodu, Total Income Deductions",
+      "form": {"2017": "CIT-8 field no. 54"}
+    },   
     "deductions_from_tax_base": {
       "type": "float",
       "desc": "Total deductions from taxable amount",
@@ -39,6 +49,11 @@
     }
   },
   "calc": {
+    "tax_base_before_deductions": {
+      "type": "float",
+      "desc": "Income tax base before deductions",
+      "form": {"2017": "CIT-8 field no. 108"}
+    },
     "income_tax_base_after_deductions": {
       "type": "float",
       "desc": "Income tax base",
