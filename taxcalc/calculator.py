@@ -16,7 +16,8 @@ import numpy as np
 import pandas as pd
 from taxcalc.functions import (net_salary_income, taxable_income,
                                pit_liability)
-from taxcalc.corpfunctions import (corp_tax_base_before_deductions, 
+from taxcalc.corpfunctions import (corp_tax_base_before_deductions,
+                                   corp_tax_base_after_deductions,
                                    cit_liability)
 from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
@@ -164,6 +165,7 @@ class Calculator(object):
         # pdb.set_trace()
         # Corporate calculations
         corp_tax_base_before_deductions(self.__policy, self.__corprecords)
+        corp_tax_base_after_deductions(self.__policy, self.__corprecords)        
         cit_liability(self.__policy, self.__corprecords)
 
         # Individual calculations
