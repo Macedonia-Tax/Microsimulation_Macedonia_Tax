@@ -36,12 +36,12 @@
       "type": "float",
       "desc": "Rrazem dochody wolne, Tax Free Income",
       "form": {"2017": "CIT-8 field no. 54"}
-    }, 
+    },
     "deductions_from_income_total": {
       "type": "float",
       "desc": "Razem odliczenia od dochodu, Total Income Deductions",
-      "form": {"2017": "CIT-8 field no. 54"}
-    },   
+      "form": {"2017": "CIT-8 field no. 52"}
+    },
     "deductions_from_tax_base": {
       "type": "float",
       "desc": "Total deductions from taxable amount",
