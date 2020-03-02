@@ -11,6 +11,15 @@ import numpy as np
 from taxcalc.decorators import iterate_jit
 
 @iterate_jit(nopython=True)
+def corp_income(revenue, expenditure, income):
+    """
+    Compute Income = Revenue - Expenditure
+    """
+    income = revenue - expenditure
+    
+    return (income)
+
+@iterate_jit(nopython=True)
 def corp_tax_base_before_deductions(income, tax_free_income_total,
                                     deductions_from_income_total,
                                     tax_base_before_deductions):
@@ -23,7 +32,7 @@ def corp_tax_base_before_deductions(income, tax_free_income_total,
     return (tax_base_before_deductions)
 
 @iterate_jit(nopython=True)
-def corp_tax_base_after_deductions(tax_base_before_deductions, 
+def corp_tax_base_after_deductions(tax_base_before_deductions,
                             deductions_from_tax_base,
                             income_tax_base_after_deductions):
     """
