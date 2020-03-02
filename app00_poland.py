@@ -56,12 +56,13 @@ weighted_etr_overall = sum(weighted_etr[~np.isnan(weighted_etr)])/sum(weight.val
 #sector = calc1.carray('sector')
 
 print('\n\n\n')
-print('FORECASTING TAX COLLECTION FOR THE YEAR - 2017\n')
-print(f'Tax Base Before Deductions, 2018: {sum(Tax_Base_Before_Deductions * weight) / 10**9:,.2f} Billion')
+print('TAX COLLECTION FOR THE YEAR - 2017\n')
+print(f'CIT Collection, 2017: {sum(citax * weight) / 10**9:,.2f} Billion')
+print(f'Tax Base Before Deductions, 2017: {sum(Tax_Base_Before_Deductions * weight) / 10**9:,.2f} Billion')
 print(f'Deductions, 2017: {sum(Deductions * weight) / 10**9:,.2f} Billion')
-print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight) / 10**9:,.2f} Billion')
-print(f'CIT Collection, 2018: {sum(citax * weight) / 10**9:,.2f} Billion')
-print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
+print(f'Tax Base After Deductions, 2017: {sum(Tax_Base_After_Deductions * weight) / 10**9:,.2f} Billion')
+
+print(f'Effective Tax Rate, 2017: {weighted_etr_overall*100:,.1f}%')
 
 #print(f'CIT Collection un-weighted, 2017: {sum(citax):,.2f} Zlotys')
 
@@ -80,10 +81,10 @@ weighted_etr_overall = sum(weighted_etr[~np.isnan(weighted_etr)])/sum(weight.val
 
 print('\n\n\n')
 print('FORECASTING TAX COLLECTION FOR THE FOLLOWING YEAR - 2018\n')
-print(f'Tax Base Before Deductions, 2018: {sum(Tax_Base_Before_Deductions * weight) / 10**9:,.2f} Billion')
-print(f'Deductions, 2017: {sum(Deductions * weight) / 10**9:,.2f} Billion')
-print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight) / 10**9:,.2f} Billion')
 print(f'CIT Collection, 2018: {sum(citax * weight) / 10**9:,.2f} Billion')
+print(f'Tax Base Before Deductions, 2018: {sum(Tax_Base_Before_Deductions * weight) / 10**9:,.2f} Billion')
+print(f'Deductions, 2018: {sum(Deductions * weight) / 10**9:,.2f} Billion')
+print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight) / 10**9:,.2f} Billion')
 print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
 
 

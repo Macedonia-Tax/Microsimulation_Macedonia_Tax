@@ -27,10 +27,15 @@
       "desc": "Województwo, Province",
       "form": {"2017": "CIT-8 field no. 10"}
     },
-    "income": {
+    "revenue": {
       "type": "float",
-      "desc": "Dochód, Income",
-      "form": {"2017": "CIT-8 field no. 49"}
+      "desc": "PRZYCHODY, Revenue",
+      "form": {"2017": "CIT-8 field no. 39"}
+    },
+    "expenditure": {
+      "type": "float",
+      "desc": "KOSZTY UZYSKANIA PRZYCHODÓW, Revenue",
+      "form": {"2017": "CIT-8 field no. 45"}
     },
     "tax_free_income_total": {
       "type": "float",
@@ -49,6 +54,11 @@
     }
   },
   "calc": {
+    "income": {
+      "type": "float",
+      "desc": "Dochód, Income",
+      "form": {"2017": "CIT-8 field no. 49"}
+    },
     "tax_base_before_deductions": {
       "type": "float",
       "desc": "Income tax base before deductions",

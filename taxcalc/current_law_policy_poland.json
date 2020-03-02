@@ -25,7 +25,7 @@
         "out_of_range_minmsg": "",
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
-    },     
+    },
    "_cit_rate_regular": {
         "long_name": "rate at which regular corporations are taxed",
         "description": "Corporate Tax rate",
