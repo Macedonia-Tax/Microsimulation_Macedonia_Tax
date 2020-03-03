@@ -54,6 +54,11 @@
     }
   },
   "calc": {
+    "small_business": {
+      "type": "int",
+      "desc": "Whether Small Business, Yes=1 or No=0",
+      "form": {"2017": ""}
+    },
     "income": {
       "type": "float",
       "desc": "Dochód, Income",

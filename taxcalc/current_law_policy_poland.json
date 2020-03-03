@@ -1,4 +1,31 @@
 {
+    "_small_business_threshold": {
+        "long_name": "Threshold for Small Business",
+        "description": "Threshold for defining Small Business",
+        "itr_ref": "CIT Law, Article 2",
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            8000000
+        ],
+        "range": {
+            "min": 0,
+            "max": 9e+99
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
     "_cit_rate_small_business": {
         "long_name": "rate at which small corporations are taxed",
         "description": "Small Corporations Tax rate",

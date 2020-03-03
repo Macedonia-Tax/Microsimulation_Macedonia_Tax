@@ -43,7 +43,8 @@ class GrowFactors(object):
     # TODO: Growfactors for Corporate and non-corporate Income heads are
     # TODO: currently set as same. New field names should be read in case we
     # TODO: want separate growfactors for Corporate and Non-corporate data.
-    VALID_NAMES = set(['CPI', 'SALARIES'])
+    VALID_NAMES = set(['CPI', 'SALARIES', 'REVENUE', 'EXPENDITURE',
+                       'TAX_FREE_INCOME_TOTAL'])
 
     def __init__(self, growfactors_filename=FILE_PATH):
         # read grow factors from specified growfactors_filename
