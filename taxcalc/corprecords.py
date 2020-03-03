@@ -84,7 +84,7 @@ class CorpRecords(object):
     CIT_DATA_FILENAME = 'cit_poland.csv'
     CIT_WEIGHTS_FILENAME = 'cit_weights_poland.csv'
     CIT_BLOWFACTORS_FILENAME = 'cit_panel_blowup.csv'
-    VAR_INFO_FILENAME = 'corprecords_variables_poland1.json'
+    VAR_INFO_FILENAME = 'corprecords_variables_poland.json'
 
     def __init__(self,
                  data=CIT_DATA_FILENAME,
