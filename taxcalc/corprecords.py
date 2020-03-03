@@ -84,7 +84,7 @@ class CorpRecords(object):
     CIT_DATA_FILENAME = 'cit_poland.csv'
     CIT_WEIGHTS_FILENAME = 'cit_weights_poland.csv'
     CIT_BLOWFACTORS_FILENAME = 'cit_panel_blowup.csv'
-    VAR_INFO_FILENAME = 'corprecords_variables_poland.json'
+    VAR_INFO_FILENAME = 'corprecords_variables_poland1.json'
 
     def __init__(self,
                  data=CIT_DATA_FILENAME,
@@ -381,11 +381,11 @@ class CorpRecords(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        GF_TAX_BASE_BEFORE_DEDUCTIONS = self.gfactors.factor_value('tax_base_before_deductions', year)
-        GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
+        #GF_TAX_BASE_BEFORE_DEDUCTIONS = self.gfactors.factor_value('tax_base_before_deductions', year)
+        #GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
 
-        self.tax_base_before_deductions *= GF_TAX_BASE_BEFORE_DEDUCTIONS
-        self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
+        #self.tax_base_before_deductions *= GF_TAX_BASE_BEFORE_DEDUCTIONS
+        #self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
 
     def _extract_panel_year(self):
         """

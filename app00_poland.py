@@ -40,7 +40,7 @@ calc1.calc_all()
 
 #sector=calc1.carray('sector')
 
-dump_vars = ['legal_form', 'sector', 'province', 'tax_base_before_deductions', 'deductions_from_tax_base',
+dump_vars = ['legal_form', 'sector', 'province', 'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 'deductions_from_tax_base',
              'income_tax_base_after_deductions', 'citax']
 dumpdf_2017 = calc1.dataframe_cit(dump_vars)
 dumpdf_2017.to_csv('app00_poland.csv', index=False, float_format='%.0f')
