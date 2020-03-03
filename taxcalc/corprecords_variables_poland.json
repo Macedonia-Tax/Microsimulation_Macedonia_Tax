@@ -59,6 +59,11 @@
       "desc": "Dochód, Income",
       "form": {"2017": "CIT-8 field no. 49"}
     },
+    "loss": {
+      "type": "float",
+      "desc": "Strata, Loss",
+      "form": {"2017": "CIT-8 field no. 50"}
+    },  
     "tax_base_before_deductions": {
       "type": "float",
       "desc": "Income tax base before deductions",

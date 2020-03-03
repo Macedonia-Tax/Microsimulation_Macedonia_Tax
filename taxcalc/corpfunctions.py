@@ -11,13 +11,18 @@ import numpy as np
 from taxcalc.decorators import iterate_jit
 
 @iterate_jit(nopython=True)
-def corp_income(revenue, expenditure, income):
+def corp_income(revenue, expenditure, income, loss):
     """
     Compute Income = Revenue - Expenditure
     """
-    income = revenue - expenditure
+    if (revenue >= expenditure):
+        income = revenue - expenditure
+        loss = 0
+    else:
+        loss = -(revenue - expenditure)
+        income=0
     
-    return (income)
+    return (income, loss)
 
 @iterate_jit(nopython=True)
 def corp_tax_base_before_deductions(income, tax_free_income_total,
