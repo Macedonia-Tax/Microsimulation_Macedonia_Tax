@@ -381,10 +381,15 @@ class CorpRecords(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        #GF_TAX_BASE_BEFORE_DEDUCTIONS = self.gfactors.factor_value('tax_base_before_deductions', year)
+        GF_REVENUE = self.gfactors.factor_value('REVENUE', year)
+        GF_EXPENDITURE = self.gfactors.factor_value('EXPENDITURE', year)   
+        GF_TAX_FREE_INCOME_TOTAL = self.gfactors.factor_value('TAX_FREE_INCOME_TOTAL', year)  
+        
         #GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
 
-        #self.tax_base_before_deductions *= GF_TAX_BASE_BEFORE_DEDUCTIONS
+        self.revenue *= GF_REVENUE
+        self.expenditure *= GF_EXPENDITURE
+        self.tax_free_income_total *= GF_TAX_FREE_INCOME_TOTAL
         #self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
 
     def _extract_panel_year(self):
