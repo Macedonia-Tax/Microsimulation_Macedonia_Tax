@@ -63,10 +63,10 @@ print('TAX COLLECTION FOR THE YEAR - 2017\n')
 print("The CIT Collection under Current Law is: ",
       citax_collection_billions1, "billions")
 
-# "{:.2f}".format(citax_collection_billions1)
-#print("{:.2f}".format(citax_collection_billions1))
-#print("The CIT Collection under Current Law is: " +
-#      "{:.2f}".format(citax_collection_billions1), "billions")
+"{:.2f}".format(citax_collection_billions1)
+print("{:.2f}".format(citax_collection_billions1))
+print("The CIT Collection under Current Law is: " +
+      "{:.2f}".format(citax_collection_billions1), "billions")
 
 
 dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 'deductions_from_tax_base',
@@ -86,8 +86,8 @@ print('TAX COLLECTION FOR THE YEAR - 2017\n')
 print("The CIT Collection under Reform is: ",
       citax_collection_billions2, "billions")
 
-#print("The CIT Collection under Current Law is: " +
-#      "{:.2f}".format(citax_collection_billions2), "billions")
+print("The CIT Collection under Current Law is: " +
+      "{:.2f}".format(citax_collection_billions2), "billions")
 
 cit_collection_difference_millions = ((citax_collection2 - citax_collection1)/
                                       10**6)
@@ -96,17 +96,20 @@ cit_collection_difference_millions = ((citax_collection2 - citax_collection1)/
 print('\n\n\n')
 print("The Difference in CIT Collection due to Reform is: ",
       cit_collection_difference_millions, "millions")
-#print("The Difference in CIT Collection due to Reform is: " +
-#      "{:.2f}".format(cit_collection_difference_millions), "millions")
+print("The Difference in CIT Collection due to Reform is: " +
+      "{:.2f}".format(cit_collection_difference_millions), "millions")
 print('\n\n\n')
 
 
-"""
 df_sector = dumpdf_1.groupby(['sector']).sum()
 df_sector['citax_millions'] = df_sector['citax']/10**6
 
 df_sector.plot.bar(y='citax')
-ax = df_small_business.plot(kind='bar', use_index=True, y='citax_millions', 
+
+cmap = plt.cm.tab10
+colors = cmap(np.arange(len(df_sector)) % cmap.N)
+
+ax = df_sector.plot(kind='bar', use_index=True, y='citax_millions', 
                     yticks = np.linspace(0,7,15), legend=False, rot=90,
                     figsize=(8,8), color=colors)
 ax.set_ylabel('CIT in million Zlotys')
@@ -120,5 +123,12 @@ df_small_business = dumpdf_1.groupby(['small_business']).sum()
 df_small_business['citax_millions'] = df_sector['citax']/10**6
 
 df_small_business.plot.pie(y='citax')
-"""
+
+Business_Profit1 = calc1.carray('income')
+etr1 = np.divide(citax1, Business_Profit1)
+weighted_etr1 = etr1*weight1.values
+weighted_etr_overall1 = (sum(weighted_etr1[~np.isnan(weighted_etr1)])/
+                         sum(weight1.values[~np.isnan(weighted_etr1)]))
+
+print("Effective Tax Rate Overall:", weighted_etr_overall1)
 

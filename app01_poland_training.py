@@ -65,7 +65,21 @@ print('TAX COLLECTION FOR THE YEAR - 2017\n')
 
 print("The CIT Collection in billions is: ", citax_collection_billions_2017)
 
-"""
+
 calc1.increment_year()
 calc1.calc_all()
-"""
+
+citax_2018 = calc1.carray('citax')
+weight_2018 = calc1.carray('weight')
+
+wtd_citax_2018 = citax_2018 * weight_2018
+
+citax_collection_2018 = wtd_citax_2018.sum()
+
+citax_collection_billions_2018 = citax_collection_2018/10**9
+
+print('\n\n\n')
+print('TAX COLLECTION FOR THE YEAR - 2018\n')
+
+print("The CIT Collection in billions is: ", citax_collection_billions_2018)
+
