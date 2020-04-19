@@ -4,7 +4,7 @@
       "required": true,
       "type": "int",
       "desc": "Identyfikator podatkowy NIP podatnika, Unique positive numeric identifier for filing unit",
-      "form": {"2017": "CIT-8 Field Number 1"}
+      "form": {"2017": "CIT-8 Field Number 1"} 
     },
     "AYEAR": {
       "type": "int",
@@ -32,15 +32,105 @@
       "desc": "PRZYCHODY, Revenue",
       "form": {"2017": "CIT-8 field no. 39"}
     },
-    "expenditure": {
+    "tax_deductible_expenditure_poland": {
       "type": "float",
-      "desc": "KOSZTY UZYSKANIA PRZYCHODÓW, Revenue",
-      "form": {"2017": "CIT-8 field no. 45"}
+      "desc": "Koszty uzyskania przychodów wymienionych w poz.35",
+      "form": {"2017": "CIT-8 field no. 40"}
     },
-    "tax_free_income_total": {
+    "tax_deductible_expenditure_outside_poland": {
       "type": "float",
-      "desc": "Rrazem dochody wolne, Tax Free Income",
-      "form": {"2017": "CIT-8 field no. 54"}
+      "desc": "Koszty uzyskania przychodów wymienionych w poz.36",
+      "form": {"2017": "CIT-8 field no. 41"}
+    },
+    "tax_deductible_expenditure_outside_poland_other": {
+      "type": "float",
+      "desc": "Koszty uzyskania przychodów wymienionych w poz.37",
+      "form": {"2017": "CIT-8 field no. 42"}
+    },
+    "tax_deductible_expediture_intellectual_property": {
+      "type": "float",
+      "desc": "Koszty uzyskania przychodów wymienionych w poz.38", 
+      "form": {"2017": "CIT-8 field no. 43"}
+    },
+    "tax_deductible_expenditure_on_interest_income": {
+      "type": "float",
+      "desc": "Koszty uzyskania przychodów wymienionych",
+      "form": {"2017": "CIT-8 field no. 44"} 
+    },
+    "tax_free_income_statistic_purpose_art_17_1_4d_etc": {
+      "type": "float",
+      "desc": "dochody(przych.) wolne od pod.,cele stat.",
+      "form": {"2017": "Article 17 (1) (4d), 4g-4u, 5a, 26,37,42,43,45,46"} 
+    },
+    "tax_free_income_art_17_1_4": {
+      "type": "float",
+      "desc": "dochody wolne od podatku",
+      "form": {"2017": "(Article 17(1)(4))"} 
+    },
+    "tax_free_income_non_agriculture_art_17_1_4e": {
+      "type": "float",
+      "desc": "dochody z działalności pozarolniczej-wolne od podatku",
+      "form": {"2017": "(Article 17 (1) (4e)"} 
+    },
+    "tax_free_income_subsidies_art_17_1_21": {
+      "type": "float",
+      "desc": "dotacje, subwen., dopłaty i inne nieodp. świad.-wolne od podatku",
+      "form": {"2017": "(Article 17 (1) point 21)"} 
+    },
+    "tax_free_income_art_17_1_23_24": {
+      "type": "float",
+      "desc": "dochody wolne od podatku",
+      "form": {"2017": "Article 17 clause 1 point 23 and 24"}
+    },
+    "tax_free_income_art_17_1_34": {
+      "type": "float",
+      "desc": "dochody wolne od podatku",
+      "form": {"2017": "(Article 17 (1) point 34)"} 
+    },
+    "tax_free_income_art_17_1_39": {
+      "type": "float",
+      "desc": "dochody wolne od podatku",
+      "form": {"2017": "(Article 17 (1) point 39)"}
+    },
+    "tax_free_income_housing_coops_art_17_1_44": {
+      "type": "float",
+      "desc": "dochody spółdzielni mieszkan., wspólnot mieszkan- wolne od podatku", 
+      "form": {"2017": "(Article 17 (1) point 44)"} 
+    },
+    "tax_free_income_subsidies_state_local_art_17_1_47": {
+      "type": "float",
+      "desc": "dotacje z budżetu państwa lub jst- wolne od podatku", 
+      "form": {"2017": "(Article 17 (1) point 47)"} 
+    },
+    "tax_free_income_amounts_government_agencies_art_17_1_48": {
+      "type": "float",
+      "desc": "kwoty od agencji rządowych lub agencji wykonawczych-wolne od podat", 
+      "form": {"2017": "(Article 17 (1) point 48)"} 
+    },
+    "tax_free_income_agriculture_producer_groups_art_17_1_49": {
+      "type": "float",
+      "desc": "dochody grup producentów rolnych",
+      "form": {"2017": "Article 17 clause 1 point 49"}  
+    },
+    "tax_free_income_financial_programs_central_europe_art_17_1_52": {
+      "type": "float",
+      "desc": "dochody z tyt. płatn. progr.finans. z udz. środ. europ.-wolne od", 
+      "form": {"2017": "(Article 17 (1) point 52)​​"} 
+    },
+    "tax_free_income_environmental_finances_art_17_1_53": {
+      "type": "float",
+      "desc": "dochody z tyt. środ.fin., otrz. przez uczest.proj.-wolne od podatku", 
+      "form": {"2017": "(Article 17 (1) point 53)"} 
+    },
+    "tax_free_income_other_art_17_1": {
+      "type": "float",
+      "desc": "pozostałe dochody (przychody) wolne od podatku",
+      "form": {"2017": "Article 17 clause 1"} 
+    },
+    "tax_free_income_other": {
+      "type": "float",
+      "desc": "dochody wolne od podatku - inne", 
+      "form": {"2017": "?? Need to know the source"} 
     },
     "deductions_from_income_total": {
       "type": "float",
@@ -68,6 +158,11 @@
       "type": "float",
       "desc": "Strata, Loss",
       "form": {"2017": "CIT-8 field no. 50"}
+    },
+    "tax_free_income_total": {
+      "type": "float",
+      "desc": "Rrazem dochody wolne, Tax Free Income",
+      "form": {"2017": "CIT-8 field no. 54"}
     },  
     "tax_base_before_deductions": {
       "type": "float",
@@ -79,6 +174,11 @@
       "desc": "Income tax base",
       "form": {"2017": "CIT-8 field no. 119"}
     },
+    "expenditure": {
+      "type": "float",
+      "desc": "KOSZTY UZYSKANIA PRZYCHODÓW, Revenue",
+      "form": {"2017": "CIT-8 field no. 45"}
+    },
     "citax": {
       "type": "float",
       "desc": "CIT liability",
@@ -86,3 +186,9 @@
     }
   }
 }
+
+	
+	
+	
+
+

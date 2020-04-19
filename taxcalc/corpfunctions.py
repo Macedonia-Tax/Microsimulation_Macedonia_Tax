@@ -11,6 +11,42 @@ import numpy as np
 from taxcalc.decorators import iterate_jit
 
 @iterate_jit(nopython=True)
+def corp_tax_free_income_total(tax_free_income_total, tax_free_income_statistic_purpose_art_17_1_4d_etc, tax_free_income_art_17_1_4,
+                            tax_free_income_non_agriculture_art_17_1_4e, tax_free_income_subsidies_art_17_1_21, 
+                            tax_free_income_art_17_1_23_24, tax_free_income_art_17_1_34,
+                            tax_free_income_art_17_1_39, tax_free_income_housing_coops_art_17_1_44,
+                            tax_free_income_subsidies_state_local_art_17_1_47, tax_free_income_amounts_government_agencies_art_17_1_48,
+                            tax_free_income_agriculture_producer_groups_art_17_1_49, tax_free_income_financial_programs_central_europe_art_17_1_52,
+                            tax_free_income_environmental_finances_art_17_1_53, tax_free_income_other_art_17_1,
+                            tax_free_income_other):
+    """
+    Compute total exemptions.
+    """
+    tax_free_income_total = (tax_free_income_statistic_purpose_art_17_1_4d_etc + tax_free_income_art_17_1_4 +
+                            tax_free_income_non_agriculture_art_17_1_4e + tax_free_income_subsidies_art_17_1_21 + 
+                            tax_free_income_art_17_1_23_24 + tax_free_income_art_17_1_34 +
+                            tax_free_income_art_17_1_39 + tax_free_income_housing_coops_art_17_1_44 +
+                            tax_free_income_subsidies_state_local_art_17_1_47 + tax_free_income_amounts_government_agencies_art_17_1_48 +
+                            tax_free_income_agriculture_producer_groups_art_17_1_49 + tax_free_income_financial_programs_central_europe_art_17_1_52 +
+                            tax_free_income_environmental_finances_art_17_1_53 + tax_free_income_other_art_17_1 +
+                            tax_free_income_other)
+
+    return (tax_free_income_total)
+
+@iterate_jit(nopython=True)
+def corp_expenditure(expenditure, tax_deductible_expenditure_poland, tax_deductible_expenditure_outside_poland,
+                            tax_deductible_expenditure_outside_poland_other, tax_deductible_expediture_intellectual_property, 
+                            tax_deductible_expenditure_on_interest_income):
+    """
+    Compute total current expenditure.
+    """
+    expenditure = (tax_deductible_expenditure_poland + tax_deductible_expenditure_outside_poland +
+                            tax_deductible_expenditure_outside_poland_other + tax_deductible_expediture_intellectual_property +
+                            tax_deductible_expenditure_on_interest_income)
+
+    return (expenditure)
+
+@iterate_jit(nopython=True)
 def is_small_business(small_business_threshold, revenue, small_business):
     """
     Compute Income = Revenue - Expenditure
