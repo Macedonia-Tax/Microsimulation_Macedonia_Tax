@@ -26,6 +26,411 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
+    "_%_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc": {
+        "long_name": "dochody(przych.) wolne od pod.,cele stat.", 
+        "description": "tax-free income for statistical purposes",
+        "itr_ref": "Article 17 (1) (4d), 4g-4u, 5a, 26,37,42,43,45,46", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_art_17_1_4": {
+        "long_name": "dochody wolne od podatku", 
+        "description": "tax-free income for ??",
+        "itr_ref": "(Article 17 (1) (4))",  
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_non_agriculture_art_17_1_4e": {
+        "long_name": "dochody z działalności pozarolniczej-wolne od podatku", 
+        "description": "tax free income from non-agricultural activities",  
+        "itr_ref": "(Article 17 (1) (4e)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_subsidies_art_17_1_21": {
+        "long_name": "dotacje, subwen., dopłaty i inne nieodp. świad.-wolne od podatku",  
+        "description": "subsidies and surcharges and other irrelevant wit-free of tax",
+        "itr_ref": "(Article 17 (1) point 21)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_art_17_1_23_24": {
+        "long_name": "dochód wolny od podatku",  
+        "description": "tax-free income pursuant to ??",
+        "itr_ref": "Article 17 clause 1 point 23 and 24",  
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_art_17_1_34": {
+        "long_name": "dochody wolne od podatku", 
+        "description": "tax-free income pursuant to ??",
+        "itr_ref": "(Article 17 (1) point 34)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_art_17_1_39": {
+        "long_name": "dochody wolne od podatku", 
+        "description": "tax-free income pursuant to ??",
+        "itr_ref": "(Article 17 (1) point 39)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_housing_coops_art_17_1_44": {
+        "long_name": "dochody spółdzielni mieszkan.,wspólnot mieszkan- wolne od podatku", 
+        "description": "income of housing cooperatives, housing associations- tax free", 
+        "itr_ref": "(Article 17 (1) point 44)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_subsidies_state_local_art_17_1_47": {
+        "long_name": "dotacje z budżetu państwa lub jst- wolne od podatku", 
+        "description": "subsidies from the state budget or local government- tax-free",
+        "itr_ref": "(Article 17 (1) point 47)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_amounts_government_agencies_art_17_1_48": {
+        "long_name": "kwoty od agencji rządowych lub agencji wykonawczych-wolne od podat.", 
+        "description": "amounts from government agencies or executive agencies- tax-free", 
+        "itr_ref": "(Article 17 (1) point 48)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_agriculture_producer_groups_art_17_1_49": {
+        "long_name": "dochody grup producentów rolnych - wolne od podatku na",   
+        "description": "income of agricultural producer groups - tax free", 
+        "itr_ref": "Article 17 clause 1 point 49", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_financial_programs_central_europe_art_17_1_52": {
+        "long_name": "dochody z tyt. płatn. progr.finans. z udz. środ. europ.-od podatku", 
+        "description": "income from paying financial programs from central Europe- tax free",
+        "itr_ref": "(Article 17 (1) point 52)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_environmental_finances_art_17_1_53": {
+        "long_name": "dochody z tyt. środ.fin., otrz. przez uczest.proj.-wolne od podatku", 
+        "description": "income from environmental finances, received by project participant- free of tax",
+        "itr_ref": "(Article 17 (1) point 53)", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_other_art_17_1": { 
+        "long_name": "pozostałe dochody (przychody) wolne od podatku", 
+        "description": "other income-free of tax from ??",
+        "itr_ref": " Article 17 clause 1", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
+    "_%_exempt_rate_tax_free_income_other": {
+        "long_name": "dochody wolne od podatku - inne", 
+        "description": "tax-free income - other ??",
+        "itr_ref": "Article ??", 
+        "notes": "",
+        "row_var": "AYEAR",
+        "row_label": [
+            "2017"
+        ],
+        "start_year": 2017,
+        "cpi_inflatable": false,
+        "cpi_inflated": false,
+        "col_var": "",
+        "col_label": "",
+        "boolean_value": false,
+        "integer_value": false,
+        "value": [
+            1.0
+        ],
+        "range": {
+            "min": 0,
+            "max": 1
+        },
+        "out_of_range_minmsg": "",
+        "out_of_range_maxmsg": "",
+        "out_of_range_action": "stop"
+    },
     "_cit_rate_small_business": {
         "long_name": "rate at which small corporations are taxed",
         "description": "Small Corporations Tax rate",
@@ -319,7 +724,7 @@
         "col_var": "",
         "col_label": "",
         "boolean_value": false,
-        "integer_value": false,
+        "integer_value": false, 
         "value": [
             0.3
         ],
@@ -359,3 +764,7 @@
         "out_of_range_action": "stop"
     }
 }
+
+
+
+

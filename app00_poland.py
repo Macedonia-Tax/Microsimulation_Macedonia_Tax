@@ -91,6 +91,19 @@ weighted_etr2 = etr2*weight2.values
 weighted_etr_overall2 = (sum(weighted_etr2[~np.isnan(weighted_etr2)])/
                          sum(weight2.values[~np.isnan(weighted_etr2)]))
 
+wtd_citax2 = citax2 * weight2
+
+citax_collection2 = wtd_citax2.sum()
+
+citax_collection_billions2 = citax_collection2/10**9
+
+print('\n\n\n')
+print('TAX COLLECTION FOR THE YEAR - 2017-Reform\n')
+
+print("The CIT Collection in billions is: ",citax_collection_billions2)
+
+print("Difference due to change in policy in small businesses:",(citax_collection_billions2 - citax_collection_billions1)*10**3,"millions")
+
 """
 print('\n\n\n')
 print('FORECASTING TAX COLLECTION FOR THE FOLLOWING YEAR - 2018\n')
