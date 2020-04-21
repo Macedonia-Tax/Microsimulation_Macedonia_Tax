@@ -26,12 +26,12 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc": {
+    "_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc": {
         "long_name": "dochody(przych.) wolne od pod.,cele stat.", 
         "description": "tax-free income for statistical purposes",
         "itr_ref": "Article 17 (1) (4d), 4g-4u, 5a, 26,37,42,43,45,46", 
         "notes": "",
-        "row_var": "AYEAR",
+        "row_var": "AYEAR",  
         "row_label": [
             "2017"
         ],
@@ -53,7 +53,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_art_17_1_4": {
+    "_percent_exempt_rate_tax_free_income_art_17_1_4": {
         "long_name": "dochody wolne od podatku", 
         "description": "tax-free income for ??",
         "itr_ref": "(Article 17 (1) (4))",  
@@ -80,7 +80,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_non_agriculture_art_17_1_4e": {
+    "_percent_exempt_rate_tax_free_income_non_agriculture_art_17_1_4e": {
         "long_name": "dochody z działalności pozarolniczej-wolne od podatku", 
         "description": "tax free income from non-agricultural activities",  
         "itr_ref": "(Article 17 (1) (4e)", 
@@ -107,7 +107,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_subsidies_art_17_1_21": {
+    "_percent_exempt_rate_tax_free_income_subsidies_art_17_1_21": {
         "long_name": "dotacje, subwen., dopłaty i inne nieodp. świad.-wolne od podatku",  
         "description": "subsidies and surcharges and other irrelevant wit-free of tax",
         "itr_ref": "(Article 17 (1) point 21)", 
@@ -134,7 +134,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_art_17_1_23_24": {
+    "_percent_exempt_rate_tax_free_income_art_17_1_23_24": {
         "long_name": "dochód wolny od podatku",  
         "description": "tax-free income pursuant to ??",
         "itr_ref": "Article 17 clause 1 point 23 and 24",  
@@ -161,7 +161,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_art_17_1_34": {
+    "_percent_exempt_rate_tax_free_income_art_17_1_34": {
         "long_name": "dochody wolne od podatku", 
         "description": "tax-free income pursuant to ??",
         "itr_ref": "(Article 17 (1) point 34)", 
@@ -188,7 +188,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_art_17_1_39": {
+    "_percent_exempt_rate_tax_free_income_art_17_1_39": {
         "long_name": "dochody wolne od podatku", 
         "description": "tax-free income pursuant to ??",
         "itr_ref": "(Article 17 (1) point 39)", 
@@ -215,7 +215,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_housing_coops_art_17_1_44": {
+    "_percent_exempt_rate_tax_free_income_housing_coops_art_17_1_44": {
         "long_name": "dochody spółdzielni mieszkan.,wspólnot mieszkan- wolne od podatku", 
         "description": "income of housing cooperatives, housing associations- tax free", 
         "itr_ref": "(Article 17 (1) point 44)", 
@@ -242,7 +242,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_subsidies_state_local_art_17_1_47": {
+    "_percent_exempt_rate_tax_free_income_subsidies_state_local_art_17_1_47": {
         "long_name": "dotacje z budżetu państwa lub jst- wolne od podatku", 
         "description": "subsidies from the state budget or local government- tax-free",
         "itr_ref": "(Article 17 (1) point 47)", 
@@ -269,7 +269,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_amounts_government_agencies_art_17_1_48": {
+    "_percent_exempt_rate_tax_free_income_amounts_government_agencies_art_17_1_48": {
         "long_name": "kwoty od agencji rządowych lub agencji wykonawczych-wolne od podat.", 
         "description": "amounts from government agencies or executive agencies- tax-free", 
         "itr_ref": "(Article 17 (1) point 48)", 
@@ -296,7 +296,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_agriculture_producer_groups_art_17_1_49": {
+    "_percent_exempt_rate_tax_free_income_agriculture_producer_groups_art_17_1_49": {
         "long_name": "dochody grup producentów rolnych - wolne od podatku na",   
         "description": "income of agricultural producer groups - tax free", 
         "itr_ref": "Article 17 clause 1 point 49", 
@@ -323,7 +323,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_financial_programs_central_europe_art_17_1_52": {
+    "_percent_exempt_rate_tax_free_income_financial_programs_central_europe_art_17_1_52": {
         "long_name": "dochody z tyt. płatn. progr.finans. z udz. środ. europ.-od podatku", 
         "description": "income from paying financial programs from central Europe- tax free",
         "itr_ref": "(Article 17 (1) point 52)", 
@@ -350,7 +350,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_environmental_finances_art_17_1_53": {
+    "_percent_exempt_rate_tax_free_income_environmental_finances_art_17_1_53": {
         "long_name": "dochody z tyt. środ.fin., otrz. przez uczest.proj.-wolne od podatku", 
         "description": "income from environmental finances, received by project participant- free of tax",
         "itr_ref": "(Article 17 (1) point 53)", 
@@ -377,7 +377,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_other_art_17_1": { 
+    "_percent_exempt_rate_tax_free_income_other_art_17_1": { 
         "long_name": "pozostałe dochody (przychody) wolne od podatku", 
         "description": "other income-free of tax from ??",
         "itr_ref": " Article 17 clause 1", 
@@ -404,7 +404,7 @@
         "out_of_range_maxmsg": "",
         "out_of_range_action": "stop"
     },
-    "_%_exempt_rate_tax_free_income_other": {
+    "_percent_exempt_rate_tax_free_income_other": {
         "long_name": "dochody wolne od podatku - inne", 
         "description": "tax-free income - other ??",
         "itr_ref": "Article ??", 
@@ -461,7 +461,7 @@
    "_cit_rate_regular": {
         "long_name": "rate at which regular corporations are taxed",
         "description": "Corporate Tax rate",
-        "itr_ref": "Schedule 1 Finance Act",
+        "itr_ref": "Schedule 1 Finance Act", 
         "notes": "",
         "row_var": "AYEAR",
         "row_label": [
