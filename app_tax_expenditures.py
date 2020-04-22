@@ -26,7 +26,44 @@ pol = Policy()
 calc1 = Calculator(policy=pol, records=recs, corprecords=crecs1,
                    gstrecords=grecs, verbose=False)
 pol2 = Policy()
-reform = Calculator.read_json_param_objects('app01_reform.json', None)
+#reform = Calculator.read_json_param_objects('app02_reform.json', None)
+
+reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
+
+ref_dict = reform['policy']
+for pkey, sdict in ref_dict.items():
+        print(f'pkey: {pkey}')
+        print(f'sdict: {sdict}')
+        for k, s in sdict.items():
+            print(f'k: {k}')
+            print(f's: {s}')
+
+#tax_expen_dict['policy'][2017][k]=s
+
+"""
+{'policy': {2017: {'_cit_rate_small_business': [0.19],
+   '_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc': [0.0]}},
+ 'consumption': {},
+ 'behavior': {},
+ 'growdiff_baseline': {},
+ 'growdiff_response': {},
+ 'growmodel': {}}
+
+{'policy': {2017: {'_cit_rate_small_business': [0.19]}},
+ 'consumption': {},
+ 'behavior': {},
+ 'growdiff_baseline': {},
+ 'growdiff_response': {},
+ 'growmodel': {}}
+
+{'policy': {2017: {'_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc': [0.0]}},
+ 'consumption': {},
+ 'behavior': {},
+ 'growdiff_baseline': {},
+ 'growdiff_response': {},
+ 'growmodel': {}}
+"""
+
 pol2.implement_reform(reform['policy'])
 
 calc2 = Calculator(policy=pol2, records=recs, corprecords=crecs1,
