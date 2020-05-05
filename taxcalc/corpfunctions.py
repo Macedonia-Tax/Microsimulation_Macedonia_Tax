@@ -54,8 +54,7 @@ def corp_expenditure(expenditure, tax_deductible_expenditure_poland, tax_deducti
     Compute total current expenditure.
     """
     expenditure = (tax_deductible_expenditure_poland + tax_deductible_expenditure_outside_poland +
-                            tax_deductible_expenditure_outside_poland_other + tax_deductible_expediture_intellectual_property +
-                            tax_deductible_expenditure_on_interest_income)
+                            tax_deductible_expenditure_outside_poland_other)
 
     return (expenditure)
 

@@ -26,9 +26,16 @@ pol = Policy()
 calc1 = Calculator(policy=pol, records=recs, corprecords=crecs1,
                    gstrecords=grecs, verbose=False)
 pol2 = Policy()
-#reform = Calculator.read_json_param_objects('app02_reform.json', None)
-
+#reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
 reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
+
+thisdict = reform
+list(thisdict.items())[0]
+list(thisdict.items())[1]
+list(thisdict.items())[2]
+list(thisdict.items())[3]
+list(thisdict.items())[4]
+list(thisdict.items())[5]
 
 ref_dict = reform['policy']
 for pkey, sdict in ref_dict.items():
@@ -37,8 +44,54 @@ for pkey, sdict in ref_dict.items():
         for k, s in sdict.items():
             print(f'k: {k}')
             print(f's: {s}')
+                        
+sdict1=list(sdict.items())[0]
+sdict2=list(sdict.items())[1]
+sdict3=list(sdict.items())[2]
+sdict4=list(sdict.items())[3]
+sdict5=list(sdict.items())[4]
+sdict6=list(sdict.items())[5]
+sdict7=list(sdict.items())[6]
+sdict8=list(sdict.items())[7]
+sdict9=list(sdict.items())[8]
+sdict10=list(sdict.items())[9]
+sdict11=list(sdict.items())[10]
+sdict12=list(sdict.items())[11]
+sdict13=list(sdict.items())[12]
+sdict14=list(sdict.items())[13]
+sdict15=list(sdict.items())[14]
+sdict16=list(sdict.items())[15]
 
-#tax_expen_dict['policy'][2017][k]=s
+
+
+
+"""
+sdict.pop("_cit_rate_small_business")
+sdict.update({'_cit_rate_small_business': 0.19})
+for key in sorted(dict.keys()):
+    print key, dict[key]
+    
+"""
+"""    
+print(k, sdict[k])
+_percent_exempt_rate_tax_free_income_other [0.0]
+"""
+
+"""
+dict1={'a':1,'b':2,'c':3}
+specific_keys_from_a_range=list(dict1.keys())[2:]
+"""
+
+"""           
+a_dictionary = {"a": 1, "b": 2, "c": 3, "d": 4}
+keys_to_extract = ["a", "c"]
+a_subset = {key: a_dictionary[key] for key in keys_to_extract}
+print(a_subset)
+tax_expen_dict['policy'][2017][k]=s
+"""
+
+
+
 
 """
 {'policy': {2017: {'_cit_rate_small_business': [0.19],
