@@ -230,7 +230,7 @@
         "col_var": "",
         "col_label": "",
         "boolean_value": false,
-        "integer_value": false,
+        "integer_value": false, 
         "value": [
             1.0
         ],

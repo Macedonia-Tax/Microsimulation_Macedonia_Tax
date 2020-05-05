@@ -1,7 +1,20 @@
 {
     "policy": {
 	"_cit_rate_small_business": {"2017": [0.19]},
-	"_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc": {"2017": [0.0]}
-	
+	"_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_art_17_1_4": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_non_agriculture_art_17_1_4e": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_subsidies_art_17_1_21": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_art_17_1_23_24": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_art_17_1_34": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_art_17_1_39": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_housing_coops_art_17_1_44": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_subsidies_state_local_art_17_1_47": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_amounts_government_agencies_art_17_1_48": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_agriculture_producer_groups_art_17_1_49": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_financial_programs_central_europe_art_17_1_52": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_environmental_finances_art_17_1_53": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_other_art_17_1": {"2017": [0.0]},
+	"_percent_exempt_rate_tax_free_income_other": {"2017": [0.0]}
     }
 }
