@@ -25,10 +25,34 @@ pol = Policy()
 # specify Calculator objects for current-law policy
 calc1 = Calculator(policy=pol, records=recs, corprecords=crecs1,
                    gstrecords=grecs, verbose=False)
+
+# NOTE: calc1 now contains a PRIVATE COPY of pol and a PRIVATE COPY of recs,
+#       so we can continue to use pol and recs in this script without any
+#       concern about side effects from Calculator method calls on calc1.
+
+assert isinstance(calc1, Calculator)
+assert calc1.current_year == 2017
+
+np.seterr(divide='ignore', invalid='ignore')
+
+# Produce DataFrame of results using cross-section
+calc1.calc_all()
+#sector=calc1.carray('sector')
+
+dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 'deductions_from_tax_base',
+             'income_tax_base_after_deductions', 'citax']
+dumpdf = calc1.dataframe_cit(dump_vars)
+dumpdf['ID_NO']= "A"+ dumpdf['CIT_ID_NO'].astype('str') 
+print(dumpdf)
+dumpdf.to_csv('app00_poland1.csv', index=False, float_format='%.0f')
+
 pol2 = Policy()
 #reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
-reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
+reform = Calculator.read_json_param_objects('tax_incentives_benchmark-1.json', None)
 
+#reform = Calculator.read_json_param_objects('app01_reform.json', None)
+
+"""
 thisdict = reform
 list(thisdict.items())[0]
 list(thisdict.items())[1]
@@ -36,33 +60,96 @@ list(thisdict.items())[2]
 list(thisdict.items())[3]
 list(thisdict.items())[4]
 list(thisdict.items())[5]
+"""
 
 ref_dict = reform['policy']
 for pkey, sdict in ref_dict.items():
-        print(f'pkey: {pkey}')
-        print(f'sdict: {sdict}')
+        #print(f'pkey: {pkey}')
+        #print(f'sdict: {sdict}')
         for k, s in sdict.items():
-            print(f'k: {k}')
-            print(f's: {s}')
-                        
-sdict1=list(sdict.items())[0]
-sdict2=list(sdict.items())[1]
-sdict3=list(sdict.items())[2]
-sdict4=list(sdict.items())[3]
-sdict5=list(sdict.items())[4]
-sdict6=list(sdict.items())[5]
-sdict7=list(sdict.items())[6]
-sdict8=list(sdict.items())[7]
-sdict9=list(sdict.items())[8]
-sdict10=list(sdict.items())[9]
-sdict11=list(sdict.items())[10]
-sdict12=list(sdict.items())[11]
-sdict13=list(sdict.items())[12]
-sdict14=list(sdict.items())[13]
-sdict15=list(sdict.items())[14]
-sdict16=list(sdict.items())[15]
+            reform.pop("policy")
+            mydict={}
+            mydict[k]=s
+            mydict0={}
+            mydict0[pkey]=mydict
+            reform['policy']=mydict0
+            print('reform:', reform)
+            #print(f'k: {k}')
+            #print(f's: {s}')
+            pol2.implement_reform(reform['policy'])
+
+            calc2 = Calculator(policy=pol2, records=recs, corprecords=crecs1,
+                               gstrecords=grecs, verbose=False)
+            
+            
+            calc2.calc_all()
+            dump_vars = ['CIT_ID_NO', 'citax']
+            dumpdf_2 = calc2.dataframe_cit(dump_vars)
+            dumpdf_2['ID_NO']= "A"+ dumpdf_2['CIT_ID_NO'].astype('int').astype('str')
+            dumpdf_2.drop('CIT_ID_NO', axis=1, inplace=True)
+            print(dumpdf_2)
+            dumpdf_2 = dumpdf_2.rename(columns={'citax':k[1:]})
+            dumpdf = pd.merge(dumpdf, dumpdf_2, how="inner", on="ID_NO")
+            print(dumpdf)
+            
+dumpdf.to_csv('tax_expenditures_poland.csv', index=False, float_format='%.0f')
 
 
+
+citax1 = calc1.carray('citax')
+weight1 = calc1.carray('weight')
+
+
+wtd_citax1 = citax1 * weight1
+citax_collection1 = wtd_citax1.sum()
+citax_collection_billions1 = citax_collection1/10**9
+
+
+
+print('\n\n\n')
+print('TAX COLLECTION FOR THE YEAR - 2017\n')
+
+print("The CIT Collection in billions is: ", citax_collection_billions1)
+            
+            Business_Profit2 = calc2.carray('income')
+            Tax_Free_Incomes2 = calc2.carray('tax_free_income_total')
+            Tax_Base_Before_Deductions2 = calc2.carray('tax_base_before_deductions')
+            Deductions2 = calc2.carray('deductions_from_tax_base')
+            Tax_Base_After_Deductions2 = calc2.carray('income_tax_base_after_deductions')
+            citax2 = calc2.carray('citax')
+            weight2 = calc2.carray('weight')
+            etr2 = np.divide(citax2, Business_Profit2)
+            weighted_etr2 = etr2*weight2.values
+            weighted_etr_overall2 = (sum(weighted_etr2[~np.isnan(weighted_etr2)])/
+                                     sum(weight2.values[~np.isnan(weighted_etr2)]))
+            
+            wtd_citax2 = citax2 * weight2
+            
+            citax_collection2 = wtd_citax2.sum()
+            
+            citax_collection_billions2 = citax_collection2/10**9
+            
+            print('\n\n\n')
+            print('TAX COLLECTION FOR THE YEAR - 2017-Reform\n')
+            
+            print("The CIT Collection in billions is: ",citax_collection_billions2)
+            
+            print("Difference due to change in policy in small businesses:",(citax_collection_billions2 - citax_collection_billions1)*10**3,"millions")
+
+"""
+print('\n\n\n')
+print('FORECASTING TAX COLLECTION FOR THE FOLLOWING YEAR - 2018\n')
+print(f'CIT Collection, 2018: {sum(citax * weight) / 10**9:,.2f} Billion')
+
+print(f'Tax Base Before Deductions, 2018: {sum(Tax_Base_Before_Deductions * weight) / 10**9:,.2f} Billion')
+print(f'Deductions, 2018: {sum(Deductions * weight) / 10**9:,.2f} Billion')
+print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight) / 10**9:,.2f} Billion')
+print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
+"""
+            
+     
+
+                 
 
 
 """
@@ -88,8 +175,9 @@ keys_to_extract = ["a", "c"]
 a_subset = {key: a_dictionary[key] for key in keys_to_extract}
 print(a_subset)
 tax_expen_dict['policy'][2017][k]=s
-"""
 
+sdict1=list(sdict.items())[0]
+"""
 
 
 
@@ -117,93 +205,7 @@ tax_expen_dict['policy'][2017][k]=s
  'growmodel': {}}
 """
 
-pol2.implement_reform(reform['policy'])
 
-calc2 = Calculator(policy=pol2, records=recs, corprecords=crecs1,
-                   gstrecords=grecs, verbose=False)
-
-# NOTE: calc1 now contains a PRIVATE COPY of pol and a PRIVATE COPY of recs,
-#       so we can continue to use pol and recs in this script without any
-#       concern about side effects from Calculator method calls on calc1.
-
-assert isinstance(calc1, Calculator)
-assert calc1.current_year == 2017
-
-np.seterr(divide='ignore', invalid='ignore')
-
-# Produce DataFrame of results using cross-section
-calc1.calc_all()
-calc2.calc_all()
-#sector=calc1.carray('sector')
-
-dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 'deductions_from_tax_base',
-             'income_tax_base_after_deductions', 'citax']
-dumpdf_1 = calc1.dataframe_cit(dump_vars)
-dumpdf_1.to_csv('app00_poland1.csv', index=False, float_format='%.0f')
-
-Business_Profit1 = calc1.carray('income')
-Tax_Free_Incomes1 = calc1.carray('tax_free_income_total')
-Tax_Base_Before_Deductions1 = calc1.carray('tax_base_before_deductions')
-Deductions1 = calc1.carray('deductions_from_tax_base')
-Tax_Base_After_Deductions1 = calc1.carray('income_tax_base_after_deductions')
-citax1 = calc1.carray('citax')
-weight1 = calc1.carray('weight')
-etr1 = np.divide(citax1, Business_Profit1)
-weighted_etr1 = etr1*weight1.values
-weighted_etr_overall1 = (sum(weighted_etr1[~np.isnan(weighted_etr1)])/
-                         sum(weight1.values[~np.isnan(weighted_etr1)]))
-
-wtd_citax1 = citax1 * weight1
-
-citax_collection1 = wtd_citax1.sum()
-
-citax_collection_billions1 = citax_collection1/10**9
-
-print('\n\n\n')
-print('TAX COLLECTION FOR THE YEAR - 2017\n')
-
-print("The CIT Collection in billions is: ", citax_collection_billions1)
-
-dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 'deductions_from_tax_base',
-             'income_tax_base_after_deductions', 'citax']
-dumpdf_2 = calc2.dataframe_cit(dump_vars)
-dumpdf_2.to_csv('app00_poland2.csv', index=False, float_format='%.0f')
-
-Business_Profit2 = calc2.carray('income')
-Tax_Free_Incomes2 = calc2.carray('tax_free_income_total')
-Tax_Base_Before_Deductions2 = calc2.carray('tax_base_before_deductions')
-Deductions2 = calc2.carray('deductions_from_tax_base')
-Tax_Base_After_Deductions2 = calc2.carray('income_tax_base_after_deductions')
-citax2 = calc2.carray('citax')
-weight2 = calc2.carray('weight')
-etr2 = np.divide(citax2, Business_Profit2)
-weighted_etr2 = etr2*weight2.values
-weighted_etr_overall2 = (sum(weighted_etr2[~np.isnan(weighted_etr2)])/
-                         sum(weight2.values[~np.isnan(weighted_etr2)]))
-
-wtd_citax2 = citax2 * weight2
-
-citax_collection2 = wtd_citax2.sum()
-
-citax_collection_billions2 = citax_collection2/10**9
-
-print('\n\n\n')
-print('TAX COLLECTION FOR THE YEAR - 2017-Reform\n')
-
-print("The CIT Collection in billions is: ",citax_collection_billions2)
-
-print("Difference due to change in policy in small businesses:",(citax_collection_billions2 - citax_collection_billions1)*10**3,"millions")
-
-"""
-print('\n\n\n')
-print('FORECASTING TAX COLLECTION FOR THE FOLLOWING YEAR - 2018\n')
-print(f'CIT Collection, 2018: {sum(citax * weight) / 10**9:,.2f} Billion')
-
-print(f'Tax Base Before Deductions, 2018: {sum(Tax_Base_Before_Deductions * weight) / 10**9:,.2f} Billion')
-print(f'Deductions, 2018: {sum(Deductions * weight) / 10**9:,.2f} Billion')
-print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight) / 10**9:,.2f} Billion')
-print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
-"""
 
 df_sector = dumpdf_1.groupby(['sector']).sum()
 df_sector['citax_millions'] = df_sector['citax']/10**6
