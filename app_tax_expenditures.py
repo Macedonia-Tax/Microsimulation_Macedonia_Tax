@@ -38,29 +38,26 @@ np.seterr(divide='ignore', invalid='ignore')
 # Produce DataFrame of results using cross-section
 calc1.calc_all()
 #sector=calc1.carray('sector')
+weight1 = calc1.carray('weight')
 
-dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 'deductions_from_tax_base',
+dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 
+             'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 
+             'deductions_from_tax_base',
              'income_tax_base_after_deductions', 'citax']
 dumpdf = calc1.dataframe_cit(dump_vars)
+#create the weight variable
+dumpdf['weight']= weight1
+dumpdf['weighted_citax']= dumpdf['weight']*dumpdf['citax']
 dumpdf['ID_NO']= "A"+ dumpdf['CIT_ID_NO'].astype('str') 
 print(dumpdf)
 dumpdf.to_csv('app00_poland1.csv', index=False, float_format='%.0f')
 
 pol2 = Policy()
 #reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
-reform = Calculator.read_json_param_objects('tax_incentives_benchmark-1.json', None)
+reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
 
 #reform = Calculator.read_json_param_objects('app01_reform.json', None)
 
-"""
-thisdict = reform
-list(thisdict.items())[0]
-list(thisdict.items())[1]
-list(thisdict.items())[2]
-list(thisdict.items())[3]
-list(thisdict.items())[4]
-list(thisdict.items())[5]
-"""
 
 ref_dict = reform['policy']
 for pkey, sdict in ref_dict.items():
@@ -88,9 +85,15 @@ for pkey, sdict in ref_dict.items():
             dumpdf_2['ID_NO']= "A"+ dumpdf_2['CIT_ID_NO'].astype('int').astype('str')
             dumpdf_2.drop('CIT_ID_NO', axis=1, inplace=True)
             print(dumpdf_2)
-            dumpdf_2 = dumpdf_2.rename(columns={'citax':k[1:]})
+            dumpdf_2 = dumpdf_2.rename(columns={'citax':"tax_collected_under_policy_"+ k[1:]})
             dumpdf = pd.merge(dumpdf, dumpdf_2, how="inner", on="ID_NO")
+            #create the weight variable
+            dumpdf['weighted_tax_collected_under_policy_'+ k[1:]]= dumpdf['weight']*dumpdf['tax_collected_under_policy_'+ k[1:]]
+            #calculating expenditure
+            dumpdf['tax_expenditure_collected_under_'+ k[1:]]= dumpdf['weighted_tax_collected_under_policy_'+ k[1:]]- dumpdf['weighted_citax']
             print(dumpdf)
+
+            #Summarize here
             
 dumpdf.to_csv('tax_expenditures_poland.csv', index=False, float_format='%.0f')
 
@@ -98,8 +101,6 @@ dumpdf.to_csv('tax_expenditures_poland.csv', index=False, float_format='%.0f')
 
 citax1 = calc1.carray('citax')
 weight1 = calc1.carray('weight')
-
-
 wtd_citax1 = citax1 * weight1
 citax_collection1 = wtd_citax1.sum()
 citax_collection_billions1 = citax_collection1/10**9
@@ -147,10 +148,7 @@ print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight
 print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
 """
             
-     
-
-                 
-
+    
 
 """
 sdict.pop("_cit_rate_small_business")
