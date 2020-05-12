@@ -38,7 +38,7 @@ np.seterr(divide='ignore', invalid='ignore')
 # Produce DataFrame of results using cross-section
 calc1.calc_all()
 #sector=calc1.carray('sector')
-weight1 = calc1.carray('weight')
+weight = calc1.carray('weight')
 
 dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business', 
              'revenue', 'expenditure', 'income', 'tax_base_before_deductions', 
@@ -46,11 +46,11 @@ dump_vars = ['CIT_ID_NO', 'legal_form', 'sector', 'province', 'small_business',
              'income_tax_base_after_deductions', 'citax']
 dumpdf = calc1.dataframe_cit(dump_vars)
 #create the weight variable
-dumpdf['weight']= weight1
+dumpdf['weight']= weight
 dumpdf['weighted_citax']= dumpdf['weight']*dumpdf['citax']
 dumpdf['ID_NO']= "A"+ dumpdf['CIT_ID_NO'].astype('str') 
 print(dumpdf)
-dumpdf.to_csv('app00_poland1.csv', index=False, float_format='%.0f')
+dumpdf.to_csv('tax_expenditures_current_law.csv', index=False, float_format='%.0f')
 
 pol2 = Policy()
 #reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', None)
@@ -88,22 +88,15 @@ for pkey, sdict in ref_dict.items():
             dumpdf_2 = dumpdf_2.rename(columns={'citax':"tax_collected_under_policy_"+ k[1:]})
             dumpdf = pd.merge(dumpdf, dumpdf_2, how="inner", on="ID_NO")
             #create the weight variable
-            dumpdf['weighted_tax_collected_under_policy_'+ k[1:]]= dumpdf['weight']*dumpdf['tax_collected_under_policy_'+ k[1:]]
+            dumpdf['weighted_tax_collected_under_policy'+ k[1:]]= dumpdf['weight']*dumpdf['tax_collected_under_policy'+ k[1:]]
             #calculating expenditure
-            dumpdf['tax_expenditure_collected_under_'+ k[1:]]= dumpdf['weighted_tax_collected_under_policy_'+ k[1:]]- dumpdf['weighted_citax']
+            dumpdf['tax_expenditure_collected_under'+ k[1:]]= dumpdf['weighted_tax_collected_under_policy'+ k[1:]]- dumpdf['weighted_citax']
             print(dumpdf)
 
             #Summarize here
             
 dumpdf.to_csv('tax_expenditures_poland.csv', index=False, float_format='%.0f')
 
-
-
-citax1 = calc1.carray('citax')
-weight1 = calc1.carray('weight')
-wtd_citax1 = citax1 * weight1
-citax_collection1 = wtd_citax1.sum()
-citax_collection_billions1 = citax_collection1/10**9
 
 
 
