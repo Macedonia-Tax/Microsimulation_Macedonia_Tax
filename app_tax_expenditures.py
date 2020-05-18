@@ -58,7 +58,6 @@ reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', Non
 
 #reform = Calculator.read_json_param_objects('app01_reform.json', None)
 
-
 ref_dict = reform['policy']
 for pkey, sdict in ref_dict.items():
         #print(f'pkey: {pkey}')
@@ -71,10 +70,11 @@ for pkey, sdict in ref_dict.items():
             mydict0[pkey]=mydict
             reform['policy']=mydict0
             print('reform:', reform)
+            #var_list= k
             #print(f'k: {k}')
             #print(f's: {s}')
             pol2.implement_reform(reform['policy'])
-
+            
             calc2 = Calculator(policy=pol2, records=recs, corprecords=crecs1,
                                gstrecords=grecs, verbose=False)
             
@@ -85,17 +85,30 @@ for pkey, sdict in ref_dict.items():
             dumpdf_2['ID_NO']= "A"+ dumpdf_2['CIT_ID_NO'].astype('int').astype('str')
             dumpdf_2.drop('CIT_ID_NO', axis=1, inplace=True)
             print(dumpdf_2)
-            dumpdf_2 = dumpdf_2.rename(columns={'citax':"tax_collected_under_policy_"+ k[1:]})
+            dumpdf_2 = dumpdf_2.rename(columns={'citax':"tax_collected_under_policy"+ k})
             dumpdf = pd.merge(dumpdf, dumpdf_2, how="inner", on="ID_NO")
             #create the weight variable
-            dumpdf['weighted_tax_collected_under_policy_'+ k[1:]]= dumpdf['weight']*dumpdf['tax_collected_under_policy_'+ k[1:]]
+            dumpdf['weighted_tax_collected_under_policy'+ k]= dumpdf['weight']*dumpdf['tax_collected_under_policy'+ k]
             #calculating expenditure
-            dumpdf['tax_expenditure_collected_under_'+ k[1:]]= dumpdf['weighted_tax_collected_under_policy_'+ k[1:]]- dumpdf['weighted_citax']
+            dumpdf['tax_expenditure_collected_under'+ k+"_mills"]= dumpdf['weighted_tax_collected_under_policy'+ k]- dumpdf['weighted_citax']
+            var_list = [k]
+            for i in var_list:
+                var_list= [var_list] + [k]
+            #var_list= [var_list]+[k]
+            #print(var_list)
+            #dumpdf[var_list]= dumpdf[var_list] + dumpdf[k]
             print(dumpdf)
-
-            #Summarize here
             
 dumpdf.to_csv('tax_expenditures_poland.csv', index=False, float_format='%.0f')
+            
+#Summarize here
+tax_expediture_list = ['tax_expenditure' + i +"_mills"]
+with open('taxcalc/current_law_policy_poland.json') as f:
+    current_law_policy = json.load(f)
+dumpdf[tax_expenditure_desc_eng] = (current_law_policy[i]['description'])
+dumpdf[tax_ependitures_desc_polish] = (current_law_policy[i]['long_name'])
+dumpdf['tax_expenditure_sum'+ k] = dumpdf['tax_expenditure_collected_under'+ k+"_mills"].sum(axis = 0)
+print(dumpdf)
 
 
 
@@ -148,62 +161,6 @@ print(f'Tax Base After Deductions, 2018: {sum(Tax_Base_After_Deductions * weight
 print(f'Effective Tax Rate, 2018: {weighted_etr_overall*100:,.1f}%')
 """
             
-    
-
-"""
-sdict.pop("_cit_rate_small_business")
-sdict.update({'_cit_rate_small_business': 0.19})
-for key in sorted(dict.keys()):
-    print key, dict[key]
-    
-"""
-"""    
-print(k, sdict[k])
-_percent_exempt_rate_tax_free_income_other [0.0]
-"""
-
-"""
-dict1={'a':1,'b':2,'c':3}
-specific_keys_from_a_range=list(dict1.keys())[2:]
-"""
-
-"""           
-a_dictionary = {"a": 1, "b": 2, "c": 3, "d": 4}
-keys_to_extract = ["a", "c"]
-a_subset = {key: a_dictionary[key] for key in keys_to_extract}
-print(a_subset)
-tax_expen_dict['policy'][2017][k]=s
-
-sdict1=list(sdict.items())[0]
-"""
-
-
-
-"""
-{'policy': {2017: {'_cit_rate_small_business': [0.19],
-   '_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc': [0.0]}},
- 'consumption': {},
- 'behavior': {},
- 'growdiff_baseline': {},
- 'growdiff_response': {},
- 'growmodel': {}}
-
-{'policy': {2017: {'_cit_rate_small_business': [0.19]}},
- 'consumption': {},
- 'behavior': {},
- 'growdiff_baseline': {},
- 'growdiff_response': {},
- 'growmodel': {}}
-
-{'policy': {2017: {'_percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc': [0.0]}},
- 'consumption': {},
- 'behavior': {},
- 'growdiff_baseline': {},
- 'growdiff_response': {},
- 'growmodel': {}}
-"""
-
-
 
 df_sector = dumpdf_1.groupby(['sector']).sum()
 df_sector['citax_millions'] = df_sector['citax']/10**6
