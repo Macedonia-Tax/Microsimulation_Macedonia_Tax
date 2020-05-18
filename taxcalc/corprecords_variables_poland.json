@@ -18,7 +18,7 @@
     },
     "sector": {
       "required": true,    
-      "type": "string",
+      "type": "string", 
       "desc": "Sekcja PKD, Sector classification",
       "form": {"2017": "Obtained from Registration Data INS-NIP2"}
     },
