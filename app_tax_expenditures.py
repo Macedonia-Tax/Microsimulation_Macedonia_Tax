@@ -85,12 +85,12 @@ for pkey, sdict in ref_dict.items():
             dumpdf_2['ID_NO']= "A"+ dumpdf_2['CIT_ID_NO'].astype('int').astype('str')
             dumpdf_2.drop('CIT_ID_NO', axis=1, inplace=True)
             print(dumpdf_2)
-            dumpdf_2 = dumpdf_2.rename(columns={'citax':"tax_collected_under_policy_"+ k[1:]})
+            dumpdf_2 = dumpdf_2.rename(columns={'citax':"tax_collected_under_policy"+ k})
             dumpdf = pd.merge(dumpdf, dumpdf_2, how="inner", on="ID_NO")
             #create the weight variable
-            dumpdf['weighted_tax_collected_under_policy'+ k[1:]]= dumpdf['weight']*dumpdf['tax_collected_under_policy'+ k[1:]]
+            dumpdf['weighted_tax_collected_under_policy'+ k]= dumpdf['weight']*dumpdf['tax_collected_under_policy'+ k]
             #calculating expenditure
-            dumpdf['tax_expenditure_collected_under'+ k[1:]]= dumpdf['weighted_tax_collected_under_policy'+ k[1:]]- dumpdf['weighted_citax']
+            dumpdf['tax_expenditure_collected_under'+ k]= dumpdf['weighted_tax_collected_under_policy'+ k]- dumpdf['weighted_citax']
             print(dumpdf)
 
             #Summarize here
