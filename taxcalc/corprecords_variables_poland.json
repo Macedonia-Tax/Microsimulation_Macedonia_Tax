@@ -132,15 +132,25 @@
       "desc": "dochody wolne od podatku - inne", 
       "form": {"2017": "?? Need to know the source"} 
     },
-    "deductions_from_income_total": {
+    "loss_from_previous_years": {
       "type": "float",
-      "desc": "Razem odliczenia od dochodu, Total Income Deductions",
-      "form": {"2017": "CIT-8 field no. 52"}
+      "desc": "strata z lat ubiegłych",
+      "form": {"2017": "CIT-8 field no. 47"}
+    },
+    "deductions_from_income_art_18_1_1": {
+      "type": "float",
+      "desc": "odliczenia od dochodu (art.18 ust.1 pkt 1)",
+      "form": {"2017": "CIT-8 field no. 48"}
+    },
+    "deductions_from_income_art_18_1_7": {
+      "type": "float",
+      "desc": "odliczenia od dochodu (art.18 ust.1 pkt 7)",
+      "form": {"2017": "CIT-8 field no. 49"}
     },
     "deductions_from_tax_base": {
       "type": "float",
       "desc": "Total deductions from taxable amount",
-      "form": {"2017": "CIT-8 field no. 112"}
+      "form": {"2017": "CIT-8 field no. 59"}
     }
   },
   "calc": {
@@ -167,7 +177,7 @@
     "tax_base_before_deductions": {
       "type": "float",
       "desc": "Income tax base before deductions",
-      "form": {"2017": "CIT-8 field no. 108"}
+      "form": {"2017": "CIT-8 field no. 55"}
     },
     "income_tax_base_after_deductions": {
       "type": "float",
@@ -178,6 +188,16 @@
       "type": "float",
       "desc": "KOSZTY UZYSKANIA PRZYCHODÓW, Revenue",
       "form": {"2017": "CIT-8 field no. 45"}
+    },
+    "deductions_from_income_total": {
+      "type": "float",
+      "desc": "Razem odliczenia od dochodu",
+      "form": {"2017": "CIT-8 field no. 52"}
+    },
+    "total_exempted_deductions": {
+      "type": "float",
+      "desc": "Całkowite Zwolnione Odliczenia",
+      "form": {"2017": "CIT-8 field no. 59 + art.18 ust.1 pkt 1 & 7"}
     },
     "citax": {
       "type": "float",

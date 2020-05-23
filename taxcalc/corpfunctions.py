@@ -38,9 +38,9 @@ def corp_tax_free_income_total(percent_exempt_rate_tax_free_income_statistic_pur
                                tax_free_income_non_agriculture_art_17_1_4e, 
                                tax_free_income_art_17_1_4, tax_free_income_statistic_purpose_art_17_1_4d_etc, 
                                tax_free_income_total):
-    """
-    Compute total exemptions.
-    """
+"""
+Compute total exemptions.
+"""
     tax_free_income_total = (tax_free_income_statistic_purpose_art_17_1_4d_etc*percent_exempt_rate_tax_free_income_statistic_purpose_art_17_1_4d_etc+ 
                              tax_free_income_art_17_1_4*percent_exempt_rate_tax_free_income_art_17_1_4 +
                              tax_free_income_non_agriculture_art_17_1_4e*percent_exempt_rate_tax_free_income_non_agriculture_art_17_1_4e + 
@@ -59,22 +59,53 @@ def corp_tax_free_income_total(percent_exempt_rate_tax_free_income_statistic_pur
 
     return (tax_free_income_total)
 
+
+@iterate_jit(nopython=True)
+def corp_deductions_from_income_total(loss_from_previous_years, deductions_from_income_art_18_1_1, 
+                                      deductions_from_income_art_18_1_7, 
+                                      deductions_from_income_total):
+"""
+Compute total current expenditure.
+"""
+    deductions_from_income_total = (loss_from_previous_years + deductions_from_income_art_18_1_1 +
+                            deductions_from_income_art_18_1_7)
+
+    return (deductions_from_income_total)
+
+@iterate_jit(nopython=True)
+def corp_total_exempted_deductions(percent_deductions_from_income_art_18_1_1,
+                                   percent_deductions_from_income_art_18_1_7,
+                                   percent_deductions_from_tax_base
+                                   deductions_from_income_art_18_1_1, 
+                                   deductions_from_income_art_18_1_7,
+                                   deductions_from_tax_base):
+"""
+Compute total current expenditure.
+"""
+    total_exempted_deductions = (deductions_from_income_art_18_1_1*percent_deductions_from_income_art_18_1_1+ 
+                                    deductions_from_income_art_18_1_7*percent_deductions_from_income_art_18_1_7 +
+                                    deductions_from_tax_base*percent_deductions_from_tax_base)
+
+    return (total_exempted_deductions)
+
+
 @iterate_jit(nopython=True)
 def corp_expenditure(expenditure, tax_deductible_expenditure_poland, tax_deductible_expenditure_outside_poland,
                             tax_deductible_expenditure_outside_poland_other):
-    """
-    Compute total current expenditure.
-    """
+"""
+Compute total current expenditure.
+"""
     expenditure = (tax_deductible_expenditure_poland + tax_deductible_expenditure_outside_poland +
                             tax_deductible_expenditure_outside_poland_other)
 
     return (expenditure)
 
+
 @iterate_jit(nopython=True)
 def is_small_business(small_business_threshold, revenue, small_business):
-    """
-    Compute Income = Revenue - Expenditure
-    """
+"""
+Compute Income = Revenue - Expenditure
+"""
     if (revenue <= small_business_threshold):
         small_business = 1
     else:    
@@ -82,11 +113,12 @@ def is_small_business(small_business_threshold, revenue, small_business):
     
     return (small_business)
 
+
 @iterate_jit(nopython=True)
 def corp_income(revenue, expenditure, income, loss):
-    """
-    Compute Income = Revenue - Expenditure
-    """
+"""
+Compute Income = Revenue - Expenditure
+"""
     if (revenue >= expenditure):
         income = revenue - expenditure
         loss = 0
@@ -96,42 +128,44 @@ def corp_income(revenue, expenditure, income, loss):
     
     return (income, loss)
 
+
 @iterate_jit(nopython=True)
 def corp_tax_base_before_deductions(income, tax_free_income_total,
                                     deductions_from_income_total,
                                     tax_base_before_deductions):
-    """
-    Compute corp tax base after taking out the deductions.
-    """
+"""
+Compute corp tax base after taking out the deductions.
+"""
     tax_base_before_deductions = (income - tax_free_income_total -
                                   deductions_from_income_total)
     tax_base_before_deductions = np.maximum(0, tax_base_before_deductions)
     
     return (tax_base_before_deductions)
 
+
 @iterate_jit(nopython=True)
 def corp_tax_base_after_deductions(tax_base_before_deductions,
                             deductions_from_tax_base,
                             income_tax_base_after_deductions):
-    """
-    Compute corp tax base after taking out the deductions.
-    """
+"""
+Compute corp tax base after taking out the deductions.
+"""
     income_tax_base_after_deductions = (tax_base_before_deductions -
                                         deductions_from_tax_base)
     income_tax_base_after_deductions = np.maximum(0, income_tax_base_after_deductions)
 
     return (income_tax_base_after_deductions)
 
+
 @iterate_jit(nopython=True)
 def cit_liability(small_business_threshold, cit_rate_small_business,
                   cit_rate_regular, revenue, income_tax_base_after_deductions,
                   citax):
-    """
-    Compute tax liability given the tax rate schedule specified
-    by the (marginal tax) rate* and (upper tax bracket) brk* parameters and
-    given taxable income (taxinc)
-
-    """
+"""
+Compute tax liability given the tax rate schedule specified
+by the (marginal tax) rate* and (upper tax bracket) brk* parameters and
+given taxable income (taxinc)
+"""
     # compute citax amount
     if (revenue <= small_business_threshold):
         citax = cit_rate_small_business * income_tax_base_after_deductions

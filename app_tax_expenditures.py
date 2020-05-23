@@ -58,7 +58,11 @@ reform = Calculator.read_json_param_objects('tax_incentives_benchmark.json', Non
 
 #reform = Calculator.read_json_param_objects('app01_reform.json', None)
 
+with open('taxcalc/current_law_policy_poland.json') as f:
+    current_law_policy = json.load(f)
 ref_dict = reform['policy']
+var_list = []
+tax_expediture_list = []
 for pkey, sdict in ref_dict.items():
         #print(f'pkey: {pkey}')
         #print(f'sdict: {sdict}')
@@ -90,10 +94,10 @@ for pkey, sdict in ref_dict.items():
             #create the weight variable
             dumpdf['weighted_tax_collected_under_policy'+ k]= dumpdf['weight']*dumpdf['tax_collected_under_policy'+ k]
             #calculating expenditure
-            dumpdf['tax_expenditure_collected_under'+ k+"_mills"]= dumpdf['weighted_tax_collected_under_policy'+ k]- dumpdf['weighted_citax']
-            var_list = [k]
-            for i in var_list:
-                var_list= [var_list] + [k]
+            dumpdf[current_law_policy[k]['description']]= (dumpdf["weighted_tax_collected_under_policy"+ k]- dumpdf["weighted_citax"])/10**6
+            var_list = var_list + [k]
+            tax_expediture_list = tax_expediture_list + [current_law_policy[k]['description']]
+            print(var_list)
             #var_list= [var_list]+[k]
             #print(var_list)
             #dumpdf[var_list]= dumpdf[var_list] + dumpdf[k]
@@ -102,16 +106,15 @@ for pkey, sdict in ref_dict.items():
 dumpdf.to_csv('tax_expenditures_poland.csv', index=False, float_format='%.0f')
             
 #Summarize here
-tax_expediture_list = ['tax_expenditure' + i +"_mills"]
-with open('taxcalc/current_law_policy_poland.json') as f:
-    current_law_policy = json.load(f)
-dumpdf[tax_expenditure_desc_eng] = (current_law_policy[i]['description'])
-dumpdf[tax_ependitures_desc_polish] = (current_law_policy[i]['long_name'])
-dumpdf['tax_expenditure_sum'+ k] = dumpdf['tax_expenditure_collected_under'+ k+"_mills"].sum(axis = 0)
-print(dumpdf)
+tax_expenditure_df = dumpdf[tax_expediture_list].sum(axis = 0)
+tax_expenditure_df= tax_expenditure_df.reset_index()
+tax_expenditure_df.columns = ['Tax Expenditure', 'Million Zlotys']
+tax_expenditure_df.to_csv('tax_expenditures_sum.csv',index=False, float_format='%.0f')
 
 
+    
 
+#use later
 citax1 = calc1.carray('citax')
 weight1 = calc1.carray('weight')
 wtd_citax1 = citax1 * weight1
