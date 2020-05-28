@@ -491,7 +491,7 @@
     "_percent_deductions_from_tax_base": { 
         "long_name": "Podst. Opod. z Tyt. Osztów Uzysk. Przych.(Dział. Badawczo-Rozwojową)", 
         "description": "Basic. Opod. from Cost of Obtaining Income (Research And Development Department)",
-        "itr_ref": "Article 73 of Annex CIT-8/O & Item. 23 of Annex CIT/BR", 
+        "itr_ref": "Article 73 of Annex CIT-8/O & Item. 23 of Annex CIT/BR",  
         "notes": "",
         "row_var": "AYEAR", 
         "row_label": [

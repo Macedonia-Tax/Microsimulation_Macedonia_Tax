@@ -18,7 +18,6 @@ from taxcalc.functions import (net_salary_income, taxable_income,
                                pit_liability)
 from taxcalc.corpfunctions import (corp_tax_free_income_total,
                                    corp_deductions_from_income_total,
-                                   corp_total_exempted_deductions,
                                    corp_expenditure,
                                    is_small_business, corp_income,
                                    corp_tax_base_before_deductions,
@@ -171,7 +170,6 @@ class Calculator(object):
         # Corporate calculations
         corp_tax_free_income_total(self.__policy, self.__corprecords)
         corp_deductions_from_income_total(self.__policy, self.__corprecords)
-        corp_total_exempted_deductions(self.__policy, self.__corprecords)
         corp_expenditure(self.__policy, self.__corprecords)
         is_small_business(self.__policy, self.__corprecords)        
         corp_income(self.__policy, self.__corprecords)

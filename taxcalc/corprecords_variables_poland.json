@@ -125,32 +125,32 @@
     "tax_free_income_other_art_17_1": {
       "type": "float",
       "desc": "pozostałe dochody (przychody) wolne od podatku",
-      "form": {"2017": "Article 17 clause 1"} 
+      "form": {"2017": "Article. 17 paragraph. 1 Section 57 of the Act"} 
     },
     "tax_free_income_other": {
       "type": "float",
       "desc": "dochody wolne od podatku - inne", 
-      "form": {"2017": "?? Need to know the source"} 
+      "form": {"2017": "Article. 17 paragraph. 1 Section 58 of the Act"} 
     },
     "loss_from_previous_years": {
       "type": "float",
       "desc": "strata z lat ubiegłych",
-      "form": {"2017": "CIT-8 field no. 47"}
+      "form": {"2017": "CIT-8-O field no. 94/115/136"}
     },
     "deductions_from_income_art_18_1_1": {
       "type": "float",
       "desc": "odliczenia od dochodu (art.18 ust.1 pkt 1)",
-      "form": {"2017": "CIT-8 field no. 48"}
+      "form": {"2017": "CIT-8-O field no. 137/138"}
     },
     "deductions_from_income_art_18_1_7": {
       "type": "float",
       "desc": "odliczenia od dochodu (art.18 ust.1 pkt 7)",
-      "form": {"2017": "CIT-8 field no. 49"}
+      "form": {"2017": "CIT-8-O field no. 139/140"}
     },
     "deductions_from_tax_base": {
       "type": "float",
       "desc": "Total deductions from taxable amount",
-      "form": {"2017": "CIT-8 field no. 59"}
+      "form": {"2017": "CIT-8-O field no. 160"}
     }
   },
   "calc": {
@@ -172,7 +172,7 @@
     "tax_free_income_total": {
       "type": "float",
       "desc": "Rrazem dochody wolne, Tax Free Income",
-      "form": {"2017": "CIT-8 field no. 54"}
+      "form": {"2017": "CIT-8-O field no. 72/73"}
     },  
     "tax_base_before_deductions": {
       "type": "float",
@@ -182,7 +182,7 @@
     "income_tax_base_after_deductions": {
       "type": "float",
       "desc": "Income tax base",
-      "form": {"2017": "CIT-8 field no. 119"}
+      "form": {"2017": "CIT-8 field no. 59"}
     },
     "expenditure": {
       "type": "float",
@@ -193,11 +193,6 @@
       "type": "float",
       "desc": "Razem odliczenia od dochodu",
       "form": {"2017": "CIT-8 field no. 52"}
-    },
-    "total_exempted_deductions": {
-      "type": "float",
-      "desc": "Całkowite Zwolnione Odliczenia",
-      "form": {"2017": "CIT-8 field no. 59 + art.18 ust.1 pkt 1 & 7"}
     },
     "citax": {
       "type": "float",

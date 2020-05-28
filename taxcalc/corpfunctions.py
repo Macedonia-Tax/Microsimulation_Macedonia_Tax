@@ -61,32 +61,19 @@ Compute total exemptions.
 
 
 @iterate_jit(nopython=True)
-def corp_deductions_from_income_total(loss_from_previous_years, deductions_from_income_art_18_1_1, 
+def corp_deductions_from_income_total(percent_deductions_from_income_art_18_1_1,
+                                      percent_deductions_from_income_art_18_1_7,
+                                      loss_from_previous_years, 
+                                      deductions_from_income_art_18_1_1, 
                                       deductions_from_income_art_18_1_7, 
                                       deductions_from_income_total):
 """
 Compute total current expenditure.
 """
-    deductions_from_income_total = (loss_from_previous_years + deductions_from_income_art_18_1_1 +
-                            deductions_from_income_art_18_1_7)
+    deductions_from_income_total = (loss_from_previous_years + deductions_from_income_art_18_1_1*percent_deductions_from_income_art_18_1_1 +
+                            deductions_from_income_art_18_1_7*percent_deductions_from_income_art_18_1_7)
 
     return (deductions_from_income_total)
-
-@iterate_jit(nopython=True)
-def corp_total_exempted_deductions(percent_deductions_from_income_art_18_1_1,
-                                   percent_deductions_from_income_art_18_1_7,
-                                   percent_deductions_from_tax_base
-                                   deductions_from_income_art_18_1_1, 
-                                   deductions_from_income_art_18_1_7,
-                                   deductions_from_tax_base):
-"""
-Compute total current expenditure.
-"""
-    total_exempted_deductions = (deductions_from_income_art_18_1_1*percent_deductions_from_income_art_18_1_1+ 
-                                    deductions_from_income_art_18_1_7*percent_deductions_from_income_art_18_1_7 +
-                                    deductions_from_tax_base*percent_deductions_from_tax_base)
-
-    return (total_exempted_deductions)
 
 
 @iterate_jit(nopython=True)
@@ -144,14 +131,15 @@ Compute corp tax base after taking out the deductions.
 
 
 @iterate_jit(nopython=True)
-def corp_tax_base_after_deductions(tax_base_before_deductions,
-                            deductions_from_tax_base,
-                            income_tax_base_after_deductions):
+def corp_tax_base_after_deductions(percent_deductions_from_tax_base, 
+                                   tax_base_before_deductions,
+                                   deductions_from_tax_base,
+                                   income_tax_base_after_deductions):
 """
 Compute corp tax base after taking out the deductions.
 """
     income_tax_base_after_deductions = (tax_base_before_deductions -
-                                        deductions_from_tax_base)
+                                        deductions_from_tax_base*percent_deductions_from_tax_base)
     income_tax_base_after_deductions = np.maximum(0, income_tax_base_after_deductions)
 
     return (income_tax_base_after_deductions)
