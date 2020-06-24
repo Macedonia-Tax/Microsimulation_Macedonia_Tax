@@ -1,0 +1,277 @@
+{
+  "read": {
+    "Identification_Number": {
+      "required": true,
+      "type": "int",
+      "desc": "Unique positive numeric identifier for filing unit",
+      "form": {"2017": "Private Info"}
+    },
+    "Year": {
+      "type": "int",
+      "desc": "Assessment year of ITR form that include prior year information",
+      "form": {"2017": "Assessment Year (first year)"}
+    },   
+    "PL_Legal_type": { 
+      "type": "string",  
+      "desc": "Earning of salary by type of employment/business",
+      "form": {"2017": "Obtained from data on Salaries & codes; PL-Legal person or SVD-independent performer of activity"}
+    },   
+    "NACE_Chapter": {
+      "type": "float",  
+      "desc": "European statistical classification of economic/business activities", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },   
+    "Salary_Source_Type": {
+      "type": "string",  
+      "desc": " Salary based on busniess success of the employer",
+      "form": {"2017": "Obtained from data on Salaries & codes; 01, 1a, 1b, 1g, 1v"}
+    },   
+    "Gender": {
+      "type": "string",  
+      "desc": "Either of the two sexes",
+      "form": {"2017": "Obtained from data on Salaries"}
+    },   
+    "Age": {
+      "type": "int",  
+      "desc": "Age of the tax filers",
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },   
+    "Calc": {
+      "type": "int",  
+      "desc": "dummy variable",
+      "form": {"2017": "Obtained from data on Salaries & codes"}    
+    },
+    "Salaries": { 
+      "type": "float",
+      "desc": "Effective Tax Base (DANOCNA_OSNOVA)",
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "Gross_income": {
+      "type": "float",
+      "desc": "Total Income base", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "Social_Security_Contributions": { 
+      "type": "float",
+      "desc": "ODBITOCI", 
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "K_Tax_Relief": {
+      "type": "float",
+      "desc": "OLESNUVANJE", 
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "PIT": {
+      "type": "float",
+      "desc": "PDD; personal Income Tax based on 10% tax rate",
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "Net_Income": {
+      "type": "float",
+      "desc": "Gross Income-SSC-PIT(based on 10% tax rate)",
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "ST_CG_AMT_2": {
+      "type": "float",
+      "desc": "115AD (STCG for FIIs on securities where STT not paid) @ 30% under current law",
+      "form": {"2017": "ITR-3 Part B-TI-4a-ii"}
+    },
+    "ST_CG_AMT_APPRATE": {
+      "type": "float",
+      "desc": "STCG at regular rates as per current law",
+      "form": {"2017": "ITR-3 Part B-TI-4a-iii"}
+    },
+    "LT_CG_AMT_1": {
+      "type": "float",
+      "desc": "LTCG at special rate 10% under current law",
+      "form": {"2017": "ITR-3 Part B-TI-4b-i"}
+    },
+    "LT_CG_AMT_2": {
+      "type": "float",
+      "desc": "LTCG at special rate 20% under current law",
+      "form": {"2017": "ITR-3 Part B-TI-4b-ii"}
+    },
+    "TOTAL_INCOME_OS": {
+      "type": "float",
+      "desc": "Income from Other Sources",
+      "form": {"2017": "ITR-3 Part B-TI-5d"}
+    },
+    "CYL_SET_OFF": {
+      "type": "float",
+      "desc": "Current Year Losses to be set off",
+      "form": {"2017": "ITR-3 Part B-TI 7"}
+    },
+    "BFL_SET_OFF_BALANCE": {
+      "type": "float",
+      "desc": "Brought Forward Losses to be set off",
+      "form": {"2017": "ITR-3 Part B-TI 9"}
+    },
+    "NET_AGRC_INCOME": {
+      "type": "float",
+      "desc": "Agricultural income used for rate purpose",
+      "form": {"2017": "ITR-3 Part B-TI 16"}
+    },
+    "TOTAL_DEDUC_VIA": {
+      "type": "float",
+      "desc": "Total itemized deductions",
+      "form": {"2017": "ITR-1 Part C-C1 and ITR-3 Part B-TI-13c"}
+    },
+    "TOTAL_DEDUC_10AA": {
+      "type": "float",
+      "desc": "Total deduction u/s 10AA",
+      "form": {"2017": "Column 11 of Part B-TI of ITR-6"}
+    },
+    "weight": {
+      "type": "float",
+      "desc": "Filing unit sampling weight",
+      "form": {"2017": "not used in filing unit tax calculations"}
+    },
+    "AGEGRP": {
+      "type": "int",
+      "desc": "Age group (0 ==> <60, 1 ==> 60-79, 2 ==> >=80)",
+      "form": {"2017": "ITR-1 didn't see this on the form"}
+    }
+  },
+  "calc": {
+    "Income_Salary": {
+      "type": "float",
+      "desc": "Computed Income from Salary",
+      "form": {"2017": "Obtained from data on Salaries & codes"}  
+    },
+    "OLESNUVANJE1": { 
+      "type": "float",
+      "desc": "Computed from Coefficent_tax_relief & K_Tax_Relief",
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "MINUS_DANOCNA_OSNOVA": {
+      "type": "float",
+      "desc": "Computed from the difference between OLESNUVANJE1 & OLESNUVANJE)", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "DANOCNA_OSNOVA_0": { 
+      "type": "float",
+      "desc": "Computed from the difference between DANOCNA_OSNOVA & MINUS_DANOCNA_OSNOVA", 
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "DANOCNA_OSNOVICA_1": {
+      "type": "float",
+      "desc": "Computed using DANOCNA_OSNOVA & Calc",  
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "PDD1": {
+      "type": "float",
+      "desc": "Computed using DANOCNA_OSNOVICA_1, PIT & Calc",
+      "form": {"2017": "ITR-3 Included in Part-B-TTI (2)(a)"}
+    },
+    "Total_Tax_STCG": {
+      "type": "float",
+      "desc": "Tax on all Short Term Capital Gains Tax_SHORT_TERM_RATE1 + Tax_SHORT_TERM_RATE2 + Tax_SHORT_TERM_APPRATE (Total_Tax_STCG)",
+      "form": {"2017": "Not in Form"}
+    },
+    "Tax_LT_CG_RATE1": {
+      "type": "float",
+      "desc": "Tax on Long Term Capital Gains at 10% under current law(Tax_LONG_TERM_RATE1)",
+      "form": {"2017": "ITR-3 Schedule SI sum of lines 3-9"}
+    },
+    "Tax_LT_CG_RATE2": {
+      "type": "float",
+      "desc": "Tax on Long Term Capital Gains at 20% under current law (Tax_LONG_TERM_RATE2)",
+      "form": {"2017": "ITR-3 Schedule SI line 10"}
+    },
+    "Total_Tax_LTCG": {
+      "type": "float",
+      "desc": "Tax on all Long Term Capital Gains Tax_LONG_TERM_RATE1 + Tax_LONG_TERM_RATE2 under current law(Total_Tax_LTCG)",
+      "form": {"2017": "Not in Form"}
+    },
+    "Total_Tax_Cap_Gains": {
+      "type": "float",
+      "desc": "Total Capital Gains Total_Tax_STCG + Total_Tax_LTCG (Total_Tax_Cap_Gains)",
+      "form": {"2017": "Not in Form"}
+    },
+    "CY_Losses": {
+      "type": "float",
+      "desc": "Computed Current Year Losses to be set off",
+      "form": {"2017": "ITR-3 Part B-TI line 7"}
+    },
+    "BF_Losses": {
+      "type": "float",
+      "desc": "Computed Brought Forward Losses to be set off",
+      "form": {"2017": "ITR-3 Part B-TI line 9"}
+    },
+    "GTI": {
+      "type": "float",
+      "desc": "Gross Total Income (GTI)",
+      "form": {"2017": "ITR-3 Part B-TI line 10"}
+    },
+    "TTI": {
+      "type": "float",
+      "desc": "Taxable Total Income (TTI)",
+      "form": {"2017": "ITR-3 Part B-TI line 14"}
+    },
+    "TI_special_rates": {
+      "type": "float",
+      "desc": "Taxable Total Income (TTI) taxed at special rates",
+      "form": {"2017": "ITR-3 Part B-TI line 15"}
+    },
+    "Aggregate_Income": {
+      "type": "float",
+      "desc": "Income taxed at normal rates TTI minus TI_special_rates",
+      "form": {"2017": "ITR-3 Part B-TI line 17"}
+    },
+    "Income_Rate_Purpose": {
+      "type": "float",
+      "desc": "Agricultural/any other Income used for rate purpose",
+      "form": {"2017": "ITR-3 Part B-TI 16"}
+    },
+    "deductions": {
+      "type": "float",
+      "desc": "Total itemized deductions",
+      "form": {"2017": "ITR-1 Part C-C1 and ITR-3 Part B-TI-13c"}
+    },
+    "deduction_10AA": {
+      "type": "float",
+      "desc": "Total deduction u/s 10AA",
+      "form": {"2017": "Part 11 of Part-B-TI of ITR 6"}
+    },
+    "tax_Aggregate_Income": {
+      "type": "float",
+      "desc": "Tax liability on Income taxed at normal rates",
+      "form": {"2017": "ITR-3 Part B TTI-2a"}
+    },
+    "tax_TI_special_rates": {
+      "type": "float",
+      "desc": "Tax liability on TI taxed at special rates",
+      "form": {"2017": "ITR-3 Part B TTI-2b"}
+    },
+    "rebate_agri": {
+      "type": "float",
+      "desc": "Rebate on agricultural income",
+      "form": {"2017": "ITR-3 Part B TTI-2c"}
+    },
+    "tax_TTI": {
+      "type": "float",
+      "desc": "Tax liability on TI which is tax_Aggregate_Income plus tax_TI_special_rates less agricultural rebate",
+      "form": {"2017": "ITR-3 Part B TTI-2d"}
+    },
+    "rebate": {
+      "type": "float",
+      "desc": "Rebate as non-refundable tax credit",
+      "form": {"2017": "ITR-3 Part B TTI-2e"}
+    },
+    "surcharge": {
+      "type": "float",
+      "desc": "Surcharge on income above surcharge_thd",
+      "form": {"2017": "ITR-3 Part B TTI-2giii"}
+    },
+    "cess": {
+      "type": "float",
+      "desc": "cess on tax and surcharge",
+      "form": {"2017": "ITR-3 Part B TTI-2giii"}
+    },
+    "pitax": {
+      "type": "float",
+      "desc": "PIT liability",
+      "form": {"2017": "ITR-1 line D11"}
+    }
+  }
+}
