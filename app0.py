@@ -46,13 +46,11 @@ assert calc1.current_year == 2017
 
 calc1.calc_all()
 
-dump_vars = ['FILING_SEQ_NO', 'AGEGRP', 'SALARIES', 'INCOME_HP',
-             'Income_BP', 'TOTAL_INCOME_OS', 'Aggregate_Income',
-             'TI_special_rates', 'tax_TI_special_rates', 'GTI', 'TTI', 'pitax']
+dump_vars = ['ID_No','Salaries', 'GTI', 'TTI', 'pitax']
 dumpdf = calc1.dataframe(dump_vars)
 column_order = dumpdf.columns
 
 assert len(dumpdf.index) == calc1.array_len
 
-dumpdf.to_csv('app0-dump.csv', columns=column_order,
+dumpdf.to_csv('app0-dump_macedonia.csv', columns=column_order,
               index=False, float_format='%.0f')

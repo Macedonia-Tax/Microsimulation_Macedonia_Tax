@@ -81,10 +81,10 @@ class CorpRecords(object):
     CITCSV_YEAR = 2017
 
     CUR_PATH = os.path.abspath(os.path.dirname(__file__))
-    CIT_DATA_FILENAME = 'cit_poland.csv'
-    CIT_WEIGHTS_FILENAME = 'cit_weights_poland.csv'
+    CIT_DATA_FILENAME = 'cit_macedonia.csv'
+    CIT_WEIGHTS_FILENAME = 'cit_weights_macedonia.csv'
     CIT_BLOWFACTORS_FILENAME = 'cit_panel_blowup.csv'
-    VAR_INFO_FILENAME = 'corprecords_variables_poland.json'
+    VAR_INFO_FILENAME = 'corprecords_variables_macedonia.json'
 
     def __init__(self,
                  data=CIT_DATA_FILENAME,
@@ -381,15 +381,11 @@ class CorpRecords(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        GF_REVENUE = self.gfactors.factor_value('REVENUE', year)
-        GF_EXPENDITURE = self.gfactors.factor_value('EXPENDITURE', year)   
-        GF_TAX_FREE_INCOME_TOTAL = self.gfactors.factor_value('TAX_FREE_INCOME_TOTAL', year)  
-        
+        GF_CIT_Income = self.gfactors.factor_value('CIT_Income', year)
+            
         #GF_DEDUCTIONS_FROM_TAX_BASE = self.gfactors.factor_value('deductions_from_tax_base', year)
-
-        self.revenue *= GF_REVENUE
-        self.expenditure *= GF_EXPENDITURE
-        self.tax_free_income_total *= GF_TAX_FREE_INCOME_TOTAL
+        
+        self.CIT_Income *= GF_CIT_Income
         #self.deductions_from_tax_base *= GF_DEDUCTIONS_FROM_TAX_BASE
 
     def _extract_panel_year(self):
