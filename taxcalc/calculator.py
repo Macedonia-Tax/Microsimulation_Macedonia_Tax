@@ -14,15 +14,9 @@ import re
 import copy
 import numpy as np
 import pandas as pd
-from taxcalc.functions import (net_salary_income, taxable_income,
-                               pit_liability)
-from taxcalc.corpfunctions import (corp_tax_free_income_total,
-                                   corp_deductions_from_income_total,
-                                   corp_expenditure,
-                                   is_small_business, corp_income,
-                                   corp_tax_base_before_deductions,
-                                   corp_tax_base_after_deductions,
-                                   cit_liability)
+from taxcalc.functions import (net_salary_income, gross_total_income , taxable_total_income, 
+                                         pit_liability)
+from taxcalc.corpfunctions import (cit_liability)
 from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
 from taxcalc.records import Records
@@ -167,21 +161,14 @@ class Calculator(object):
         self.__records.zero_out_changing_calculated_vars()
         # For now, don't zero out for corporate
         # pdb.set_trace()
-        # Corporate calculations
-        corp_tax_free_income_total(self.__policy, self.__corprecords)
-        corp_deductions_from_income_total(self.__policy, self.__corprecords)
-        corp_expenditure(self.__policy, self.__corprecords)
-        is_small_business(self.__policy, self.__corprecords)        
-        corp_income(self.__policy, self.__corprecords)
-        corp_tax_base_before_deductions(self.__policy, self.__corprecords)
-        corp_tax_base_after_deductions(self.__policy, self.__corprecords)        
+        # Corporate calculations     
         cit_liability(self.__policy, self.__corprecords)
         
-
         # Individual calculations
         net_salary_income(self.__policy, self.__records)
-        taxable_income(self.__policy, self.__records)
-        pit_liability(self.__policy, self.__records)
+        gross_total_income(self.__policy, self.__records)
+        taxable_total_income(self.__policy, self.__records)
+        pit_liability(self.__policy, self.__records) 
         # GST calculations
         # agg_consumption(self.__policy, self.__gstrecords)
         # gst_liability_cereal(self.__policy, self.__gstrecords)

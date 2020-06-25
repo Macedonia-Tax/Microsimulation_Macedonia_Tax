@@ -1,0 +1,148 @@
+{
+  "read": {
+    "ID_No": { 
+      "required": true, 
+      "type": "int",
+      "desc": "Unique positive numeric identifier for filing unit",
+      "form": {"2017": "Private Info"}
+    },
+    "AYEAR": {
+      "required": true,
+      "type": "int",
+      "desc": "Assessment Year", 
+      "form": {"2017": "private info"}
+    },   
+    "Legal_type": {  
+      "type": "string",   
+      "desc": "Earning of salary by type of employment/business",
+      "form": {"2017": "Obtained from data on Salaries & codes; PL-Legal person or SVD-independent performer of activity"}
+    },   
+    "NACE_Chapter": {
+      "type": "float",  
+      "desc": "European statistical classification of economic/business activities", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },   
+    "Salary_Source_Type": {
+      "type": "string",  
+      "desc": " Salary based on busniess success of the employer",
+      "form": {"2017": "Obtained from data on Salaries & codes; 01, 1a, 1b, 1g, 1v"}
+    },   
+    "Gender": {
+      "type": "string",  
+      "desc": "Either of the two sexes",
+      "form": {"2017": "Obtained from data on Salaries"} 
+    },   
+    "Age": {
+      "type": "int",  
+      "desc": "Age of the tax filers",
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },   
+    "Condition": {
+      "type": "int",  
+      "desc": "dummy variable",
+      "form": {"2017": "Obtained from data on Salaries & codes"}    
+    },
+    "Salaries": { 
+      "type": "float",
+      "desc": "Effective Tax Base (DANOCNA_OSNOVA)",
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "Gross_income": {
+      "type": "float",
+      "desc": "Total Income base", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "Social_Security_Contributions": { 
+      "type": "float",
+      "desc": "ODBITOCI", 
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "K_Tax_Relief": { 
+      "type": "float",
+      "desc": "OLESNUVANJE", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}  
+    },
+    "PIT": {
+      "type": "float",
+      "desc": "PDD; personal Income Tax based on 10% tax rate",
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "Net_Income": {
+      "type": "float",
+      "desc": "Gross Income-SSC-PIT(based on 10% tax rate)",
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "ST_CG_AMT_2": {
+      "type": "float",
+      "desc": "115AD (STCG for FIIs on securities where STT not paid) @ 30% under current law",
+      "form": {"2017": "ITR-3 Part B-TI-4a-ii"}
+    },
+    "ST_CG_AMT_APPRATE": {
+      "type": "float",
+      "desc": "STCG at regular rates as per current law",
+      "form": {"2017": "ITR-3 Part B-TI-4a-iii"}
+    },
+    "LT_CG_AMT_1": {
+      "type": "float",
+      "desc": "LTCG at special rate 10% under current law",
+      "form": {"2017": "ITR-3 Part B-TI-4b-i"}
+    },
+    "LT_CG_AMT_2": {
+      "type": "float",
+      "desc": "LTCG at special rate 20% under current law",
+      "form": {"2017": "ITR-3 Part B-TI-4b-ii"}
+    },
+    "TOTAL_INCOME_OS": {
+      "type": "float",
+      "desc": "Income from Other Sources",
+      "form": {"2017": "ITR-3 Part B-TI-5d"}
+    },
+    "BFL_SET_OFF_BALANCE": {
+      "type": "float",
+      "desc": "Brought Forward Losses to be set off",
+      "form": {"2017": "ITR-3 Part B-TI 9"}
+    },
+    "NET_AGRC_INCOME": {
+      "type": "float",
+      "desc": "Agricultural income used for rate purpose",
+      "form": {"2017": "ITR-3 Part B-TI 16"}
+    },
+    "TOTAL_DEDUC_VIA": {
+      "type": "float",
+      "desc": "Total itemized deductions",
+      "form": {"2017": "ITR-1 Part C-C1 and ITR-3 Part B-TI-13c"}
+    },
+    "TOTAL_DEDUC_10AA": {
+      "type": "float",
+      "desc": "Total deduction u/s 10AA",
+      "form": {"2017": "Column 11 of Part B-TI of ITR-6"}
+    },
+    "weight": {
+      "type": "float",
+      "desc": "Filing unit sampling weight",
+      "form": {"2017": "not used in filing unit tax calculations"}
+    }
+  },
+  "calc": {
+    "Income_Salary": {
+      "type": "float",
+      "desc": "Computed Income from Salaries (DANOCNA_OSNOVA)",
+      "form": {"2017": "Obtained from data on Salaries & codes"}  
+    },
+    "GTI": {
+      "type": "float",
+      "desc": "Gross Total Income (GTI)",
+      "form": {"2017": "IObtained from data on Salaries & codes"}
+    },
+    "TTI": {
+      "type": "float",
+      "desc": "Taxable Total Income (TTI)",
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    },
+    "pitax": {
+      "type": "float",
+      "desc": "PIT liability",
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    }
+  }
+}
