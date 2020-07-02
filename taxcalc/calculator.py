@@ -14,8 +14,8 @@ import re
 import copy
 import numpy as np
 import pandas as pd
-from taxcalc.functions import (net_salary_income, gross_total_income , taxable_total_income, 
-                                         pit_liability)
+from taxcalc.functions import (cal_OLESNUVANJE1, cal_MINUS_DANOCNA_OSNOVA,net_salary_income, 
+                               gross_total_income, taxable_total_income, pit_liability, gini_coefficient)
 from taxcalc.corpfunctions import (cit_liability)
 from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
@@ -165,10 +165,13 @@ class Calculator(object):
         cit_liability(self.__policy, self.__corprecords)
         
         # Individual calculations
+        cal_OLESNUVANJE1(self.__policy, self.__records)
+        cal_MINUS_DANOCNA_OSNOVA(self.__policy, self.__records)
         net_salary_income(self.__policy, self.__records)
         gross_total_income(self.__policy, self.__records)
         taxable_total_income(self.__policy, self.__records)
-        pit_liability(self.__policy, self.__records) 
+        pit_liability(self.__policy, self.__records)
+        gini_coefficient(self.__policy, self.__records)
         # GST calculations
         # agg_consumption(self.__policy, self.__gstrecords)
         # gst_liability_cereal(self.__policy, self.__gstrecords)
