@@ -1,5 +1,5 @@
 {
-  "read": {
+  "read": { 
     "ID_No": { 
       "required": true, 
       "type": "int",
@@ -12,7 +12,7 @@
       "desc": "Assessment Year", 
       "form": {"2017": "private info"}
     },   
-    "Legal_type": {  
+    "P_Legal": {  
       "type": "string",   
       "desc": "Earning of salary by type of employment/business",
       "form": {"2017": "Obtained from data on Salaries & codes; PL-Legal person or SVD-independent performer of activity"}
@@ -127,12 +127,22 @@
     "Income_Salary": {
       "type": "float",
       "desc": "Computed Income from Salaries (DANOCNA_OSNOVA)",
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "OLESNUVANJE1": {
+      "type": "float",
+      "desc": "K_Tax_Relief*1.072961373390", 
+      "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "MINUS_DANOCNA_OSNOVA": {
+      "type": "float",
+      "desc": "OLESNUVANJE1 - K_Tax_Relief", 
       "form": {"2017": "Obtained from data on Salaries & codes"}  
     },
     "GTI": {
       "type": "float",
       "desc": "Gross Total Income (GTI)",
-      "form": {"2017": "IObtained from data on Salaries & codes"}
+      "form": {"2017": "Obtained from data on Salaries & codes"}
     },
     "TTI": {
       "type": "float",
@@ -143,6 +153,11 @@
       "type": "float",
       "desc": "PIT liability",
       "form": {"2017": "Obtained from data on Salaries & codes"}
+    },
+    "post_tax_income": {
+      "type": "float",
+      "desc": "Income - PIT",  
+      "form": {"2017": "Obtained from data on Salaries & codes"} 
     }
   }
 }

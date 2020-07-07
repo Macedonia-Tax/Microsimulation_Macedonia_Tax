@@ -46,19 +46,27 @@ print(f'Tax 1 {weighted_tax1 * 1e-6:,.2f}')
 print(f'Tax 2 {weighted_tax2 * 1e-6:,.2f}')
 print(f'Total weight {total_weights * 1e-6:,.2f}')
 
-# Show results from corporate tax
-print(calc1.carray('NET_TAX_LIABILTY'))
-print(calc2.carray('NET_TAX_LIABILITY_A'))
-
-# dump out records
-dump_vars = ['ID_No','Salaries', 'GTI', 'TTI', 'pitax']
+dump_vars = ['ID_No','Salaries','GTI','TTI', 'pitax','post_tax_income']
 dumpdf = calc1.dataframe(dump_vars)
-dumpdf['pitax1'] = calc1.array('pitax')
-dumpdf['pitax2'] = calc2.array('pitax')
-dumpdf['pitax_diff'] = dumpdf['pitax2'] - dumpdf['pitax1']
-column_order = dumpdf.columns
-
-assert len(dumpdf.index) == calc1.array_len
-
-dumpdf.to_csv('app1-dump.csv', columns=column_order,
+dumpdf= dumpdf.sort_values(by=['Salaries'])
+dumpdf.to_csv('app0-dump_macedonia.csv',
               index=False, float_format='%.0f')
+
+
+gini_pre_tax = calc1.gini(['GTI'])
+print(gini_pre_tax)
+
+gini_post_tax = calc1.gini(['post_tax_income'])
+print(gini_post_tax)
+
+gini_post_tax_reform = calc2.gini(['post_tax_income'])
+print(gini_post_tax_reform)
+
+
+
+
+
+
+
+
+

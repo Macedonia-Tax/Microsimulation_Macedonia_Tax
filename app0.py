@@ -46,7 +46,7 @@ assert calc1.current_year == 2017
 
 calc1.calc_all()
 
-dump_vars = ['ID_No','Salaries', 'GTI', 'TTI', 'pitax']
+dump_vars = ['ID_No','Salaries','GTI','TTI', 'pitax']
 dumpdf = calc1.dataframe(dump_vars)
 column_order = dumpdf.columns
 

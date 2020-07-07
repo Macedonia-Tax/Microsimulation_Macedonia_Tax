@@ -14,8 +14,9 @@ import re
 import copy
 import numpy as np
 import pandas as pd
-from taxcalc.functions import (net_salary_income, gross_total_income , taxable_total_income, 
-                                         pit_liability)
+from taxcalc.functions import (cal_OLESNUVANJE1, cal_MINUS_DANOCNA_OSNOVA,net_salary_income, 
+                               gross_total_income, taxable_total_income, pit_liability,
+                               cal_post_tax_income)
 from taxcalc.corpfunctions import (cit_liability)
 from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
@@ -165,10 +166,13 @@ class Calculator(object):
         cit_liability(self.__policy, self.__corprecords)
         
         # Individual calculations
+        cal_OLESNUVANJE1(self.__policy, self.__records)
+        cal_MINUS_DANOCNA_OSNOVA(self.__policy, self.__records)
         net_salary_income(self.__policy, self.__records)
         gross_total_income(self.__policy, self.__records)
         taxable_total_income(self.__policy, self.__records)
-        pit_liability(self.__policy, self.__records) 
+        pit_liability(self.__policy, self.__records)
+        cal_post_tax_income(self.__policy, self.__records)
         # GST calculations
         # agg_consumption(self.__policy, self.__gstrecords)
         # gst_liability_cereal(self.__policy, self.__gstrecords)
@@ -223,6 +227,62 @@ class Calculator(object):
         pdf = pd.DataFrame(data=np.column_stack(arys), columns=variable_list)
         del arys
         return pdf
+    
+    def gini(self, variable):
+        """
+        Return pandas DataFrame containing the listed variables from embedded
+        Records object.
+        """
+        assert isinstance(variable, list)
+        variable = variable + ['weight']
+        arys = [self.array(vname) for vname in variable]
+        #print(arys)
+        pdf = pd.DataFrame(data=np.column_stack(arys), columns=variable)
+        del arys
+        gini = pdf
+        gini= gini.sort_values(by=variable)
+        #gini['weight'] = 100
+        gini['cumulative_weight']=np.cumsum(gini['weight'])
+        sum_weight = (gini['weight']).sum()
+        gini['percentage_cumul_pop'] = gini['cumulative_weight']/sum_weight
+        gini['total_income'] = gini['weight']*gini[variable[0]]
+        gini['cumulative_total_income']= np.cumsum(gini['total_income'])
+        sum_total_income = sum(gini['total_income'])
+        gini['percentage_cumul_income'] = gini['cumulative_total_income']/sum_total_income
+        gini['height'] = gini['percentage_cumul_pop']-gini['percentage_cumul_income']
+        gini['lag_percentage_cumul_pop']= gini['percentage_cumul_pop'].shift(1)
+        gini['lag_percentage_cumul_income']= gini['percentage_cumul_income'].shift(1)
+        gini['lag_height']= gini['height'].shift(1)
+        gini['lag_percentage_cumul_pop']= gini['lag_percentage_cumul_pop'].fillna(0)
+        gini['lag_percentage_cumul_income']= gini['lag_percentage_cumul_income'].fillna(0)
+        gini['lag_height']= gini['lag_height'].fillna(0)
+        gini['base'] = gini.lag_percentage_cumul_pop.diff()
+        gini['base']= gini['base'].fillna(0)
+        gini['integrate_area']= 0.5*gini['base']*(gini['height']+gini['height'].shift())
+        sum_integrate_area = gini['integrate_area'].sum()
+        gini_index = 2*(sum_integrate_area)
+        
+        #ploting gini coefficient
+        import matplotlib.pyplot as plt
+        
+        n = 430
+        w = np.exp(np.random.randn(n))
+        
+        f_vals = gini['lag_percentage_cumul_pop']
+        f_vals = f_vals.append(pd.Series([1.0]))
+        #print(f_vals)
+        l_vals = gini['lag_percentage_cumul_income']
+        l_vals = l_vals.append(pd.Series([1.0]))
+        #print(l_vals)
+        
+        fig, ax = plt.subplots()
+        ax.plot(f_vals, l_vals, label='Lorenz curve, lognormal sample')
+        ax.plot(f_vals, f_vals, label='Line of Equality, 45 degrees')
+        ax.legend()
+        plt.show()
+        return gini_index
+    
+    
     
     def distribution_table_dataframe(self):
         """

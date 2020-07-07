@@ -10,9 +10,19 @@ import copy
 import numpy as np
 from taxcalc.decorators import iterate_jit
 
+@iterate_jit(nopython=True)
+def cal_OLESNUVANJE1(K_Tax_Relief,OLESNUVANJE1):
+    OLESNUVANJE1 = K_Tax_Relief*1.072961373390
+    return(OLESNUVANJE1)
+    
+@iterate_jit(nopython=True)
+def cal_MINUS_DANOCNA_OSNOVA(OLESNUVANJE1, K_Tax_Relief, MINUS_DANOCNA_OSNOVA):
+    MINUS_DANOCNA_OSNOVA = OLESNUVANJE1 - K_Tax_Relief
+    return(MINUS_DANOCNA_OSNOVA)
+    
 
 @iterate_jit(nopython=True)
-def net_salary_income(Salaries, K_Tax_Relief, Income_Salary):
+def net_salary_income(Salaries, MINUS_DANOCNA_OSNOVA, Income_Salary):
     """
     Compute net salary as gross salary minus deductions u/s 16.
     """
@@ -27,9 +37,6 @@ def net_salary_income(Salaries, K_Tax_Relief, Income_Salary):
     intruduced only from AY 2019 onwards, "std_deduction" is set as 30000 for
     AY 2017 and of 2018 thus resulting in no change for those years.
     """
-    
-    OLESNUVANJE1 = K_Tax_Relief*1.072961373390
-    MINUS_DANOCNA_OSNOVA = OLESNUVANJE1 - K_Tax_Relief
     if (Salaries == 0):
         DANOCNA_OSNOVA_0 = 0
     else:    
@@ -71,9 +78,15 @@ def pit_liability(rate1, rate2, tbrk1, TTI, pitax):
     return (pitax)
 
 
-
-
-   
+@iterate_jit(nopython=True)
+def cal_post_tax_income(GTI,pitax,post_tax_income):
+    """
+    Calculating post tax income
+    """
+    post_tax_income = GTI-pitax
+    return(post_tax_income)
+    
+    
 
 
 
