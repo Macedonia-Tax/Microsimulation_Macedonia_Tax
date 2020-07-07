@@ -154,9 +154,9 @@
       "desc": "PIT liability",
       "form": {"2017": "Obtained from data on Salaries & codes"}
     },
-    "gini_index": {
+    "post_tax_income": {
       "type": "float",
-      "desc": "Gini_index",
+      "desc": "Income - PIT",  
       "form": {"2017": "Obtained from data on Salaries & codes"} 
     }
   }

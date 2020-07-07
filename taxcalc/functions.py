@@ -78,55 +78,13 @@ def pit_liability(rate1, rate2, tbrk1, TTI, pitax):
     return (pitax)
 
 
-import pandas as pd
-data = pd.read_csv (r'C:\Users\wb544155\OneDrive - WBG\Documents\GitHub\Microsimulation_Macedonia_Tax\calc_gini.csv')
-print (data)
-gini = pd.DataFrame(data, columns= ['id','Salaries'])
-
 @iterate_jit(nopython=True)
-def gini_coefficient(gini):
-    
-        """
-    Compute gini-index
-      
-    """ 
-    gini['weight'] = 100
-    gini['cumulative_weight']=np.cumsum(gini['weight'])
-    sum_weight = (gini['weight']).sum()
-    gini['percentage_cumul_pop'] = gini['cumulative_weight']/sum_weight
-    gini['total_income'] = gini['weight']*gini['Salaries']
-    gini['cumulative_total_income']= np.cumsum(gini['total_income'])
-    sum_total_income = sum(gini['total_income'])
-    gini['percentage_cumul_income'] = gini['cumulative_total_income']/sum_total_income
-    gini['height'] = gini['percentage_cumul_pop']-gini['percentage_cumul_income']
-    gini['lag_percentage_cumul_pop']= gini['percentage_cumul_pop'].shift(1)
-    gini['lag_percentage_cumul_income']= gini['percentage_cumul_income'].shift(1)
-    gini['lag_height']= gini['height'].shift(1)
-    gini['lag_percentage_cumul_pop']= gini['lag_percentage_cumul_pop'].fillna(0)
-    gini['lag_percentage_cumul_income']= gini['lag_percentage_cumul_income'].fillna(0)
-    gini['lag_height']= gini['lag_height'].fillna(0)
-    gini['base'] = gini.lag_percentage_cumul_pop.diff()
-    gini['base']= gini['base'].fillna(0)
-    gini['integrate_area']= 0.5*gini['base']*(gini['height']+gini['height'].shift())
-    sum_integrate_area = gini['integrate_area'].sum()
-    gini_index = 2*(sum_integrate_area)
-    return(gini_index)
-    
-    
-    
-    
-   
-    
-
-
-
-
- #to create a lag variable
-#df['lagprice'] = df['price'].shift(1)
-#For a single column using pandas: 
-#df['DataFrame Column'] = df['DataFrame Column'].fillna(0)
-#For a single column using numpy:
-#df['DataFrame Column'] = df['DataFrame Column'].replace(np.nan, 0)   
+def cal_post_tax_income(GTI,pitax,post_tax_income):
+    """
+    Calculating post tax income
+    """
+    post_tax_income = GTI-pitax
+    return(post_tax_income)
     
     
 
