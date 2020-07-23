@@ -26,7 +26,7 @@ pol.implement_reform(reform['policy'])
 calc2 = Calculator(policy=pol, records=recs, gstrecords=grecs,
                    corprecords=crecs, verbose=False)
 
-<<<<<<< HEAD
+
 # compare aggregate results from two calculators
 weighted_tax1 = calc1.weighted_total('pitax')
 weighted_tax2 = calc2.weighted_total('pitax')
