@@ -250,13 +250,12 @@ class Calculator(object):
         sum_total_income = sum(gini['total_income'])
         gini['percentage_cumul_income'] = gini['cumulative_total_income']/sum_total_income
         gini['height'] = gini['percentage_cumul_pop']-gini['percentage_cumul_income']
-        gini['lag_percentage_cumul_pop']= gini['percentage_cumul_pop'].shift(1)
-        gini['lag_percentage_cumul_income']= gini['percentage_cumul_income'].shift(1)
-        gini['lag_height']= gini['height'].shift(1)
-        gini['lag_percentage_cumul_pop']= gini['lag_percentage_cumul_pop'].fillna(0)
-        gini['lag_percentage_cumul_income']= gini['lag_percentage_cumul_income'].fillna(0)
-        gini['lag_height']= gini['lag_height'].fillna(0)
-        gini['base'] = gini.lag_percentage_cumul_pop.diff()
+        gini1 = pd.DataFrame([[np.nan]*len(gini.columns)], columns=gini.columns)
+        gini = gini1.append(gini, ignore_index=True)
+        gini['percentage_cumul_pop']= gini['percentage_cumul_pop'].fillna(0)
+        gini['percentage_cumul_income']= gini['percentage_cumul_income'].fillna(0)
+        gini['height']= gini['height'].fillna(0)
+        gini['base'] = gini.percentage_cumul_pop.diff()
         gini['base']= gini['base'].fillna(0)
         gini['integrate_area']= 0.5*gini['base']*(gini['height']+gini['height'].shift())
         sum_integrate_area = gini['integrate_area'].sum()
@@ -268,11 +267,11 @@ class Calculator(object):
         n = 430
         w = np.exp(np.random.randn(n))
         
-        f_vals = gini['lag_percentage_cumul_pop']
-        f_vals = f_vals.append(pd.Series([1.0]))
+        f_vals = gini['percentage_cumul_pop']
+        #f_vals = f_vals.append(pd.Series([1.0]))
         #print(f_vals)
-        l_vals = gini['lag_percentage_cumul_income']
-        l_vals = l_vals.append(pd.Series([1.0]))
+        l_vals = gini['percentage_cumul_income']
+        #l_vals = l_vals.append(pd.Series([1.0]))
         #print(l_vals)
         
         fig, ax = plt.subplots()
