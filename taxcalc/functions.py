@@ -10,19 +10,10 @@ import copy
 import numpy as np
 from taxcalc.decorators import iterate_jit
 
-@iterate_jit(nopython=True)
-def cal_OLESNUVANJE1(K_Tax_Relief,OLESNUVANJE1):
-    OLESNUVANJE1 = K_Tax_Relief*1.072961373390
-    return(OLESNUVANJE1)
-    
-@iterate_jit(nopython=True)
-def cal_MINUS_DANOCNA_OSNOVA(OLESNUVANJE1, K_Tax_Relief, MINUS_DANOCNA_OSNOVA):
-    MINUS_DANOCNA_OSNOVA = OLESNUVANJE1 - K_Tax_Relief
-    return(MINUS_DANOCNA_OSNOVA)
-    
 
+   
 @iterate_jit(nopython=True)
-def net_salary_income(Salaries, MINUS_DANOCNA_OSNOVA, Income_Salary):
+def net_salary_income(Salaries, Income_Salary):
     """
     Compute net salary as gross salary minus deductions u/s 16.
     """
@@ -37,11 +28,8 @@ def net_salary_income(Salaries, MINUS_DANOCNA_OSNOVA, Income_Salary):
     intruduced only from AY 2019 onwards, "std_deduction" is set as 30000 for
     AY 2017 and of 2018 thus resulting in no change for those years.
     """
-    if (Salaries == 0):
-        DANOCNA_OSNOVA_0 = 0
-    else:    
-        DANOCNA_OSNOVA_0 = Salaries-MINUS_DANOCNA_OSNOVA
-    Income_Salary = DANOCNA_OSNOVA_0 
+
+    Income_Salary = Salaries
     return Income_Salary
   
 @iterate_jit(nopython=True)
