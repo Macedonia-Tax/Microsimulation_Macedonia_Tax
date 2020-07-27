@@ -45,6 +45,11 @@ assert isinstance(calc1, Calculator)
 assert calc1.current_year == 2017
 
 calc1.calc_all()
+# compare aggregate results from two calculators
+weighted_tax1 = calc1.weighted_total('pitax')
+total_weights = calc1.total_weight()
+print(f'Tax under current law {weighted_tax1 * 1e-6:,.2f} millions')
+print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 
 dump_vars = ['ID_No','Salaries','GTI','TTI', 'pitax']
 dumpdf = calc1.dataframe(dump_vars)

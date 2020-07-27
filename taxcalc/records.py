@@ -217,7 +217,7 @@ class Records(object):
         # pylint: disable=too-many-locals,too-many-statements
         GF_SALARIES = self.gfactors.factor_value('SALARIES', year)
 
-        self.SALARIES *= GF_SALARIES
+        self.Salaries *= GF_SALARIES
 
 
 
