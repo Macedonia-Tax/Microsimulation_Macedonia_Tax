@@ -41,10 +41,13 @@ calc2.calc_all()
 # compare aggregate results from two calculators
 weighted_tax1 = calc1.weighted_total('pitax')
 weighted_tax2 = calc2.weighted_total('pitax')
+weighted_tax_diff = weighted_tax2 - weighted_tax1
 total_weights = calc1.total_weight()
 print(f'Tax under current law {weighted_tax1 * 1e-6:,.2f} millions')
 print(f'Tax under reform {weighted_tax2 * 1e-6:,.2f} millions')
+print(f'Tax difference {weighted_tax_diff * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
+
 
 dump_vars = ['ID_No','Salaries','GTI','TTI', 'pitax','post_tax_income']
 dumpdf = calc1.dataframe(dump_vars)
@@ -63,7 +66,19 @@ gini_post_tax_reform = calc2.gini(['post_tax_income'])
 print(gini_post_tax_reform)
 
 
-
+"""
+import matplotlib as plt
+output_categories = 'Gross_income'
+dt1, dt2 = calc1.distribution_tables(calc2, output_categories, averages = True, scaling = True)
+dt1 = dt1.fillna(0)
+print(dt1)
+dt2['pitax_diff'] = dt2['pitax'] - dt1['pitax']
+dt2['etr'] = (dt2['pitax']/dt2['GTI'])*100
+dt2 = dt2.fillna(0)    
+print(dt2)
+dt2[['pitax', 'pitax_diff']].plot.bar()
+plt.show()
+"""
 
 
 

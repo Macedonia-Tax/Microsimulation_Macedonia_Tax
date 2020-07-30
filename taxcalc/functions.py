@@ -13,7 +13,28 @@ from taxcalc.decorators import iterate_jit
 
    
 @iterate_jit(nopython=True)
-def net_salary_income(Salaries, Income_Salary):
+def cal_ssc(ssc_rate, Gross_income, Social_Security_Contributions):
+    """
+    Compute ssc as gross salary minus deductions u/s 16.
+    """
+    # TODO: when gross salary and deductions are avaiable, do the calculation
+    # TODO: when using net_salary as function argument, no calculations neeed
+    """
+    The deductions (transport and medical) that are being done away with while
+    intrducing Standard Deduction is not captured in the schedule also. Thus,
+    the two deductions combined (crude estimate gives a figure of 30000) is
+    added to "SALARIES" and then "std_deduction" (introduced as a policy
+    variable) is deducted to get "Income_Salary". Standard Deduction is being
+    intruduced only from AY 2019 onwards, "std_deduction" is set as 30000 for
+    AY 2017 and of 2018 thus resulting in no change for those years.
+    """
+
+    Social_Security_Contributions = ssc_rate*Gross_income
+    return Social_Security_Contributions
+
+@iterate_jit(nopython=True)
+def net_salary_income(Gross_income, Social_Security_Contributions, K_Tax_Relief,
+                      Income_Salary):
     """
     Compute net salary as gross salary minus deductions u/s 16.
     """
@@ -29,7 +50,7 @@ def net_salary_income(Salaries, Income_Salary):
     AY 2017 and of 2018 thus resulting in no change for those years.
     """
 
-    Income_Salary = Salaries
+    Income_Salary = Gross_income-Social_Security_Contributions-K_Tax_Relief
     return Income_Salary
   
 @iterate_jit(nopython=True)

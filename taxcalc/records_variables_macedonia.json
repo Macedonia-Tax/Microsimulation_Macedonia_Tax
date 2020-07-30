@@ -52,11 +52,6 @@
       "desc": "Total Income base", 
       "form": {"2017": "Obtained from data on Salaries & codes"}
     },
-    "Social_Security_Contributions": { 
-      "type": "float",
-      "desc": "ODBITOCI", 
-      "form": {"2017": "Obtained from data on Salaries & codes"} 
-    },
     "K_Tax_Relief": { 
       "type": "float",
       "desc": "OLESNUVANJE", 
@@ -128,6 +123,11 @@
       "type": "float",
       "desc": "Computed Income from Salaries (DANOCNA_OSNOVA)",
       "form": {"2017": "Obtained from data on Salaries & codes"}
+   },
+    "Social_Security_Contributions": { 
+      "type": "float",
+      "desc": "ODBITOCI", 
+      "form": {"2017": "Computed from Gross Income(% of it)"}  
     },
     "OLESNUVANJE1": {
       "type": "float",

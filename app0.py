@@ -50,8 +50,13 @@ weighted_tax1 = calc1.weighted_total('pitax')
 total_weights = calc1.total_weight()
 print(f'Tax under current law {weighted_tax1 * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
+weighted_ssc = calc1.weighted_total('Social_Security_Contributions')
+total_weights = calc1.total_weight()
+print(f'SSC under current law {weighted_tax1 * 1e-6:,.2f} millions')
+print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 
-dump_vars = ['ID_No','Salaries','GTI','TTI', 'pitax']
+
+dump_vars = ['ID_No','Salaries','GTI','TTI', 'Social_Security_Contributions', 'pitax']
 dumpdf = calc1.dataframe(dump_vars)
 column_order = dumpdf.columns
 
