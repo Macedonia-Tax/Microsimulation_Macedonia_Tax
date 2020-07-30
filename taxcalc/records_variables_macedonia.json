@@ -52,7 +52,7 @@
       "desc": "Total Income base", 
       "form": {"2017": "Obtained from data on Salaries & codes"}
     },
-    "K_Tax_Relief": { 
+    "Tax_Relief": { 
       "type": "float",
       "desc": "OLESNUVANJE", 
       "form": {"2017": "Obtained from data on Salaries & codes"}  
