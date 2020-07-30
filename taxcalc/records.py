@@ -215,9 +215,9 @@ class Records(object):
         Apply to READ (not CALC) variables the grow factors for specified year.
         """
         # pylint: disable=too-many-locals,too-many-statements
-        GF_SALARIES = self.gfactors.factor_value('SALARIES', year)
+        GF_GROSS_INCOME = self.gfactors.factor_value('GROSS_INCOME', year)
 
-        self.Salaries *= GF_SALARIES
+        self.Gross_income *= GF_GROSS_INCOME
 
 
 
