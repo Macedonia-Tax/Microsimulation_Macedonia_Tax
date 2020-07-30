@@ -33,7 +33,7 @@ def cal_ssc(ssc_rate, Gross_income, Social_Security_Contributions):
     return Social_Security_Contributions
 
 @iterate_jit(nopython=True)
-def net_salary_income(Gross_income, Social_Security_Contributions, K_Tax_Relief,
+def net_salary_income(Gross_income, Social_Security_Contributions, Tax_Relief,
                       Income_Salary):
     """
     Compute net salary as gross salary minus deductions u/s 16.
@@ -50,7 +50,7 @@ def net_salary_income(Gross_income, Social_Security_Contributions, K_Tax_Relief,
     AY 2017 and of 2018 thus resulting in no change for those years.
     """
 
-    Income_Salary = Gross_income-Social_Security_Contributions-K_Tax_Relief
+    Income_Salary = Gross_income-Social_Security_Contributions-Tax_Relief
     return Income_Salary
   
 @iterate_jit(nopython=True)

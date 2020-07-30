@@ -78,7 +78,7 @@ class Records(object):
     PITCSV_YEAR = 2017
 
     CUR_PATH = os.path.abspath(os.path.dirname(__file__))
-    PIT_DATA_FILENAME = 'pit_macedonia.csv'
+    PIT_DATA_FILENAME = 'macedonia_merged_data.csv'
     PIT_WEIGHTS_FILENAME = 'pit_weights_macedonia.csv'
     VAR_INFO_FILENAME = 'records_variables_macedonia.json'
 
