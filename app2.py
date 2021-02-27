@@ -27,13 +27,13 @@ calc2 = Calculator(policy=pol, records=recs, gstrecords=grecs,
                    corprecords=crecs, verbose=False)
 
 # Loop through years 2017, 2018 and 2019 and print out pitax
-for year in range(2017,2024):
+for year in range(2019,2024):
     calc1.advance_to_year(year)
     calc2.advance_to_year(year)
     calc1.calc_all()
     calc2.calc_all()
-    weighted_tax1 = calc1.weighted_total('pitax')
-    weighted_tax2 = calc2.weighted_total('pitax')
+    weighted_tax1 = calc1.weighted_total('total_pit')
+    weighted_tax2 = calc2.weighted_total('total_pit')
     total_weights = calc1.total_weight()
 
     print(f'Tax under current law for {year}: {weighted_tax1 * 1e-9:,.2f} billions')
