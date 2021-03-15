@@ -52,7 +52,7 @@ print(f'Tax under current law {weighted_tax1 * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 weighted_ssc = calc1.weighted_total('ssc_w')
 total_weights = calc1.total_weight()
-print(f'SSC under current law {weighted_tax1 * 1e-6:,.2f} millions')
+print(f'SSC under current law {weighted_ssc * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 
 

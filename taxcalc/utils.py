@@ -22,7 +22,7 @@ from taxcalc.utilsprvt import (weighted_count_lt_zero,
 # DIST_TABLE_LABELS list below; this correspondence allows us to use this
 # labels list to map a label to the correct column in a distribution table.
 
-DIST_VARIABLES = ['weight', 'GTI', 'TTI', 'pitax']
+DIST_VARIABLES = ['weight', 'total_gross_income', 'total_taxable_income', 'total_pit']
 
 DIST_TABLE_COLUMNS = DIST_VARIABLES
 
@@ -45,12 +45,13 @@ DECILE_ROW_NAMES = ['0-10n', '0-10z', '0-10p',
                     'ALL',
                     '90-95', '95-99', 'Top 1%']
 
-STANDARD_ROW_NAMES = ['<0', '=0', '0-200000', '200000-400000', '400000-600000',
-                      '600000-800000', '800000-1000000', '1000000-1200000', '1200000-1400000',
-                      '1400000-1600000', '>1600000', 'ALL']
 
-STANDARD_INCOME_BINS = [-9e99, -1e-9, 1e-9, 2e5, 4e5, 6e5, 8e5, 10e5,
-                        12e5, 14e5, 16e5, 9e99]
+STANDARD_ROW_NAMES = ['<0', '=0', '0-80000', '80000-160000', '160000-240000',
+                      '240000-320000', '320000-400000', '400000-4800000', '480000-560000',
+                      '560000-640000', '>640000', 'ALL']
+
+STANDARD_INCOME_BINS = [-9e99, -1e-9, 1e-9, 8e4, 16e4, 24e4, 32e4, 4e5,
+                        48e5, 56e4, 64e4, 9e99]
 
 
 def unweighted_sum(pdf, col_name):
@@ -228,7 +229,7 @@ def create_distribution_table(vdf, groupby, income_measure,
     assert isinstance(vdf, pd.DataFrame)
     assert (groupby == 'weighted_deciles' or
             groupby == 'standard_income_bins')
-    assert (income_measure == 'GTI' or
+    assert (income_measure == 'total_gross_income' or
             income_measure == 'GTI_baseline')
     assert income_measure in vdf
     assert 'table_row' not in list(vdf.columns.values)

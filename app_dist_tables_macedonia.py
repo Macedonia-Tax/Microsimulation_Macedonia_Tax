@@ -13,15 +13,15 @@ recs = Records()
 grecs = GSTRecords()
 
 assert isinstance(grecs, GSTRecords)
-assert grecs.data_year == 2017
-assert grecs.current_year == 2017
+assert grecs.data_year == 2019
+assert grecs.current_year == 2019
 
 # create CorpRecords object containing cit.csv and cit_weights.csv input data
 crecs = CorpRecords()
 
 assert isinstance(crecs, CorpRecords)
-assert crecs.data_year == 2017
-assert crecs.current_year == 2017
+assert crecs.data_year == 2019
+assert crecs.current_year == 2019
 
 # create Policy object containing current-law policy
 pol = Policy()
@@ -39,8 +39,8 @@ calc2 = Calculator(policy=pol, records=recs, gstrecords=grecs,
 calc2.calc_all()
 
 # compare aggregate results from two calculators
-weighted_tax1 = calc1.weighted_total('pitax')
-weighted_tax2 = calc2.weighted_total('pitax')
+weighted_tax1 = calc1.weighted_total('total_pit')
+weighted_tax2 = calc2.weighted_total('total_pit')
 weighted_tax_diff = weighted_tax2 - weighted_tax1
 total_weights = calc1.total_weight()
 print(f'Tax under current law {weighted_tax1 * 1e-6:,.2f} millions')
@@ -48,7 +48,7 @@ print(f'Tax under reform {weighted_tax2 * 1e-6:,.2f} millions')
 print(f'Tax difference {weighted_tax_diff * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 
-dump_vars = ['ID_No','Salaries','GTI','TTI', 'Social_Security_Contributions', 'pitax']
+dump_vars = ['id_n','total_gross_income','total_taxable_income', 'ssc_w', 'total_pit']
 dumpdf = calc1.dataframe(dump_vars)
 column_order = dumpdf.columns
 
@@ -64,7 +64,7 @@ dt1, dt2 = calc1.distribution_tables(calc2, output_categories,
                                      averages=output_in_averages,
                                      scaling=True)
 
-dt2['pitax_diff'] = dt2['pitax'] - dt1['pitax']
+dt2['pitax_diff'] = dt2['total_pit'] - dt1['total_pit']
 
 dt1 = dt1.fillna(0)
 dt2 = dt2.fillna(0)
