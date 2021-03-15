@@ -217,7 +217,15 @@ class Records(object):
         # pylint: disable=too-many-locals,too-many-statements
         GF_GROSS_INCOME = self.gfactors.factor_value('GROSS_INCOME', year)
 
-        self.total_gross_income *= GF_GROSS_INCOME
+        self.gross_i_w *= GF_GROSS_INCOME
+        self.ssc_w *= GF_GROSS_INCOME
+        self.personal_allowance_w *= GF_GROSS_INCOME
+        self.gross_i_I *= GF_GROSS_INCOME
+        self.gross_i_c *= GF_GROSS_INCOME
+        self.deductions_c *= GF_GROSS_INCOME
+        
+        
+       
 
 
 

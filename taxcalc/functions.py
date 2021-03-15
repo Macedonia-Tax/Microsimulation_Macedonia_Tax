@@ -132,9 +132,9 @@ def cal_pit_I(rate1, rate2, tbrk1, tti_I, pit_I):
     # subtract TI_special_rates from TTI to get Aggregate_Income, which is
     # the portion of TTI that is taxed at normal rates
     taxinc = tti_I 
-    tax = (rate1 * min(taxinc, tbrk1) +
+    tax1 = (rate1 * min(taxinc, tbrk1) +
                        rate2 * max(0., taxinc - tbrk1))
-    pit_I = tax 
+    pit_I = tax1 
     return (pit_I)
 
 
@@ -181,7 +181,7 @@ def cal_pit_c(capital__income_rate, tti_c, pit_c):
     """
     # subtract TI_special_rates from TTI to get Aggregate_Income, which is
     # the portion of TTI that is taxed at normal rates
-    pit_c = capital__income_rate*tti_c
+    pit_c = tti_c*capital__income_rate
     return pit_c
 
 @iterate_jit(nopython=True)
