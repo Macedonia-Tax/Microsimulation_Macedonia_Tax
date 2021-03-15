@@ -13,15 +13,15 @@ recs = Records()
 grecs = GSTRecords()
 
 assert isinstance(grecs, GSTRecords)
-assert grecs.data_year == 2017
-assert grecs.current_year == 2017
+assert grecs.data_year == 2019
+assert grecs.current_year == 2019
 
 # create CorpRecords object containing cit.csv and cit_weights.csv input data
 crecs = CorpRecords()
 
 assert isinstance(crecs, CorpRecords)
-assert crecs.data_year == 2017
-assert crecs.current_year == 2017
+assert crecs.data_year == 2019
+assert crecs.current_year == 2019
 
 # create Policy object containing current-law policy
 pol = Policy()
@@ -39,8 +39,8 @@ calc2 = Calculator(policy=pol, records=recs, gstrecords=grecs,
 calc2.calc_all()
 
 # compare aggregate results from two calculators
-weighted_tax1 = calc1.weighted_total('pitax')
-weighted_tax2 = calc2.weighted_total('pitax')
+weighted_tax1 = calc1.weighted_total('total_pit')
+weighted_tax2 = calc2.weighted_total('total_pit')
 weighted_tax_diff = weighted_tax2 - weighted_tax1
 total_weights = calc1.total_weight()
 print(f'Tax under current law {weighted_tax1 * 1e-6:,.2f} millions')
@@ -49,20 +49,20 @@ print(f'Tax difference {weighted_tax_diff * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 
 
-dump_vars = ['ID_No','Salaries','GTI','TTI', 'pitax','post_tax_income']
+dump_vars = ['id_n','total_gross_income','total_taxable_income','total_pit','total_net_icome']
 dumpdf = calc1.dataframe(dump_vars)
-dumpdf= dumpdf.sort_values(by=['Salaries'])
+dumpdf= dumpdf.sort_values(by=['total_gross_income'])
 dumpdf.to_csv('app1-dump_macedonia.csv',
               index=False, float_format='%.0f')
 
 
-gini_pre_tax = calc1.gini(['GTI'])
+gini_pre_tax = calc1.gini(['total_gross_income'])
 print(gini_pre_tax)
 
-gini_post_tax = calc1.gini(['post_tax_income'])
+gini_post_tax = calc1.gini(['total_net_icome'])
 print(gini_post_tax)
 
-gini_post_tax_reform = calc2.gini(['post_tax_income'])
+gini_post_tax_reform = calc2.gini(['total_net_icome'])
 print(gini_post_tax_reform)
 
 

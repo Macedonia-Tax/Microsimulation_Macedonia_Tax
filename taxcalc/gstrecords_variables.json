@@ -3,7 +3,7 @@
         "gst": {
             "desc": "Potential GST paid by Household during the year in Rupees",
             "form": {
-                "2017": "Calculated"
+                "2019": "Calculated"
             },
             "type": "float"
         }
@@ -12,7 +12,7 @@
         "AYEAR": {
             "desc": "Year of Consumption",
             "form": {
-                "2017": "Household Survey 48th Round Block 12"
+                "2019": "Household Survey 48th Round Block 12"
             },
             "type": "int"
         },
@@ -20,14 +20,14 @@
             "required": true,        
             "desc": "Household ID HHID",
             "form": {
-                "2017": "Household Survey 48th Round Block 12"
+                "2019": "Household Survey 48th Round Block 12"
             },
             "type": "int"
         },
         "CONSUMPTION_TOTAL": {
             "desc": "Total Consumption of Household",
             "form": {
-                "2017": "Household Survey 48th Round Block 3 Level 2"
+                "2019": "Household Survey 48th Round Block 3 Level 2"
             },
             "type": "int"
         }

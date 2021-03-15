@@ -14,8 +14,9 @@ import re
 import copy
 import numpy as np
 import pandas as pd
-from taxcalc.functions import (cal_ssc, net_salary_income, gross_total_income, taxable_total_income, pit_liability,
-                               cal_post_tax_income)
+from taxcalc.functions import (cal_ssc_w, cal_tti_w, cal_pit_w, cal_net_i_w, cal_ssc_I, cal_tti_I, cal_pit_I, 
+                               cal_net_i_I, cal_tti_c, cal_pit_c, cal_net_i_c, cal_total_gross_income, cal_total_taxable_income,
+                               cal_total_pit)
 from taxcalc.corpfunctions import (cit_liability)
 from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
@@ -165,12 +166,20 @@ class Calculator(object):
         cit_liability(self.__policy, self.__corprecords)
         
         # Individual calculations
-        cal_ssc(self.__policy, self.__records)
-        net_salary_income(self.__policy, self.__records)
-        gross_total_income(self.__policy, self.__records)
-        taxable_total_income(self.__policy, self.__records)
-        pit_liability(self.__policy, self.__records)
-        cal_post_tax_income(self.__policy, self.__records)
+        cal_ssc_w(self.__policy, self.__records)
+        cal_tti_w(self.__policy, self.__records)
+        cal_pit_w(self.__policy, self.__records)
+        cal_net_i_w(self.__policy, self.__records)
+        cal_ssc_I(self.__policy, self.__records)
+        cal_tti_I(self.__policy, self.__records)
+        cal_pit_I(self.__policy, self.__records)
+        cal_net_i_I(self.__policy, self.__records)
+        cal_tti_c(self.__policy, self.__records)
+        cal_pit_c(self.__policy, self.__records)
+        cal_net_i_c(self.__policy, self.__records)
+        cal_total_gross_income(self.__policy, self.__records)
+        cal_total_taxable_income(self.__policy, self.__records)
+        cal_total_pit(self.__policy, self.__records)
         # GST calculations
         # agg_consumption(self.__policy, self.__gstrecords)
         # gst_liability_cereal(self.__policy, self.__gstrecords)

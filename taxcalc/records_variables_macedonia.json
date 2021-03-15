@@ -1,163 +1,178 @@
 {
   "read": { 
-    "ID_No": { 
+    "id_n": {  
       "required": true, 
       "type": "int",
       "desc": "Unique positive numeric identifier for filing unit",
-      "form": {"2017": "Private Info"}
+      "form": {"2019": "Private Info"}
     },
-    "AYEAR": {
+    "AYEAR": { 
       "required": true,
       "type": "int",
       "desc": "Assessment Year", 
-      "form": {"2017": "private info"}
+      "form": {"2019": "private info"}
     },   
-    "P_Legal": {  
-      "type": "string",   
-      "desc": "Earning of salary by type of employment/business",
-      "form": {"2017": "Obtained from data on Salaries & codes; PL-Legal person or SVD-independent performer of activity"}
+    "gross_i_w": {  
+      "type": "float",   
+      "desc": "Gross income from wages",
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },   
-    "NACE_Chapter": {
+    "personal_allowance_w": {
       "type": "float",  
-      "desc": "European statistical classification of economic/business activities", 
-      "form": {"2017": "Obtained from data on Salaries & codes"}
+      "desc": "Personal allowance on wages", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },   
-    "Salary_Source_Type": {
-      "type": "string",  
-      "desc": " Salary based on busniess success of the employer",
-      "form": {"2017": "Obtained from data on Salaries & codes; 01, 1a, 1b, 1g, 1v"}
+    "gross_i_I": {
+      "type": "float",  
+      "desc": "Gross income from 'other income of labour'",
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },   
-    "Gender": {
-      "type": "string",  
-      "desc": "Either of the two sexes",
-      "form": {"2017": "Obtained from data on Salaries"} 
+    "personal_allowance_I": {
+      "type": "float",
+      "desc": "Currently there is no personal allowance for 'other income of labour'", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },   
-    "Age": {
-      "type": "int",  
-      "desc": "Age of the tax filers",
-      "form": {"2017": "Obtained from data on Salaries & codes"}
+    "deductions_I": {
+      "type": "float",
+      "desc": "deductions from 'other income of labour'", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}  
     },   
-    "Condition": {
-      "type": "int",  
-      "desc": "dummy variable",
-      "form": {"2017": "Obtained from data on Salaries & codes"}    
-    },
-    "Salaries": { 
-      "type": "float",
-      "desc": "Effective Tax Base (DANOCNA_OSNOVA)",
-      "form": {"2017": "Obtained from data on Salaries & codes"} 
-    },
-    "Gross_income": {
-      "type": "float",
-      "desc": "Total Income base", 
-      "form": {"2017": "Obtained from data on Salaries & codes"}
-    },
-    "Tax_Relief": { 
-      "type": "float",
-      "desc": "OLESNUVANJE", 
-      "form": {"2017": "Obtained from data on Salaries & codes"}  
-    },
-    "PIT": {
-      "type": "float",
-      "desc": "PDD; personal Income Tax based on 10% tax rate",
-      "form": {"2017": "Obtained from data on Salaries & codes"}
-    },
-    "Net_Income": {
-      "type": "float",
-      "desc": "Gross Income-SSC-PIT(based on 10% tax rate)",
-      "form": {"2017": "Obtained from data on Salaries & codes"} 
+    "gross_i_c": {
+      "type": "float",  
+      "desc": "Gross income from 'capital'",
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },   
+    "deductions_c": { 
+      "type": "float",  
+      "desc": "deductions from 'capital'", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}     
     },
     "ST_CG_AMT_2": {
       "type": "float",
       "desc": "115AD (STCG for FIIs on securities where STT not paid) @ 30% under current law",
-      "form": {"2017": "ITR-3 Part B-TI-4a-ii"}
+      "form": {"2019": "ITR-3 Part B-TI-4a-ii"}
     },
     "ST_CG_AMT_APPRATE": {
       "type": "float",
       "desc": "STCG at regular rates as per current law",
-      "form": {"2017": "ITR-3 Part B-TI-4a-iii"}
+      "form": {"2019": "ITR-3 Part B-TI-4a-iii"}
     },
     "LT_CG_AMT_1": {
       "type": "float",
       "desc": "LTCG at special rate 10% under current law",
-      "form": {"2017": "ITR-3 Part B-TI-4b-i"}
+      "form": {"2019": "ITR-3 Part B-TI-4b-i"}
     },
     "LT_CG_AMT_2": {
       "type": "float",
       "desc": "LTCG at special rate 20% under current law",
-      "form": {"2017": "ITR-3 Part B-TI-4b-ii"}
+      "form": {"2019": "ITR-3 Part B-TI-4b-ii"}
     },
     "TOTAL_INCOME_OS": {
       "type": "float",
       "desc": "Income from Other Sources",
-      "form": {"2017": "ITR-3 Part B-TI-5d"}
+      "form": {"2019": "ITR-3 Part B-TI-5d"}
     },
     "BFL_SET_OFF_BALANCE": {
       "type": "float",
       "desc": "Brought Forward Losses to be set off",
-      "form": {"2017": "ITR-3 Part B-TI 9"}
+      "form": {"2019": "ITR-3 Part B-TI 9"}
     },
     "NET_AGRC_INCOME": {
       "type": "float",
       "desc": "Agricultural income used for rate purpose",
-      "form": {"2017": "ITR-3 Part B-TI 16"}
+      "form": {"2019": "ITR-3 Part B-TI 16"}
     },
     "TOTAL_DEDUC_VIA": {
       "type": "float",
       "desc": "Total itemized deductions",
-      "form": {"2017": "ITR-1 Part C-C1 and ITR-3 Part B-TI-13c"}
+      "form": {"2019": "ITR-1 Part C-C1 and ITR-3 Part B-TI-13c"}
     },
     "TOTAL_DEDUC_10AA": {
       "type": "float",
       "desc": "Total deduction u/s 10AA",
-      "form": {"2017": "Column 11 of Part B-TI of ITR-6"}
+      "form": {"2019": "Column 11 of Part B-TI of ITR-6"}
     },
     "weight": {
       "type": "float",
       "desc": "Filing unit sampling weight",
-      "form": {"2017": "not used in filing unit tax calculations"}
+      "form": {"2019": "not used in filing unit tax calculations"}
     }
   },
   "calc": {
-    "Income_Salary": {
+    "ssc_w": {    
       "type": "float",
-      "desc": "Computed Income from Salaries (DANOCNA_OSNOVA)",
-      "form": {"2017": "Obtained from data on Salaries & codes"}
-   },
-    "Social_Security_Contributions": { 
-      "type": "float",
-      "desc": "ODBITOCI", 
-      "form": {"2017": "Computed from Gross Income(% of it)"}  
+      "desc": "Computed as 0.2675 of Gross Income", 
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
     },
-    "OLESNUVANJE1": {
+    "tti_w": { 
       "type": "float",
-      "desc": "K_Tax_Relief*1.072961373390", 
-      "form": {"2017": "Obtained from data on Salaries & codes"}
+      "desc": "Total taxable income from wages (pit-ssc-personal allowance)", 
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
     },
-    "MINUS_DANOCNA_OSNOVA": {
-      "type": "float",
-      "desc": "OLESNUVANJE1 - K_Tax_Relief", 
-      "form": {"2017": "Obtained from data on Salaries & codes"}  
+    "pit_w": {
+      "type": "float", 
+      "desc": "Pit liability from wages (pit-ssc-personal allowance)*tax rate", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },
-    "GTI": {
+    "net_i_w": {
       "type": "float",
-      "desc": "Gross Total Income (GTI)",
-      "form": {"2017": "Obtained from data on Salaries & codes"}
+      "desc": "post tax income from wages(gross income-ssc-pit)", 
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
     },
-    "TTI": {
+    "ssc_I": {
       "type": "float",
-      "desc": "Taxable Total Income (TTI)",
-      "form": {"2017": "Obtained from data on Salaries & codes"} 
+      "desc": "Currently there is no ssc for 'other income of labour'", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },
-    "pitax": {
+    "tti_I": {
       "type": "float",
-      "desc": "PIT liability",
-      "form": {"2017": "Obtained from data on Salaries & codes"}
+      "desc": "Total taxable income from 'other income of labour'(gross income-deductions)", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
     },
-    "post_tax_income": {
+    "pit_I": { 
       "type": "float",
-      "desc": "Income - PIT",  
-      "form": {"2017": "Obtained from data on Salaries & codes"} 
+      "desc": "Pit liability from 'other income of labour'(gross income-deductions)*tax rate", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },
+    "net_i_I": {
+      "type": "float",
+      "desc": "post tax income from 'other income of labour'(gross income-pit)", 
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
+    },
+    "tti_c": { 
+      "type": "float", 
+      "desc": "Total taxable income from 'capital'(gross income-deductions)", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },
+    "pit_c": {
+      "type": "float", 
+      "desc": "Pit liability from 'capital'(gross income-deductions)*tax rate", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },
+    "net_i_c": {
+      "type": "float", 
+      "desc": "post tax income from 'capital'(gross income-pit)", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },
+    "total_gross_income": { 
+      "type": "float",
+      "desc": "Gross Total Income (GTI) (gross_i_w + gross_i_l + gross_i_c)",
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },
+    "total_taxable_income": {
+      "type": "float",
+      "desc": "Taxable Total Income (TTI)(tti_w+ tti_l+tti_c) ",
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
+    },
+    "total_net_icome": {
+      "type": "float",
+      "desc": "Total post tax income (TTI)(net_i_w+ net_i_I+net_i_c)",
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },
+    "total_pit": {
+      "type": "float",
+      "desc": "PIT liability (pit_w+ pit_l+pit_c)",
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
     }
   }
 }

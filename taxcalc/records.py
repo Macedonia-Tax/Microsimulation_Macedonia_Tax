@@ -75,10 +75,10 @@ class Records(object):
     # suppress pylint warnings about too many class instance attributes:
     # pylint: disable=too-many-instance-attributes
 
-    PITCSV_YEAR = 2017
+    PITCSV_YEAR = 2019
 
     CUR_PATH = os.path.abspath(os.path.dirname(__file__))
-    PIT_DATA_FILENAME = 'macedonia_merged_data.csv'
+    PIT_DATA_FILENAME = 'pit_macedonia.csv'
     PIT_WEIGHTS_FILENAME = 'pit_weights_macedonia.csv'
     VAR_INFO_FILENAME = 'records_variables_macedonia.json'
 
@@ -217,7 +217,7 @@ class Records(object):
         # pylint: disable=too-many-locals,too-many-statements
         GF_GROSS_INCOME = self.gfactors.factor_value('GROSS_INCOME', year)
 
-        self.Gross_income *= GF_GROSS_INCOME
+        self.total_gross_income *= GF_GROSS_INCOME
 
 
 
