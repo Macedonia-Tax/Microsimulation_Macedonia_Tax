@@ -544,8 +544,8 @@ class Calculator(object):
             otherwise, return false.  (Note that "same" means nobody's
             GTI differs by more than one cent.)
             """
-            im1 = calc1.array('GTI')
-            im2 = calc2.array('GTI')
+            im1 = calc1.array('total_gross_income')
+            im2 = calc2.array('total_gross_income')
             return np.allclose(im1, im2, rtol=0.0, atol=0.01)
         # main logic of method
         assert calc is None or isinstance(calc, Calculator)
@@ -555,7 +555,7 @@ class Calculator(object):
             assert np.allclose(self.array('weight'),
                                calc.array('weight'))  # rows in same order
         var_dataframe = self.distribution_table_dataframe()
-        imeasure = 'GTI'
+        imeasure = 'total_gross_income'
         dt1 = create_distribution_table(var_dataframe, groupby, imeasure,
                                         averages, scaling)
         del var_dataframe
@@ -566,7 +566,7 @@ class Calculator(object):
             assert calc.array_len == self.array_len
             var_dataframe = calc.distribution_table_dataframe()
             if have_same_income_measure(self, calc):
-                imeasure = 'GTI'
+                imeasure = 'total_gross_income'
             else:
                 imeasure = 'GTI_baseline'
                 var_dataframe[imeasure] = self.array('GTI')

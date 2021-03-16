@@ -6,6 +6,6 @@
 	"_rate1": {"2019": [0.12]},
 	"_ssc_rate_w":{"2019": [0.18]},
 	"_ssc_rate_I":{"2019": [0.05]},
-	"_capital__income_rate":{"2019": [0.09]}
+	"_capital_income_rate":{"2019": [0.09]}
     }
 }

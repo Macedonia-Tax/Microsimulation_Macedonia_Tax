@@ -5,6 +5,7 @@ CHECK: Use your favorite Windows diff utility to confirm that app1.res is
        the same as the app1.out file that is in the repository.
 """
 from taxcalc import *
+import matplotlib.pyplot as plt
 
 # create Records object containing pit.csv and pit_weights.csv input data
 recs = Records()
@@ -22,6 +23,8 @@ crecs = CorpRecords()
 assert isinstance(crecs, CorpRecords)
 assert crecs.data_year == 2019
 assert crecs.current_year == 2019
+year = 2019
+
 
 # create Policy object containing current-law policy
 pol = Policy()
@@ -57,7 +60,8 @@ assert len(dumpdf.index) == calc1.array_len
 dumpdf.to_csv('app0-dump_macedonia.csv', columns=column_order,
               index=False, float_format='%.0f')
 
-output_categories = 'standard_income_bins'
+#output_categories = 'standard_income_bins'
+output_categories = 'weighted_deciles'
 output_in_averages = False
 
 dt1, dt2 = calc1.distribution_tables(calc2, output_categories,
@@ -88,7 +92,16 @@ print('  *** POLICY-REFORM DISTRIBUTION TABLE ***')
 print(dt2)
 print('\n')
 
-
-
+dt1.columns
+"""chart"""
+ax = dt1[:-1].plot(kind='bar', use_index=True, y='total_pit',
+legend=False, rot=90,
+figsize=(8,8))
+ax.set_ylabel('PIT in mkd')
+ax.set_xlabel('GTI bins')
+ax.set_title(' PIT Distribution Under Current Law (2019)', fontweight="bold")
+#pic_filename1 = 'CIT Collection 2017.png'
+#plt.savefig(pic_filename1)
+plt.plot
 
 
