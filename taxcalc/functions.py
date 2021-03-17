@@ -173,7 +173,7 @@ def cal_tti_c(gross_i_c, deductions_c, tti_c):
     return tti_c
 
 @iterate_jit(nopython=True)
-def cal_pit_c(capital__income_rate, tti_c, pit_c):
+def cal_pit_c(capital_income_rate, tti_c, pit_c):
     """pit_c
     Compute tax liability given the progressive tax rate schedule specified
     by the (marginal tax) rate* and (upper tax bracket) brk* parameters and
@@ -181,7 +181,7 @@ def cal_pit_c(capital__income_rate, tti_c, pit_c):
     """
     # subtract TI_special_rates from TTI to get Aggregate_Income, which is
     # the portion of TTI that is taxed at normal rates
-    pit_c = tti_c*capital__income_rate
+    pit_c = tti_c*capital_income_rate
     return pit_c
 
 @iterate_jit(nopython=True)

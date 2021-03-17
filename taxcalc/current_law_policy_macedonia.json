@@ -169,7 +169,7 @@
         "out_of_range_action": "stop"
         
     },
-    "_capital__income_rate": {
+    "_capital_income_rate": {
         "long_name": " Tax rate at which capital income is levied",
         "description": "Tax collected from capital income .",
         "itr_ref": "R code",
