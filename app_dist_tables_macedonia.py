@@ -4,8 +4,9 @@ USAGE: python app1.py > app1.res
 CHECK: Use your favorite Windows diff utility to confirm that app1.res is
        the same as the app1.out file that is in the repository.
 """
-from taxcalc import *
+from taxcalc import*
 import matplotlib.pyplot as plt
+import pandas as pd 
 
 # create Records object containing pit.csv and pit_weights.csv input data
 recs = Records()
@@ -92,6 +93,7 @@ print('  *** POLICY-REFORM DISTRIBUTION TABLE ***')
 print(dt2)
 print('\n')
 
+
 dt1.columns
 """chart"""
 ax = dt1[:-1].plot(kind='bar', use_index=True, y='total_pit',
@@ -103,5 +105,18 @@ ax.set_title(' PIT Distribution Under Current Law (2019)', fontweight="bold")
 #pic_filename1 = 'CIT Collection 2017.png'
 #plt.savefig(pic_filename1)
 plt.plot
+
+dt2.columns
+"""chart2"""
+ay = dt2[:-1].plot(kind='bar', use_index=True, y='total_pit',
+legend=False, rot=90,
+figsize=(8,8))
+ax.set_ylabel('PIT in mkd')
+ax.set_xlabel('GTI bins')
+ax.set_title(' PIT Distribution Under Reform', fontweight="bold")
+#pic_filename1 = 'CIT Collection 2017.png'
+#plt.savefig(pic_filename1)
+plt.plot
+
 
 
