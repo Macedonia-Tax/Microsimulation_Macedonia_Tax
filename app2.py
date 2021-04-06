@@ -26,7 +26,7 @@ pol.implement_reform(reform['policy'])
 calc2 = Calculator(policy=pol, records=recs, gstrecords=grecs,
                    corprecords=crecs, verbose=False)
 
-# Loop through years 2017, 2018 and 2019 and print out pitax
+# Loop through years 2019, 2020 and 2021 and print out pitax
 for year in range(2019,2024):
     calc1.advance_to_year(year)
     calc2.advance_to_year(year)
