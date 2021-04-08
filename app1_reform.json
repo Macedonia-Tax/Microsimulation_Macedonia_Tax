@@ -1,11 +1,11 @@
 {
     "policy": {
-    // increase rate2 from 10% to 20%
+    // Some of the policy changes
 	"_rate2": {"2019": [0.20]},
 	"_tbrk1": {"2019": [108000]},
-	"_rate1": {"2019": [0.12]},
-	"_ssc_rate_w":{"2019": [0.18]},
-	"_ssc_rate_I":{"2019": [0.05]},
-	"_capital_income_rate":{"2019": [0.09]}
+	"_rate1": {"2019": [0.10]},
+	"_ssc_rate_w":{"2019": [0.280]},
+	"_ssc_rate_I":{"2019": [0.00]},
+	"_capital_income_rate":{"2019": [0.17]}
     }
 }

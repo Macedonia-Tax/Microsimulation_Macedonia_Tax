@@ -569,7 +569,7 @@ class Calculator(object):
                 imeasure = 'total_gross_income'
             else:
                 imeasure = 'GTI_baseline'
-                var_dataframe[imeasure] = self.array('GTI')
+                var_dataframe[imeasure] = self.array('total_gross_income')
             dt2 = create_distribution_table(var_dataframe, groupby, imeasure,
                                             averages, scaling)
             del var_dataframe
