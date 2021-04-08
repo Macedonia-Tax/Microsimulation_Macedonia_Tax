@@ -224,11 +224,6 @@ class Records(object):
         self.gross_i_c *= GF_GROSS_INCOME
         self.deductions_c *= GF_GROSS_INCOME
         
-        
-       
-
-
-
     def _read_data(self, data):
         """
         Read Records data from file or use specified DataFrame as data.
