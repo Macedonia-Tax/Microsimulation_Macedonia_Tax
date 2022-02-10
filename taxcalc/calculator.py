@@ -16,7 +16,7 @@ import numpy as np
 import pandas as pd
 from taxcalc.functions import (cal_ssc_w, cal_tti_w, cal_pit_w, cal_net_i_w, cal_ssc_I, cal_tti_I, cal_pit_I, 
                                cal_net_i_I, cal_tti_c, cal_pit_c, cal_net_i_c, cal_total_gross_income, cal_total_taxable_income,
-                               cal_total_pit)
+                               cal_total_pit, cal_total_n_icome)
 from taxcalc.corpfunctions import (cit_liability)
 from taxcalc.gstfunctions import (gst_liability)
 from taxcalc.policy import Policy
@@ -180,6 +180,7 @@ class Calculator(object):
         cal_total_gross_income(self.__policy, self.__records)
         cal_total_taxable_income(self.__policy, self.__records)
         cal_total_pit(self.__policy, self.__records)
+        cal_total_n_icome(self.__policy, self.__records)
         # GST calculations
         # agg_consumption(self.__policy, self.__gstrecords)
         # gst_liability_cereal(self.__policy, self.__gstrecords)
@@ -240,6 +241,7 @@ class Calculator(object):
         Return pandas DataFrame containing the listed variables from embedded
         Records object.
         """
+        import numpy as np
         assert isinstance(variable, list)
         variable = variable + ['weight']
         arys = [self.array(vname) for vname in variable]
@@ -268,12 +270,20 @@ class Calculator(object):
         sum_integrate_area = gini['integrate_area'].sum()
         gini_index = 2*(sum_integrate_area)
         
+        
         #ploting gini coefficient
         import matplotlib.pyplot as plt
+        import quantecon as qe
+        #from numba import njit, jitclass, float64, prange
         
-        n = 430
+        n = 62345
         w = np.exp(np.random.randn(n))
         
+        f_vals, l_vals = qe.lorenz_curve(w)
+
+
+        
+        f_vals, l_vals = qe.lorenz_curve(w)
         f_vals = gini['percentage_cumul_pop']
         #f_vals = f_vals.append(pd.Series([1.0]))
         #print(f_vals)
@@ -283,7 +293,7 @@ class Calculator(object):
         
         fig, ax = plt.subplots()
         ax.plot(f_vals, l_vals, label='Lorenz curve, lognormal sample')
-        ax.plot(f_vals, f_vals, label='Line of Equality, 45 degrees')
+        ax.plot(f_vals, f_vals, label='Lorenz curve, equality')
         ax.legend()
         plt.show()
         return gini_index
@@ -450,7 +460,7 @@ class Calculator(object):
         """
         return self.__records.data_year
 
-    def diagnostic_table(self, num_years):
+    def diagnostic_table(self, num_years, diag, create_diagnostic_table, diag_variables):
         """
         Generate multi-year diagnostic table containing aggregate statistics;
         this method leaves the Calculator object unchanged.
@@ -575,7 +585,7 @@ class Calculator(object):
             del var_dataframe
         return (dt1, dt2)
 
-    def difference_table(self, calc, groupby, tax_to_diff):
+    def difference_table(self, calc, groupby, tax_to_diff, DIFF_VARIABLES, create_difference_table):
         """
         Get results from self and calc, sort them by expanded_income into
         table rows defined by groupby, compute grouped statistics, and

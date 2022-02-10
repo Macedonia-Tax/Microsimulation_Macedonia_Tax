@@ -39,11 +39,7 @@ for year in range(2019,2024):
     print(f'Tax under current law for {year}: {weighted_tax1 * 1e-9:,.2f} billions')
     print(f'Tax under reform for {year}: {weighted_tax2 * 1e-9:,.2f} billions')
     print(f'Total number of tax returns for {year}: {total_weights * 1e-3:,.2f} thousands')
-    
-    
-    
-    
-    
+
     
     
     
