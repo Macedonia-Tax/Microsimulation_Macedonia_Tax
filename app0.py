@@ -5,6 +5,10 @@ CHECK: Use your favorite Windows diff utility to confirm that app0.res is
        the same as the app0.out file that is in the repository.
 """
 from taxcalc import *
+import pandas as pd
+import numpy as np
+import os
+import csv 
 
 # create Records object containing pit.csv and pit_weights.csv input data
 recs = Records()
@@ -55,12 +59,18 @@ total_weights = calc1.total_weight()
 print(f'SSC under current law {weighted_ssc * 1e-6:,.2f} millions')
 print(f'Total number of tax returns {total_weights * 1e-6:,.2f} millions')
 
-
+"""
 dump_vars = ['id_n','ssc_w','total_gross_income', 'total_taxable_income', 'total_pit']
 dumpdf = calc1.dataframe(dump_vars)
 column_order = dumpdf.columns
 
-assert len(dumpdf.index) == calc1.array_len
+assert len(dumpdf.index) == calc1.array_len 
 
-dumpdf.to_csv('app0-dump_macedonia.csv', columns=column_order,
+dumpdf.to_csv('app0_dump_macedonia.csv', columns=column_order,
               index=False, float_format='%.0f')
+"""
+
+
+
+
+

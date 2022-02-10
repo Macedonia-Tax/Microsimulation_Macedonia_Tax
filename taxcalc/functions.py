@@ -223,12 +223,12 @@ def cal_total_pit(pit_w, pit_I, pit_c, total_pit):
     return total_pit
 
 @iterate_jit(nopython=True)
-def cal_total_net_icome(net_i_w, net_i_I, net_i_c, total_net_icome):
+def cal_total_n_icome(net_i_w, net_i_I, net_i_c, total_n_icome):
     """
     Compute GTI including capital gains amounts taxed at special rates.
     """
-    total_net_icome = net_i_w + net_i_I + net_i_c
-    return total_net_icome
+    total_n_icome = net_i_w + net_i_I + net_i_c
+    return total_n_icome
 
 
 

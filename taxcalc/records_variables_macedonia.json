@@ -45,7 +45,17 @@
     "deductions_c": { 
       "type": "float",  
       "desc": "deductions from 'capital'", 
-      "form": {"2019": "Obtained from data on Salaries & codes"}     
+      "form": {"2019": "Obtained from data on Salaries & codes"}
+    },   
+    "y_b": { 
+      "type": "int",  
+      "desc": "Year the tax payer was born in (age)'", 
+      "form": {"2019": "Obtained from data on Salaries & codes"} 
+    },   
+    "gender": { 
+      "type": "int",  
+      "desc": "Gender of the tax payer", 
+      "form": {"2019": "Obtained from data on Salaries & codes"}    
     },
     "ST_CG_AMT_2": {
       "type": "float",
@@ -98,7 +108,7 @@
       "form": {"2019": "not used in filing unit tax calculations"}
     }
   },
-  "calc": {
+  "calc": { 
     "ssc_w": {    
       "type": "float",
       "desc": "Computed as 0.2675 of Gross Income", 
@@ -164,7 +174,7 @@
       "desc": "Taxable Total Income (TTI)(tti_w+ tti_l+tti_c) ",
       "form": {"2019": "Obtained from data on Salaries & codes"} 
     },
-    "total_net_icome": {
+    "total_n_icome": {
       "type": "float",
       "desc": "Total post tax income (TTI)(net_i_w+ net_i_I+net_i_c)",
       "form": {"2019": "Obtained from data on Salaries & codes"}
